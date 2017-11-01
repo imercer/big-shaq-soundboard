@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css"/>
     <script defer src="js/material.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -55,10 +56,9 @@
         }
     </style>
 </head>
-
 <body id="body" style="display: none">
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="app">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
@@ -67,385 +67,394 @@
             <!-- Navigation. We hide it in small screens. -->
         </div>
     </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title" onclick="displayAll()">Soundboard</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" onclick="displayElement('song')">Mans Not Hot Song</a>
+            <a class="mdl-navigation__link" onclick="displayElement('maths')">Maths</a>
+            <a class="mdl-navigation__link" onclick="displayElement('english')">English</a>
+            <a class="mdl-navigation__link" onclick="displayElement('sayings')">Sayings and Ad-libs</a>
+        </nav>
+    </div>
     <main class="mdl-layout__content">
         <div class="page-content">
             <div class="container">
             <div class="row align-items-start">
-                <div class="col"  onclick="playSound('bigshaq');">
+                <div class="col song sayings"  onclick="playSound('bigshaq');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Big Shaq</span>
                 </div>
-                <div class="col" onclick="playSound('boom');">
+                <div class="col song sayings" onclick="playSound('boom');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Boom</span>
                 </div>
-                <div class="col" onclick="playSound('2plus2');">
+                <div class="col song maths" onclick="playSound('2plus2');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>2 + 2 = 4</span>
                 </div>
-                <div class="col" onclick="playSound('minus1thats3');">
+                <div class="col song maths" onclick="playSound('minus1thats3');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>-1 = 3</span>
                 </div>
-                <div class="col" onclick="playSound('1234');">
+                <div class="col song" onclick="playSound('1234');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>1,2,3 and 4</span>
                 </div>
-                <div class="col" onclick="playSound('mandobigmafs');">
+                <div class="col maths" onclick="playSound('mandobigmafs');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Big mafs</span>
                 </div>
 
-                <div class="col" onclick="playSound('eforexcellent');">
+                <div class="col sayings english" onclick="playSound('eforexcellent');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>E For Excellent</span>
                 </div>
-                <div class="col" onclick="playSound('eldickhead');">
+                <div class="col sayings" onclick="playSound('eldickhead');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>El Dickhead</span>
                 </div>
-                <div class="col" onclick="playSound('hisdadsadinnerlady');">
+                <div class="col sayings" onclick="playSound('hisdadsadinnerlady');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>His dad's a dinner lady</span>
                 </div>                
-                <div class="col" onclick="playSound('holdtightasznee');">
+                <div class="col song sayings" onclick="playSound('holdtightasznee');">
                 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                     <i class="material-icons">audiotrack</i>
                 </button>
                 <span class="soundboard-label"><br>Hold tight asznee</span>
                 </div>
-                <div class="col" onclick="playSound('putmenexttothesun');">
+                <div class="col sayings" onclick="playSound('putmenexttothesun');">
                 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                     <i class="material-icons">audiotrack</i>
                 </button>
                 <span class="soundboard-label"><br>Put me next to the sun</span>
                 </div>
-                <div class="col" onclick="playSound('ivegotthesauce');">
+                <div class="col song" onclick="playSound('ivegotthesauce');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>I've got the sauce</span>
                 </div>
-                <div class="col" onclick="playSound('mandontstartbiff');">
+                <div class="col sayings english" onclick="playSound('mandontstartbiff');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Don't start biff</span>
                 </div>
 
-                <div class="col" onclick="playSound('mansgotblueeyes');">
+                <div class="col sayings" onclick="playSound('mansgotblueeyes');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Blue eyes</span>
                 </div>
-                <div class="col" onclick="playSound('thesunshotterthanme');">
+                <div class="col sayings" onclick="playSound('thesunshotterthanme');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>The sun is hotter than me</span>
                 </div>
 
-                <div class="col" onclick="playSound('mansnothot');">
+                <div class="col song sayings" onclick="playSound('mansnothot');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Man's not hot</span>
                 </div>
-                <div class="col" onclick="playSound('mansnotdumb');">
+                <div class="col sayings" onclick="playSound('mansnotdumb');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Man's not dumb</span>
                 </div>
 
-                <div class="col" onclick="playSound('mybrudda');">
+                <div class="col sayings" onclick="playSound('mybrudda');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>My brudda</span>
                 </div>
-                <div class="col" onclick="playSound('ilikemyfantawithnohaice');">
+                <div class="col sayings" onclick="playSound('ilikemyfantawithnohaice');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Fanta with no haice</span>
                 </div>
 
-                <div class="col" onclick="playSound('noketchup');">
+                <div class="col song" onclick="playSound('noketchup');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>No Ketchup</span>
                 </div>
-                <div class="col" onclick="playSound('mansgotsauce');">
+                <div class="col sayings" onclick="playSound('mansgotsauce');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Man's got Sauce</span>
                 </div>
-                <div class="col" onclick="playSound('youdontforcethesauce');">
+                <div class="col sayings" onclick="playSound('youdontforcethesauce');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You don't force the sauce</span>
                 </div>
-                <div class="col" onclick="playSound('askanegghowdoyouhaveyouryolk');">
+                <div class="col sayings" onclick="playSound('askanegghowdoyouhaveyouryolk');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Ask an egg how do you have your yolk?</span>
                 </div>
 
-                <div class="col" onclick="playSound('papakakaka');">
+                <div class="col song" onclick="playSound('papakakaka');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Pa-pa-ka-ka-ka</span>
                 </div>
 
-                <div class="col" onclick="playSound('quackquackquack');">
+                <div class="col song" onclick="playSound('quackquackquack');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Quack Quack Quack</span>
                 </div>
-                <div class="col" onclick="playSound('youmanwereducking');">
+                <div class="col song" onclick="playSound('youmanwereducking');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You man were ducking</span>
                 </div>
 
-                <div class="col" onclick="playSound('quickmafs');">
+                <div class="col song maths" onclick="playSound('quickmafs');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Quick mafs</span>
                 </div>
-                <div class="col" onclick="playSound('manknowsalgebra');">
+                <div class="col maths" onclick="playSound('manknowsalgebra');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Man knows Algebra</span>
                 </div>
-                <div class="col" onclick="playSound('pythagoroustheorem');">
+                <div class="col maths" onclick="playSound('pythagoroustheorem');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Pythagoras Theorem</span>
                 </div>
 
-                <div class="col" onclick="playSound('rawsauce');">
+                <div class="col song" onclick="playSound('rawsauce');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Raw Sauce</span>
                 </div>
 
-                <div class="col" onclick="playSound('skidipipapa');">
+                <div class="col song" onclick="playSound('skidipipapa');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Skibi-ki-pa-pa</span>
                 </div>
 
-                <div class="col" onclick="playSound('skrrrrrra');">
+                <div class="col song" onclick="playSound('skrrrrrra');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Skrrrrra</span>
                 </div>
 
-                <div class="col" onclick="playSound('skyaaa');">
+                <div class="col song" onclick="playSound('skyaaa');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Skyaaa</span>
                 </div>
 
-                <div class="col" onclick="playSound('put-put-put-boom');">
+                <div class="col song" onclick="playSound('put-put-put-boom');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>put-put-put-boom</span>
                 </div>
 
-                <div class="col" onclick="playSound('poompoom');">
+                <div class="col song" onclick="playSound('poompoom');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Poom Poom</span>
                 </div>
 
-                <div class="col" onclick="playSound('tu-tu-tu-qum-poom-boom');">
+                <div class="col song" onclick="playSound('tu-tu-tu-qum-poom-boom');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>tu-tu-tu-qum-poom-boom</span>
                 </div>
 
-                <div class="col" onclick="playSound('lookatyournose');">
+                <div class="col song" onclick="playSound('lookatyournose');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Look at your nose</span>
                 </div>
 
-                <div class="col" onclick="playSound('thetinggoesfull');">
+                <div class="col song" onclick="playSound('thetinggoesfull');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>The ting goes skrrraa (full)</span>
                 </div>
 
-                <div class="col" onclick="playSound('takeoffyourjacket');">
+                <div class="col song" onclick="playSound('takeoffyourjacket');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Take off your jacket</span>
                 </div>
 
-                <div class="col" onclick="playSound('thatgirlisauckers');">
+                <div class="col song" onclick="playSound('thatgirlisauckers');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>That girl is a uckers</span>
                 </div>
 
-                <div class="col" onclick="playSound('thetinggoes');">
+                <div class="col song" onclick="playSound('thetinggoes');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>The ting goes</span>
                 </div>
 
-                <div class="col" onclick="playSound('whosdat');">
+                <div class="col sayings" onclick="playSound('whosdat');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Who's dat</span>
                 </div>
 
-                <div class="col" onclick="playSound('yadunknow');">
+                <div class="col song" onclick="playSound('yadunknow');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You dun know</span>
                 </div>
 
-                <div class="col" onclick="playSound('youdickhead');">
+                <div class="col song" onclick="playSound('youdickhead');">
                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
                      <span class="soundboard-label"><br>You dickhead</span>
                  </div>
 
-                <div class="col" onclick="playSound('yourequitescintilating');">
+                <div class="col sayings english" onclick="playSound('yourequitescintilating');">
                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
                      <span class="soundboard-label"><br>You're quite scintillating</span>
                  </div>
 
-                <div class="col" onclick="playSound('givemeyournumber');">
+                <div class="col sayings" onclick="playSound('givemeyournumber');">
                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
                      <span class="soundboard-label"><br>Give me your number</span>
                  </div>
-                <div class="col" onclick="playSound('idonttakeoffmyjacket');">
+                <div class="col sayings" onclick="playSound('idonttakeoffmyjacket');">
                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
                      <span class="soundboard-label"><br>I don't take off my jacket</span>
                  </div>
 
-                <div class="col" onclick="playSound('yougetme');">
+                <div class="col sayings" onclick="playSound('yougetme');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You get me</span>
                 </div>
-                <div class="col" onclick="playSound('squadededup');">
+                <div class="col english" onclick="playSound('squadededup');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Squad-ed-ed Up</span>
                 </div>
-                <div class="col" onclick="playSound('theowlgoesprrttt');">
+                <div class="col sayings" onclick="playSound('theowlgoesprrttt');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>The owl goes prrrrt</span>
                 </div>
-                <div class="col" onclick="playSound('youknowlikethat');">
+                <div class="col sayings" onclick="playSound('youknowlikethat');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You know like that</span>
                 </div>
-                <div class="col" onclick="playSound('mansgotbars');">
+                <div class="col sayings" onclick="playSound('mansgotbars');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Mans got bars</span>
                 </div>
-                <div class="col" onclick="playSound('cmonbruv');">
+                <div class="col sayings" onclick="playSound('cmonbruv');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>C'mon Bruv</span>
                 </div>
-                <div class="col" onclick="playSound('englishlanguage');">
+                <div class="col english" onclick="playSound('englishlanguage');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>English Language</span>
                 </div>
-                <div class="col" onclick="playSound('islandrecords');">
+                <div class="col english" onclick="playSound('islandrecords');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Is-land records</span>
                 </div>
-                <div class="col" onclick="playSound('ileland');">
+                <div class="col english" onclick="playSound('ileland');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>I-l-e land</span>
                 </div>
-                <div class="col" onclick="playSound('mandontmakemelooklikeidontknowenglish');">
+                <div class="col english" onclick="playSound('mandontmakemelooklikeidontknowenglish');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>I don't know English</span>
                 </div>
-                <div class="col" onclick="playSound('bigenglish');">
+                <div class="col english" onclick="playSound('bigenglish');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Big English</span>
                 </div>
-                <div class="col" onclick="playSound('englishidnotreallymystrongestsubject');">
+                <div class="col english" onclick="playSound('englishidnotreallymystrongestsubject');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
@@ -453,50 +462,50 @@
                 </div>
 
 
-                <div class="col" onclick="playSound('mansready');">
+                <div class="col sayings" onclick="playSound('mansready');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Man's ready</span>
                 </div>
-                <div class="col" onclick="playSound('amplificication');">
+                <div class="col english" onclick="playSound('amplificication');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Amplificication</span>
                 </div>
-                <div class="col" onclick="playSound('youreprotecteded');">
+                <div class="col english" onclick="playSound('youreprotecteded');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>You're protected-ed</span>
                 </div>
-                <div class="col" onclick="playSound('causetheconspic');">
+                <div class="col english" onclick="playSound('causetheconspic');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Causing the conspic-</span>
                 </div>
-                <div class="col" onclick="playSound('donttrytoincriminateme');">
+                <div class="col english" onclick="playSound('donttrytoincriminateme');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Don't try to incriminate me</span>
                 </div>
 
-                <div class="col" onclick="playSound('checkthestatistics');">
+                <div class="col english maths sayings" onclick="playSound('checkthestatistics');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Check the Statistics</span>
                 </div>
-                <div class="col" onclick="playSound('persperationting');">
+                <div class="col song" onclick="playSound('persperationting');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
                     <span class="soundboard-label"><br>Perspiration Ting</span>
                 </div>
-                <div class="col" onclick="playSound('lynxeffect');">
+                <div class="col song" onclick="playSound('lynxeffect');">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>

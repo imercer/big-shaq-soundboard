@@ -39,4 +39,24 @@ function playSound(audio) {
         my_media.play();
 };
 
+function displayElement(element) {
+    console.log("Showing element " + element);
+    $('.english').hide();
+    $('.maths').hide();
+    $('.song').hide();
+    $('.sayings').hide();
+    $('.' + element + '').show();
+    document.getElementById('app').MaterialLayout.toggleDrawer();
+}
+
+function displayAll() {
+    $('.english').show();
+    $('.maths').show();
+    $('.song').show();
+    $('.sayings').show();
+    document.getElementById('app').MaterialLayout.toggleDrawer();
+}
+
 document.addEventListener("deviceready", notifyonDeviceReady, false);
+
+
