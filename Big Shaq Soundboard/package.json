@@ -27,12 +27,14 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-admobpro": {}
     }
   },
   "dependencies": {
     "cordova-android": "^6.3.0",
     "cordova-browser": "~5.0.1",
+    "cordova-plugin-admobpro": "^2.29.27",
     "cordova-plugin-battery-status": "~1.1.1",
     "cordova-plugin-camera": "~2.1.1",
     "cordova-plugin-console": "~1.0.2",
@@ -41,6 +43,7 @@
     "cordova-plugin-device-motion": "~1.2.0",
     "cordova-plugin-device-orientation": "~1.0.2",
     "cordova-plugin-dialogs": "~1.2.0",
+    "cordova-plugin-extension": "^1.5.2",
     "cordova-plugin-file": "~4.1.1",
     "cordova-plugin-file-transfer": "~1.5.0",
     "cordova-plugin-geolocation": "~2.1.0",

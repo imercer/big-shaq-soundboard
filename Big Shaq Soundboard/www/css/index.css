@@ -27,3 +27,10 @@ body {
 -ms-user-select: none;
 user-select: none;
 }
+
+
+.col {
+    min-width: 86.5px;
+    position: relative;
+    overflow: visible;
+}

@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-extension",
+        "raw": "cordova-plugin-extension",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-extension@latest",
+  "_id": "cordova-plugin-extension@1.5.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-extension",
+  "_nodeVersion": "4.8.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-extension-1.5.2.tgz_1504715657536_0.6651972394902259"
+  },
+  "_npmUser": {
+    "email": "rjfun.mobile@gmail.com",
+    "name": "floatinghotpot"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-extension",
+    "raw": "cordova-plugin-extension",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.2.tgz",
+  "_shasum": "97decb62803b9fb3e67b03a31797bfe512cdf409",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-extension",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "email": "rjfun.mobile@gmail.com",
+    "name": "Liming Xie"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-extension/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-extension",
+    "platforms": [
+      "android",
+      "ios",
+      "amazon-fireos"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Plugin common extension with adapter interface",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "97decb62803b9fb3e67b03a31797bfe512cdf409",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.2.tgz"
+  },
+  "gitHead": "3dacf4e33123b2316b7a2f1f4815569b254e6241",
+  "homepage": "https://github.com/floatinghotpot/cordova-extension#readme",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "extension",
+    "rjfun"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "rjfun.mobile@gmail.com",
+      "name": "floatinghotpot"
+    }
+  ],
+  "name": "cordova-plugin-extension",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floatinghotpot/cordova-extension.git"
+  },
+  "scripts": {},
+  "version": "1.5.2"
+}

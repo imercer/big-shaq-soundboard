@@ -1,0 +1,134 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-admobpro",
+        "raw": "cordova-plugin-admobpro",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-admobpro@latest",
+  "_id": "cordova-plugin-admobpro@2.29.27",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-admobpro",
+  "_nodeVersion": "4.8.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-admobpro-2.29.27.tgz_1509855828495_0.614992146845907"
+  },
+  "_npmUser": {
+    "email": "rjfun.mobile@gmail.com",
+    "name": "floatinghotpot"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-admobpro",
+    "raw": "cordova-plugin-admobpro",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-admobpro/-/cordova-plugin-admobpro-2.29.27.tgz",
+  "_shasum": "49517084c53da2c5564558eaafe8b818d045a295",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-admobpro",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "name": "Liming Xie"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-admob-pro/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-admobpro",
+    "platforms": [
+      "android",
+      "ios",
+      "amazon-fireos",
+      "wp8"
+    ]
+  },
+  "dependencies": {},
+  "description": "Ultimate Cordova Plugin for Google AdMob and DFP to monetize hybrid apps. Show mobile Ad with single line of JavaScript. Compatible with Cordova CLI, PhoneGap Build, Intel XDK/Crosswalk, Google ChromeApp, Ionic, Meteor, etc.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "49517084c53da2c5564558eaafe8b818d045a295",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-admobpro/-/cordova-plugin-admobpro-2.29.27.tgz"
+  },
+  "gitHead": "7a6c439e60023c26515a836d3ebbc96de822d31e",
+  "homepage": "https://github.com/floatinghotpot/cordova-admob-pro#readme",
+  "keywords": [
+    "cordova",
+    "admob",
+    "plugin",
+    "phonegap",
+    "intel-xdk",
+    "intel",
+    "xdk",
+    "crosswalk",
+    "ionic",
+    "meteor",
+    "ad",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp8",
+    "cordova-amazon-fireos",
+    "google",
+    "ads",
+    "eclipse",
+    "android-studio",
+    "simple",
+    "easy",
+    "android",
+    "ios",
+    "windows",
+    "phonegap",
+    "monetization",
+    "monetisation",
+    "money",
+    "banner",
+    "interstitial",
+    "advertisement",
+    "advertising",
+    "earn",
+    "cordova-admob",
+    "admobpro",
+    "iad",
+    "flurry",
+    "mobfox",
+    "mopub",
+    "inmobi",
+    "chartboost",
+    "domob",
+    "rjfun"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "rjfun.mobile@gmail.com",
+      "name": "floatinghotpot"
+    }
+  ],
+  "name": "cordova-plugin-admobpro",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floatinghotpot/cordova-admob-pro.git"
+  },
+  "scripts": {},
+  "version": "2.29.27"
+}
