@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-support-google-services",
+        "raw": "cordova-support-google-services",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-support-google-services@latest",
+  "_id": "cordova-support-google-services@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-support-google-services",
+  "_nodeVersion": "4.4.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-support-google-services-1.0.0.tgz_1504712237795_0.21293998276814818"
+  },
+  "_npmUser": {
+    "email": "chemerisuk@gmail.com",
+    "name": "chemerisuk"
+  },
+  "_npmVersion": "2.14.20",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-support-google-services",
+    "raw": "cordova-support-google-services",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-support-google-services/-/cordova-support-google-services-1.0.0.tgz",
+  "_shasum": "66e660f7cd4696ca7fa25cdda7cb6df255e65d5c",
+  "_shrinkwrap": null,
+  "_spec": "cordova-support-google-services",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "email": "chemerisuk@gmail.com",
+    "name": "Maksim Chemerisuk",
+    "url": "https://github.com/chemerisuk"
+  },
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-support-google-services/issues"
+  },
+  "cordova": {
+    "id": "cordova-support-google-services",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova plugin to add google service support",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "66e660f7cd4696ca7fa25cdda7cb6df255e65d5c",
+    "tarball": "https://registry.npmjs.org/cordova-support-google-services/-/cordova-support-google-services-1.0.0.tgz"
+  },
+  "gitHead": "4d58e51d6ed910337017f5a7165948db20b64ada",
+  "homepage": "https://github.com/chemerisuk/cordova-support-google-services#readme",
+  "keywords": [
+    "cordova",
+    "google services",
+    "firebase",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "chemerisuk@gmail.com",
+      "name": "chemerisuk"
+    }
+  ],
+  "name": "cordova-support-google-services",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-support-google-services.git"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+  },
+  "version": "1.0.0"
+}

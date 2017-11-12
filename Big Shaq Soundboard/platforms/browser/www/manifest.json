@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Big Shaq",
+  "short_name": "Big Shaq",
+  "version": "nz.isaacmercer.bigshaq",
+  "description": "Mans not hot",
+  "author": "Isaac Mercer",
+  "icons": [
+    {
+      "src": "res/icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}

@@ -2,6 +2,10 @@ function notifyonDeviceReady() {
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#ad3127");
     }
+    cordova.plugins.firebase.analytics.setEnabled(true);
+    var uuid = device.uuid;
+    cordova.plugins.firebase.analytics.setUserId(uuid);
+    cordova.plugins.firebase.analytics.setCurrentScreen("Home");
 	document.getElementById('body').style.display = 'block';
 	StatusBar.show();
 
@@ -80,6 +84,7 @@ function playSound(audio) {
     }
         // Play audio
         my_media.play();
+        cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio});
 };
 
 function displayElement(element) {
@@ -89,6 +94,7 @@ function displayElement(element) {
     $('.song').hide();
     $('.sayings').hide();
     $('.' + element + '').show();
+    cordova.plugins.firebase.analytics.setCurrentScreen(element);
     document.getElementById('app').MaterialLayout.toggleDrawer();
     /*AdMob.showInterstitial();
     AdMob.prepareInterstitial({
@@ -102,6 +108,7 @@ function displayAll() {
     $('.maths').show();
     $('.song').show();
     $('.sayings').show();
+    cordova.plugins.firebase.analytics.setCurrentScreen("Home");
     document.getElementById('app').MaterialLayout.toggleDrawer();
 }
 

@@ -91,6 +91,10 @@
             {
               "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"FirebaseAnalytics\"><param name=\"android-package\" value=\"by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -108,7 +112,7 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 1
+              "count": 2
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
@@ -190,6 +194,12 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-admobpro": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-firebase-analytics": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -720,6 +730,14 @@
       "clobbers": [
         "window.AdMob"
       ]
+    },
+    {
+      "id": "cordova-plugin-firebase-analytics.FirebaseAnalytics",
+      "file": "plugins/cordova-plugin-firebase-analytics/www/FirebaseAnalytics.js",
+      "pluginId": "cordova-plugin-firebase-analytics",
+      "merges": [
+        "cordova.plugins.firebase.analytics"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -744,6 +762,8 @@
     "cordova-plugin-vibration": "2.1.5",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-extension": "1.5.2",
-    "cordova-plugin-admobpro": "2.29.27"
+    "cordova-plugin-admobpro": "2.29.27",
+    "cordova-support-google-services": "1.0.0",
+    "cordova-plugin-firebase-analytics": "0.12.0"
   }
 }

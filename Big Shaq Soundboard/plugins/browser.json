@@ -66,6 +66,12 @@
     },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {

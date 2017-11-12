@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="111" id="nz.isaacmercer.bigshaq" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <hook src="hooks/gradle-fix.js" type="before_prepare" />
     <name>Big Shaq</name>
     <description>
         Mans not hot
@@ -34,6 +35,12 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <platform name="android">
+        <resource-file src="google-services.json" target="google-services.json" />
+    </platform>
+    <platform name="ios">
+        <resource-file src="GoogleService-Info.plist" />
+    </platform>
     <engine name="browser" spec="~5.0.1" />
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-battery-status" spec="~1.1.1" />
@@ -57,4 +64,6 @@
     <plugin name="cordova-plugin-vibration" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
     <plugin name="cordova-plugin-admobpro" spec="^2.29.27" />
+    <plugin name="cordova-support-google-services" spec="^1.0.0" />
+    <plugin name="cordova-plugin-firebase-analytics" spec="^0.12.0" />
 </widget>

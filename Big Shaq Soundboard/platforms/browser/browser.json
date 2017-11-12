@@ -90,6 +90,12 @@
     },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {},
@@ -704,6 +710,14 @@
       "clobbers": [
         "window.AdMob"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-firebase-analytics/www/FirebaseAnalytics.js",
+      "id": "cordova-plugin-firebase-analytics.FirebaseAnalytics",
+      "pluginId": "cordova-plugin-firebase-analytics",
+      "merges": [
+        "cordova.plugins.firebase.analytics"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -729,6 +743,8 @@
     "cordova-plugin-vibration": "2.1.5",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-extension": "1.5.2",
-    "cordova-plugin-admobpro": "2.29.27"
+    "cordova-plugin-admobpro": "2.29.27",
+    "cordova-support-google-services": "1.0.0",
+    "cordova-plugin-firebase-analytics": "0.12.0"
   }
 }

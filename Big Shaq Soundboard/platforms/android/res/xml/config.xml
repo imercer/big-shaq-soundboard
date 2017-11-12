@@ -66,6 +66,11 @@
         <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="FirebaseAnalytics">
+        <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseAnalyticsPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <hook src="hooks/gradle-fix.js" type="before_prepare" />
     <name>Big Shaq</name>
     <description>
         Mans not hot
@@ -89,6 +94,7 @@
     <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
     <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
     <allow-intent href="market:*" />
+    <resource-file src="google-services.json" target="google-services.json" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
