@@ -84,7 +84,7 @@ function playSound(audio) {
     }
         // Play audio
         my_media.play();
-        cordova.plugins.firebase.analytics.logEvent("sound_played", {param1: audio});
+        cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio});
 };
 
 function displayElement(element) {
