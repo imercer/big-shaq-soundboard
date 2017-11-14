@@ -56,7 +56,14 @@ function notifyonDeviceReady() {
 
 function playSound(audio) {
     console.log('loading sound' + audio);
-    if(cordova.platformId == 'android') {
+    window.plugins.NativeAudio.preloadSimple(audio, 'audio/' + audio + '.mp3', function(){console.log('loaded sound' + audio + ' successfully');playAudio(audio);},function(msg){console.log( 'playSound() error: loading sound' + audio + msg );playAudio(audio);});
+
+    function playAudio(audio) {
+    window.plugins.NativeAudio.play(audio,function(){console.log('playing' + audio);},function(msg){console.log('error playing back' + audio + msg);},function(){console.log('completed playing back' + audio);window.plugins.NativeAudio.unload(audio);});
+    };
+cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio});
+
+   /* if(cordova.platformId == 'android') {
         // Play the audio file at url
                 var my_media = new Media('/android_asset/www/audio/' + audio + '.mp3',
                     // success callback
@@ -83,8 +90,7 @@ function playSound(audio) {
                 );
     }
         // Play audio
-        my_media.play();
-        cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio});
+        my_media.play();*/
 };
 
 function displayElement(element) {

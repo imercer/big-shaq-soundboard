@@ -51,6 +51,9 @@
     },
     "cordova-plugin-wkwebview-engine": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-nativeaudio": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {

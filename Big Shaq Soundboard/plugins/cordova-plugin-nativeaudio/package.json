@@ -1,0 +1,107 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-nativeaudio",
+        "raw": "cordova-plugin-nativeaudio",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-nativeaudio@latest",
+  "_id": "cordova-plugin-nativeaudio@3.0.9",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-nativeaudio",
+  "_nodeVersion": "4.7.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-nativeaudio-3.0.9.tgz_1488679654900_0.8962833816185594"
+  },
+  "_npmUser": {
+    "email": "rjfun.mobile@gmail.com",
+    "name": "floatinghotpot"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-nativeaudio",
+    "raw": "cordova-plugin-nativeaudio",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-nativeaudio/-/cordova-plugin-nativeaudio-3.0.9.tgz",
+  "_shasum": "16cebfdaee24beb23c05f49713cb8773bc78536c",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-nativeaudio",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "name": "Andrew Trice"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio/issues"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Trice"
+    },
+    {
+      "email": "rjfun.mobile@gmail.com",
+      "name": "Raymond Xie"
+    },
+    {
+      "name": "Sidney Bofah"
+    }
+  ],
+  "cordova": {
+    "id": "cordova-plugin-nativeaudio",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova/PhoneGap Plugin for low latency Native Audio Playback, must have for HTML5 games",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "16cebfdaee24beb23c05f49713cb8773bc78536c",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-nativeaudio/-/cordova-plugin-nativeaudio-3.0.9.tgz"
+  },
+  "gitHead": "6c173892da095d7ec21e158b6209d07fab6fcf0c",
+  "homepage": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio#readme",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "music",
+    "audio",
+    "game",
+    "mp3",
+    "rjfun"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "rjfun.mobile@gmail.com",
+      "name": "floatinghotpot"
+    }
+  ],
+  "name": "cordova-plugin-nativeaudio",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floatinghotpot/cordova-plugin-nativeaudio.git"
+  },
+  "scripts": {},
+  "version": "3.0.9"
+}
