@@ -23,7 +23,7 @@ cordova.define("cordova-plugin-media-capture.CaptureImageOptions", function(requ
 /**
  * Encapsulates all image capture operation configuration options.
  */
-var CaptureImageOptions = function(){
+var CaptureImageOptions = function () {
     // Upper limit of images user can take. Value must be equal or greater than 1.
     this.limit = 1;
 };

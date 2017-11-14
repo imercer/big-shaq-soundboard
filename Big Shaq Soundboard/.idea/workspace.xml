@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+            <state relative-caret-position="636">
+              <caret line="74" column="56" lean-forward="false" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -67,8 +67,9 @@
         <option value="$PROJECT_DIR$/platforms/android/project.properties" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/platforms/android/android.json" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
+        <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
   </component>
@@ -555,13 +556,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/css/fonts.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -848,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/android.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8706">
@@ -868,6 +854,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="474" column="95" lean-forward="false" selection-start-line="474" selection-start-column="95" selection-end-line="474" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="61" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+          <folding>
+            <marker date="1510628433017" expanded="true" signature="31:1892" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="494:723" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="543:716" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="781:990" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="810:983" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="996:1215" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="1035:1208" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="1242:1569" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="1652:1777" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="1654:1770" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="1921:3142" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2005:2532" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2085:2525" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2204:2337" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2538:3008" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2580:3001" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="2680:2813" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="3178:3647" ph="{...}" />
+            <marker date="1510628433017" expanded="true" signature="3671:3904" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="74" column="56" lean-forward="false" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>

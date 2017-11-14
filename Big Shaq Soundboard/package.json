@@ -5,19 +5,17 @@
   "cordova": {
     "platforms": [
       "browser",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-battery-status": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-media-capture": {},
-      "cordova-plugin-console": {},
       "cordova-plugin-contacts": {},
       "cordova-plugin-device": {},
       "cordova-plugin-device-motion": {},
       "cordova-plugin-device-orientation": {},
       "cordova-plugin-dialogs": {},
-      "cordova-plugin-file-transfer": {},
       "cordova-plugin-geolocation": {},
       "cordova-plugin-globalization": {},
       "cordova-plugin-inappbrowser": {},
@@ -28,18 +26,21 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-admobpro": {},
       "cordova-support-google-services": {},
-      "cordova-plugin-firebase-analytics": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-media": {}
+      "cordova-plugin-media": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-firebase-analytics": {},
+      "cordova-plugin-media-capture": {},
+      "cordova-plugin-wkwebview-engine": {}
     }
   },
   "dependencies": {
     "cordova-android": "^6.3.0",
     "cordova-browser": "~5.0.1",
+    "cordova-ios": "^4.5.3",
     "cordova-plugin-admobpro": "^2.29.27",
     "cordova-plugin-battery-status": "~1.1.1",
     "cordova-plugin-camera": "~2.1.1",
-    "cordova-plugin-console": "~1.0.2",
     "cordova-plugin-contacts": "~2.0.1",
     "cordova-plugin-device": "~1.1.1",
     "cordova-plugin-device-motion": "~1.2.0",
@@ -47,18 +48,21 @@
     "cordova-plugin-dialogs": "~1.2.0",
     "cordova-plugin-extension": "^1.5.2",
     "cordova-plugin-file": "^5.0.0",
-    "cordova-plugin-file-transfer": "~1.5.0",
+    "cordova-plugin-file-transfer": "^1.7.0",
     "cordova-plugin-firebase-analytics": "^0.12.0",
     "cordova-plugin-geolocation": "~2.1.0",
     "cordova-plugin-globalization": "~1.0.3",
     "cordova-plugin-inappbrowser": "~1.3.0",
     "cordova-plugin-media": "^4.0.0",
-    "cordova-plugin-media-capture": "~1.2.0",
+    "cordova-plugin-media-capture": "^2.0.0",
     "cordova-plugin-network-information": "~1.2.0",
     "cordova-plugin-splashscreen": "~3.2.1",
     "cordova-plugin-statusbar": "~2.1.2",
     "cordova-plugin-vibration": "~2.1.0",
+    "cordova-plugin-webserver": "^1.0.3",
     "cordova-plugin-whitelist": "~1.2.1",
+    "cordova-plugin-wkwebview": "^0.6.10",
+    "cordova-plugin-wkwebview-engine": "^1.1.4",
     "cordova-support-google-services": "^1.0.0"
   }
 }

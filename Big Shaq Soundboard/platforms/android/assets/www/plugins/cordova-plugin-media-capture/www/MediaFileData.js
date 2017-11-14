@@ -29,7 +29,7 @@ cordova.define("cordova-plugin-media-capture.MediaFileData", function(require, e
  * @param {long} width
  * @param {float} duration
  */
-var MediaFileData = function(codecs, bitrate, height, width, duration){
+var MediaFileData = function (codecs, bitrate, height, width, duration) {
     this.codecs = codecs || null;
     this.bitrate = bitrate || 0;
     this.height = height || 0;

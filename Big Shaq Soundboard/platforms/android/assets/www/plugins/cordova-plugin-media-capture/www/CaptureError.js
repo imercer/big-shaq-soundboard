@@ -23,8 +23,8 @@ cordova.define("cordova-plugin-media-capture.CaptureError", function(require, ex
 /**
  * The CaptureError interface encapsulates all errors in the Capture API.
  */
-var CaptureError = function(c) {
-   this.code = c || null;
+var CaptureError = function (c) {
+    this.code = c || null;
 };
 
 // Camera or microphone failed to capture image or sound.
@@ -35,6 +35,8 @@ CaptureError.CAPTURE_APPLICATION_BUSY = 1;
 CaptureError.CAPTURE_INVALID_ARGUMENT = 2;
 // User exited camera application or audio capture application before capturing anything.
 CaptureError.CAPTURE_NO_MEDIA_FILES = 3;
+// User denied permissions required to perform the capture request.
+CaptureError.CAPTURE_PERMISSION_DENIED = 4;
 // The requested capture operation is not supported.
 CaptureError.CAPTURE_NOT_SUPPORTED = 20;
 

@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-webserver",
+        "raw": "cordova-plugin-webserver",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-webserver@latest",
+  "_id": "cordova-plugin-webserver@1.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-webserver",
+  "_nodeVersion": "0.12.3",
+  "_npmUser": {
+    "email": "georgi.alexandrov@telerik.com",
+    "name": "galexandrov"
+  },
+  "_npmVersion": "2.9.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-webserver",
+    "raw": "cordova-plugin-webserver",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-webserver/-/cordova-plugin-webserver-1.0.3.tgz",
+  "_shasum": "18a0d7a81ef7840ea279cfba86894928241e939e",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-webserver",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "name": "Telerik"
+  },
+  "bugs": {
+    "url": "https://github.com/icenium/cordova-plugin-webserver/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-webserver",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova WebServer Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "18a0d7a81ef7840ea279cfba86894928241e939e",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-webserver/-/cordova-plugin-webserver-1.0.3.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/icenium/cordova-plugin-webserver#readme",
+  "keywords": [
+    "cordova",
+    "webserver",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "georgi.alexandrov@telerik.com",
+      "name": "galexandrov"
+    }
+  ],
+  "name": "cordova-plugin-webserver",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icenium/cordova-plugin-webserver.git"
+  },
+  "scripts": {},
+  "version": "1.0.3"
+}

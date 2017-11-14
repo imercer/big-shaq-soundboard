@@ -22,7 +22,7 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:rim="http://www.blackberry.com/ns/widgets"
            id="cordova-plugin-media-capture"
-      version="1.2.0">
+      version="2.0.0">
     <name>Capture</name>
 
     <description>Cordova Media Capture Plugin</description>
@@ -30,13 +30,17 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
     <keywords>cordova,media,capture</keywords>
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git</repo>
     <issue>https://issues.apache.org/jira/browse/CB/component/12320646</issue>
-    
-    <dependency id="cordova-plugin-file" version="^4.0.0" />
+
+    <engines>
+        <engine name="cordova-android" version=">=6.3.0" />
+    </engines>
+
+    <dependency id="cordova-plugin-file" version="^5.0.0" />
 
     <js-module src="www/CaptureAudioOptions.js" name="CaptureAudioOptions">
         <clobbers target="CaptureAudioOptions" />
     </js-module>
-    
+
     <js-module src="www/CaptureImageOptions.js" name="CaptureImageOptions">
         <clobbers target="CaptureImageOptions" />
     </js-module>
@@ -44,7 +48,7 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
     <js-module src="www/CaptureVideoOptions.js" name="CaptureVideoOptions">
         <clobbers target="CaptureVideoOptions" />
     </js-module>
-        
+
     <js-module src="www/CaptureError.js" name="CaptureError">
         <clobbers target="CaptureError" />
     </js-module>
@@ -52,11 +56,15 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
     <js-module src="www/MediaFileData.js" name="MediaFileData">
         <clobbers target="MediaFileData" />
     </js-module>
-        
+
     <js-module src="www/MediaFile.js" name="MediaFile">
         <clobbers target="MediaFile" />
     </js-module>
-    
+
+    <js-module src="www/helpers.js" name="helpers">
+        <runs />
+    </js-module>
+
     <js-module src="www/capture.js" name="capture">
         <clobbers target="navigator.device.capture" />
     </js-module>
@@ -68,17 +76,23 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
                 <param name="android-package" value="org.apache.cordova.mediacapture.Capture"/>
             </feature>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.RECORD_AUDIO" />
             <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
         <source-file src="src/android/Capture.java" target-dir="src/org/apache/cordova/mediacapture" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/mediacapture" />
+        <source-file src="src/android/PendingRequests.java" target-dir="src/org/apache/cordova/mediacapture" />
+
+        <js-module src="www/android/init.js" name="init">
+            <runs />
+        </js-module>
     </platform>
-    
+
     <!-- amazon-fireos -->
     <platform name="amazon-fireos">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -86,7 +100,7 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
                 <param name="android-package" value="org.apache.cordova.mediacapture.Capture"/>
             </feature>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.RECORD_AUDIO" />
             <uses-permission android:name="android.permission.RECORD_VIDEO"/>
@@ -96,7 +110,7 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
         <source-file src="src/android/Capture.java" target-dir="src/org/apache/cordova/mediacapture" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/mediacapture" />
     </platform>
-    
+
 
     <!-- ubuntu -->
     <platform name="ubuntu">
@@ -122,18 +136,19 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
     </platform>
 
     <!-- ios -->
-    <platform name="ios">    
+    <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="Capture">
-                <param name="ios-package" value="CDVCapture" /> 
+                <param name="ios-package" value="CDVCapture" />
             </feature>
         </config-file>
         <header-file src="src/ios/CDVCapture.h" />
         <source-file src="src/ios/CDVCapture.m" />
         <resource-file src="src/ios/CDVCapture.bundle" />
-        
+
         <framework src="CoreGraphics.framework" />
         <framework src="MobileCoreServices.framework" />
+
     </platform>
 
     <!-- blackberry10 -->
@@ -208,7 +223,7 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
         </js-module>
 
         <js-module src="src/windows/CaptureProxy.js" name="CaptureProxy">
-            <merges target="" />
+            <runs />
         </js-module>
     </platform>
 
@@ -225,7 +240,7 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
         </js-module>
 
         <js-module src="src/windows/CaptureProxy.js" name="CaptureProxy">
-            <merges target="" />
+            <runs />
         </js-module>
     </platform>
 
