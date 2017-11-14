@@ -1,20 +1,4 @@
 {
-  "cordova-plugin-battery-status": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-battery-status@~1.1.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-camera": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-camera@~2.1.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-compat": {
     "source": {
       "type": "registry",
@@ -23,26 +7,10 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-contacts": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-contacts@~2.0.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
       "id": "cordova-plugin-device@~1.1.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-device-motion": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-device-motion@~1.2.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -59,22 +27,6 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-dialogs@~1.2.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-geolocation": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-geolocation@~2.1.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-globalization": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-globalization@~1.0.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -107,14 +59,6 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-statusbar@~2.1.2"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-vibration": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-vibration@~2.1.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -189,22 +133,6 @@
       "id": "cordova-plugin-firebase-analytics"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-media-capture": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-media-capture@2.0.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-webserver": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-webserver"
-    },
-    "is_top_level": false,
     "variables": {}
   },
   "cordova-plugin-wkwebview-engine": {
