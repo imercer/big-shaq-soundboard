@@ -256,7 +256,6 @@ dependencies {
     releaseCompile(project(path: "CordovaLib", configuration: "release"))
     compile "com.google.android.gms:play-services-ads:11.4.2"
     compile "com.google.firebase:firebase-core:11.4.2"
-    compile "com.google.firebase:firebase-core:11.0.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

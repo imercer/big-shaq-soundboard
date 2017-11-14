@@ -1,6 +1,6 @@
 function notifyonDeviceReady() {
     if (cordova.platformId == 'android') {
-        StatusBar.backgroundColorByHexString("#ad3127");
+        StatusBar.backgroundColorByHexString("#d84b29");
     }
     cordova.plugins.firebase.analytics.setEnabled(true);
     var uuid = device.uuid;
@@ -17,8 +17,8 @@ function notifyonDeviceReady() {
       };
     } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5284137657', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-5354491797983322/7068116329'
+        banner: 'ca-app-pub-5354491797983322/5706099041', // or DFP format "/6253334/dfp_example_ad"
+        interstitial: 'ca-app-pub-5354491797983322/6572334447'
       };
     } else { // for windows phone
       admobid = {

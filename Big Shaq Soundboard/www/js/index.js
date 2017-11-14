@@ -1,6 +1,6 @@
 function notifyonDeviceReady() {
     if (cordova.platformId == 'android') {
-        StatusBar.backgroundColorByHexString("#ad3127");
+        StatusBar.backgroundColorByHexString("#d84b29");
     }
     cordova.plugins.firebase.analytics.setEnabled(true);
     var uuid = device.uuid;
