@@ -1,7 +1,55 @@
 {
-  "name": "cordova-plugin-media",
-  "version": "2.2.0",
-  "description": "Cordova Media Plugin",
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-media",
+        "raw": "cordova-plugin-media@4.0.0",
+        "rawSpec": "4.0.0",
+        "scope": null,
+        "spec": "4.0.0",
+        "type": "version"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-media@4.0.0",
+  "_id": "cordova-plugin-media@4.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-media",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-media-4.0.0.tgz_1510361710631_0.2537436909042299"
+  },
+  "_npmUser": {
+    "email": "stevengill97@gmail.com",
+    "name": "stevegill"
+  },
+  "_npmVersion": "4.6.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-media",
+    "raw": "cordova-plugin-media@4.0.0",
+    "rawSpec": "4.0.0",
+    "scope": null,
+    "spec": "4.0.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-media/-/cordova-plugin-media-4.0.0.tgz",
+  "_shasum": "f708081f8f0ecb30291d67a2e38149671d94f20b",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-media@4.0.0",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "name": "Apache Software Foundation"
+  },
+  "bugs": {
+    "url": "https://issues.apache.org/jira/browse/CB"
+  },
   "cordova": {
     "id": "cordova-plugin-media",
     "platforms": [
@@ -17,10 +65,30 @@
       "tizen"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/apache/cordova-plugin-media"
+  "dependencies": {},
+  "description": "Cordova Media Plugin",
+  "devDependencies": {
+    "jshint": "^2.6.0"
   },
+  "directories": {},
+  "dist": {
+    "shasum": "f708081f8f0ecb30291d67a2e38149671d94f20b",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-media/-/cordova-plugin-media-4.0.0.tgz"
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova-android": ">=6.1.0"
+      },
+      "4.0.0": {
+        "cordova-android": ">=6.3.0"
+      },
+      "5.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "homepage": "https://github.com/apache/cordova-plugin-media#readme",
   "keywords": [
     "cordova",
     "media",
@@ -36,9 +104,48 @@
     "cordova-windows",
     "cordova-tizen"
   ],
-  "peerDependencies": {
-    "cordova-plugin-file": "^4.0.0"
+  "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "email": "bowserj@apache.org",
+      "name": "bowserj"
+    },
+    {
+      "email": "csantana23@gmail.com",
+      "name": "csantanapr"
+    },
+    {
+      "email": "maj.fil@gmail.com",
+      "name": "filmaj"
+    },
+    {
+      "email": "kotikov.vladimir@gmail.com",
+      "name": "kotikov.vladimir"
+    },
+    {
+      "email": "purplecabbage@gmail.com",
+      "name": "purplecabbage"
+    },
+    {
+      "email": "shazron@gmail.com",
+      "name": "shazron"
+    },
+    {
+      "email": "stevengill97@gmail.com",
+      "name": "stevegill"
+    }
+  ],
+  "name": "cordova-plugin-media",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apache/cordova-plugin-media.git"
   },
-  "author": "Apache Software Foundation",
-  "license": "Apache-2.0"
+  "scripts": {
+    "jshint": "jshint www && jshint src && jshint tests",
+    "test": "npm run jshint"
+  },
+  "types": "./types/index.d.ts",
+  "version": "4.0.0"
 }

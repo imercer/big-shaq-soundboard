@@ -43,9 +43,6 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-media": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
     "cordova-plugin-media-capture": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
@@ -72,13 +69,16 @@
     },
     "cordova-plugin-firebase-analytics": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-file": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-extension": {

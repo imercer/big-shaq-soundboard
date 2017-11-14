@@ -21,9 +21,9 @@ description: Read/write files on the device.
 #         under the License.
 -->
 
-|Android 4.4|Android 5.1|Android 6.0|iOS 9.3|iOS 10.0|Windows 10 Store|Travis CI|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=android-4.4,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=android-4.4,PLUGIN=cordova-plugin-file/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=android-5.1,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=android-5.1,PLUGIN=cordova-plugin-file/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=android-6.0,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=android-6.0,PLUGIN=cordova-plugin-file/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=ios-9.3,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=ios-9.3,PLUGIN=cordova-plugin-file/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=ios-10.0,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=ios-10.0,PLUGIN=cordova-plugin-file/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=windows-10-store,PLUGIN=cordova-plugin-file)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=windows-10-store,PLUGIN=cordova-plugin-file/)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-file.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-file)|
+|AppVeyor|Travis CI|
+|:-:|:-:|
+|[![Build status](https://ci.appveyor.com/api/projects/status/github/apache/cordova-plugin-file?branch=master)](https://ci.appveyor.com/project/ApacheSoftwareFoundation/cordova-plugin-file)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-file.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-file)|
 
 # cordova-plugin-file
 
@@ -171,7 +171,7 @@ the `cordova.file.*` properties map to physical paths on a real device.
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Documents` |                             | documents                 | r/w  |     Yes     |     No    |   Yes   |
 | `<sdcard>/`                                     | externalRootDirectory       | sdcard                    | r/w  |     Yes     |     No    |   No    |
 | &nbsp;&nbsp;&nbsp;`Android/data/<app-id>/`      | externalApplicationStorageDirectory | -                 | r/w  |     Yes     |     No    |   No    |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cache`     | externalCacheDirectry       | cache-external            | r/w  |     Yes     |     No\*\*|   No    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cache`     | externalCacheDirectory       | cache-external            | r/w  |     Yes     |     No\*\*|   No    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`files`     | externalDataDirectory       | files-external            | r/w  |     Yes     |     No    |   No    |
 
 \* The OS may periodically clear this directory, but do not rely on this behavior. Clear
@@ -571,7 +571,7 @@ The File plugin allows you to do things like store files in a temporary or persi
 
 Before you use the File plugin APIs, you can get access to the file system using `requestFileSystem`. When you do this, you can request either persistent or temporary storage. Persistent storage will not be removed unless permission is granted by the user.
 
-When you get file system access using `requestFileSystem`, access is granted for the sandboxed file system only (the sandbox limits access to the app itself), not for general access to any file system location on the device. (To access file system locations outside the sandboxed storage, use other methods such as window.requestLocalFileSystemURL, which support platform-specific locations. For one example of this, see _Append a File_.)
+When you get file system access using `requestFileSystem`, access is granted for the sandboxed file system only (the sandbox limits access to the app itself), not for general access to any file system location on the device. (To access file system locations outside the sandboxed storage, use other methods such as window.resolveLocalFileSystemURL, which support platform-specific locations. For one example of this, see _Append a File_.)
 
 Here is a request for persistent storage.
 
