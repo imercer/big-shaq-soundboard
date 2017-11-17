@@ -4,14 +4,14 @@ function notifyonDeviceReady() {
     }
     cordova.plugins.firebase.analytics.setEnabled(true);
     var uuid = device.uuid;
-    cordova.getAppVersion.getVersionCode(function (version) {
-            cordova.plugins.firebase.analytics.setUserProperty("build_number", version);
-    });
     cordova.plugins.firebase.analytics.setUserProperty("build_number", "value1");
     var sounds = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect"];
     sounds.forEach(loadSounds);
     cordova.plugins.firebase.analytics.setUserId(uuid);
     cordova.plugins.firebase.analytics.setCurrentScreen("Home");
+    cordova.getAppVersion.getVersionCode(function (version) {
+                cordova.plugins.firebase.analytics.setUserProperty("build_number", version);
+        });
 	document.getElementById('body').style.display = 'block';
 	loadFavourites();
 	StatusBar.show();
@@ -75,7 +75,7 @@ function loadFavourites() {
     storedfavourites.forEach(function(favourite) {
           console.log(favourite);
           favlabel = document.getElementById(favourite + 'label').innerHTML;
-          favbody += "<div class=\"col\" onclick=\"playSound('" + favourite + "');\"ontouchstart=\"touchStartRem('"+ favourite +"');\" ontouchmove=\"clearTimeout(pressTimer);\" ontouchcancel=\"clearTimeout(pressTimer);\"> <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--primary\"><i class=\"material-icons\">audiotrack</i></button><span class=\"soundboard-label\"><br>" + favlabel + "</span> </div>";
+          favbody += "<div class=\"col\" onclick=\"playSound('favourites','" + favourite + "');\"ontouchstart=\"touchStartRem('"+ favourite +"');\" ontouchmove=\"clearTimeout(pressTimer);\" ontouchcancel=\"clearTimeout(pressTimer);\"> <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--primary\"><i class=\"material-icons\">audiotrack</i></button><span class=\"soundboard-label\"><br>" + favlabel + "</span> </div>";
       });
     favbody += "</div></div>";
   document.getElementById('favbody').innerHTML = favbody;
@@ -140,11 +140,11 @@ function removeSound(sound) {
     loadFavourites();
 }
 
-function playSound(audio) {
+function playSound(origin,audio) {
     clearTimeout(pressTimer);
     window.plugins.NativeAudio.play(audio,function(){console.log('playing' + audio);},function(msg){console.log('error playing back' + audio + msg);},function(){console.log('completed playing back' + audio);});
 
-cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio});
+cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio, origin: origin});
 
    /* if(cordova.platformId == 'android') {
         // Play the audio file at url
