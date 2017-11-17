@@ -1,7 +1,7 @@
 {
     "AdSupport.framework": 1,
-    "AudioToolbox.framework": 3,
-    "AVFoundation.framework": 2,
+    "AudioToolbox.framework": 2,
+    "AVFoundation.framework": 1,
     "CoreBluetooth.framework": 1,
     "CoreLocation.framework": 2,
     "CoreMedia.framework": 1,
@@ -10,7 +10,7 @@
     "CoreVideo.framework": 1,
     "EventKit.framework": 1,
     "EventKitUI.framework": 1,
-    "Foundation.framework": 2,
+    "Foundation.framework": 1,
     "GLKit.framework": 1,
     "MediaPlayer.framework": 1,
     "MessageUI.framework": 1,

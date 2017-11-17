@@ -48,3 +48,11 @@ user-select: none;
     bottom: 15;
     z-index: 5;
  }
+
+#waitalert {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 5;
+ }

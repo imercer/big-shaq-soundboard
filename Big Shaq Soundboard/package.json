@@ -24,7 +24,6 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-firebase-analytics": {},
       "cordova-plugin-wkwebview-engine": {},
-      "cordova-plugin-nativeaudio": {},
       "cordova-plugin-app-version": {}
     }
   },
@@ -43,7 +42,6 @@
     "cordova-plugin-firebase-analytics": "^0.12.0",
     "cordova-plugin-inappbrowser": "~1.3.0",
     "cordova-plugin-media": "^4.0.0",
-    "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-network-information": "~1.2.0",
     "cordova-plugin-splashscreen": "~3.2.1",
     "cordova-plugin-statusbar": "~2.1.2",

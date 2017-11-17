@@ -615,9 +615,20 @@
         </div>
         </div>
     </main>
-</div>
-<div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="successalert">
-
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="waitalert">
+        Hold on a bit! There's been a bit of a hiccup, sounds will be back in just a sec.
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="successalert">
+    </div>
+    <div id="loadingoverlay" style="display:none;">
+        <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: white;text-align:center;margin-top:56px">
+        <div class="mdl-spinner mdl-js-spinner is-active" style="
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    margin-top: 50px;"></div>
+    </div>
+    </div>
 </div>
 </body>
 

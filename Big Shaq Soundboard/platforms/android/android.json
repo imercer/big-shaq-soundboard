@@ -65,10 +65,6 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"NativeAudio\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.nativeaudio.NativeAudio\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"AppVersion\"><param name=\"android-package\" value=\"uk.co.whiteoctober.cordova.AppVersion\" /></feature>",
               "count": 1
             }
@@ -88,10 +84,6 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
               "count": 1
             }
           ],
@@ -152,9 +144,6 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-wkwebview-engine": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-nativeaudio": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-app-version": {
@@ -475,14 +464,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-nativeaudio.nativeaudio",
-      "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
-      "pluginId": "cordova-plugin-nativeaudio",
-      "clobbers": [
-        "window.plugins.NativeAudio"
-      ]
-    },
-    {
       "id": "cordova-plugin-app-version.AppVersionPlugin",
       "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
       "pluginId": "cordova-plugin-app-version",
@@ -508,7 +489,6 @@
     "cordova-plugin-file-transfer": "1.7.0",
     "cordova-plugin-firebase-analytics": "0.12.0",
     "cordova-plugin-wkwebview-engine": "1.1.4",
-    "cordova-plugin-nativeaudio": "3.0.9",
     "cordova-plugin-app-version": "0.1.9"
   }
 }
