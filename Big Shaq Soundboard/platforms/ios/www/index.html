@@ -27,7 +27,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' gap: 'unsafe-inline' data: ; style-src * 'self' 'unsafe-inline'; media-src *" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' gap: 'unsafe-inline' data: mailto: market: ; style-src * 'self' 'unsafe-inline'; media-src *" />
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/card.css"/>
     <script defer src="js/material.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -70,532 +71,553 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title" onclick="displayAll()">Soundboard</span>
         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" onclick="displayAll()">Home</a>
+            <a class="mdl-navigation__link" onclick="menudisplayFavourites()">Favourites</a>
             <a class="mdl-navigation__link" onclick="displayElement('song')">Mans Not Hot Song</a>
             <a class="mdl-navigation__link" onclick="displayElement('maths')">Maths</a>
             <a class="mdl-navigation__link" onclick="displayElement('english')">English</a>
             <a class="mdl-navigation__link" onclick="displayElement('sayings')">Sayings and Ad-libs</a>
+            <br><br>
+            <a class="mdl-navigation__link" href="mailto:bigshaqapp@isaacscomputertips.com?subject=Big Shaq Soundboard - Sound Suggestion">Suggest a Sound</a>
+            <a class="mdl-navigation__link" href="market://details?id=nz.isaacmercer.bigshaq">Review on Google Play</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-            <div class="container">
+            <div id="favbody">
+                <div class="content">
+                    <div id="favprompt" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                        <h4 class="alert-heading">Introducing favourites!</h4>
+                        <p>You can now add your favourite Big Shaq sounds to your favourites collection which will appear at the top of the home screen, and in the favourites section - accessible from the menu.</p>
+                        <hr>
+                        <p class="mb-0">Simply long press any sound and I'll add it to your favourites.</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="hideFavouritesPrompt();">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                    </div>
+                    </div>
+                </div>
+                </center>
+            </div>
+            <div class="container" id="all">
             <div class="row">
-                <div class="col song sayings"  onclick="playSound('bigshaq');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+
+                <div class="col song sayings" ontouchstart="touchStart('bigshaq');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('bigshaq');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Big Shaq</span>
+                    <span class="soundboard-label" id="bigshaqlabel"><br>Big Shaq</span>
                 </div>
-                <div class="col song sayings" onclick="playSound('boom');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song sayings" ontouchstart="touchStart('boom');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('boom');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Boom</span>
+                    <span class="soundboard-label" id="boomlabel"><br>Boom</span>
                 </div>
-                <div class="col song maths" onclick="playSound('2plus2');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song maths" ontouchstart="touchStart('2plus2');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('2plus2');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>2 + 2 = 4</span>
+                    <span class="soundboard-label" id="2plus2label"><br>2 + 2 = 4</span>
                 </div>
-                <div class="col song maths" onclick="playSound('minus1thats3');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song maths" ontouchstart="touchStart('minus1thats3');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('minus1thats3');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>-1 = 3</span>
+                    <span class="soundboard-label" id="minus1thats3label"><br>-1 = 3</span>
                 </div>
-                <div class="col song" onclick="playSound('1234');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('1234');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('1234');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>1,2,3 and 4</span>
+                    <span class="soundboard-label" id="1234label"><br>1,2,3 and 4</span>
                 </div>
-                <div class="col maths" onclick="playSound('mandobigmafs');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col maths" ontouchstart="touchStart('mandobigmafs');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mandobigmafs');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Big mafs</span>
+                    <span class="soundboard-label" id="mandobigmafslabel"><br>Big mafs</span>
                 </div>
 
-                <div class="col sayings english" onclick="playSound('eforexcellent');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings english" ontouchstart="touchStart('eforexcellent');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('eforexcellent');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>E For Excellent</span>
+                    <span class="soundboard-label" id="eforexcellentlabel"><br>E For Excellent</span>
                 </div>
-                <div class="col sayings" onclick="playSound('eldickhead');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('eldickhead');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('eldickhead');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>El Dickhead</span>
+                    <span class="soundboard-label" id="eldickheadlabel"><br>El Dickhead</span>
                 </div>
-                <div class="col sayings" onclick="playSound('hisdadsadinnerlady');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('hisdadsadinnerlady');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('hisdadsadinnerlady');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>His dad's a dinner lady</span>
+                    <span class="soundboard-label" id="hisdadsadinnerladylabel"><br>His dad's a dinner lady</span>
                 </div>                
-                <div class="col song sayings" onclick="playSound('holdtightasznee');">
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song sayings" ontouchstart="touchStart('holdtightasznee');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('holdtightasznee');">
+                <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                     <i class="material-icons">audiotrack</i>
                 </button>
-                <span class="soundboard-label"><br>Hold tight asznee</span>
+                <span class="soundboard-label" id="holdtightaszneelabel"><br>Hold tight asznee</span>
                 </div>
-                <div class="col sayings" onclick="playSound('putmenexttothesun');">
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('putmenexttothesun');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('putmenexttothesun');">
+                <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                     <i class="material-icons">audiotrack</i>
                 </button>
-                <span class="soundboard-label"><br>Put me next to the sun</span>
+                <span class="soundboard-label" id="putmenexttothesunlabel"><br>Put me next to the sun</span>
                 </div>
-                <div class="col song" onclick="playSound('ivegotthesauce');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('ivegotthesauce');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('ivegotthesauce');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>I've got the sauce</span>
+                    <span class="soundboard-label" id="ivegotthesaucelabel"><br>I've got the sauce</span>
                 </div>
-                <div class="col sayings english" onclick="playSound('mandontstartbiff');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings english" ontouchstart="touchStart('mandontstartbiff');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mandontstartbiff');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Don't start biff</span>
+                    <span class="soundboard-label" id="mandontstartbifflabel"><br>Don't start biff</span>
                 </div>
 
-                <div class="col sayings" onclick="playSound('mansgotblueeyes');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mansgotblueeyes');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansgotblueeyes');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Blue eyes</span>
+                    <span class="soundboard-label" id="mansgotblueeyeslabel"><br>Blue eyes</span>
                 </div>
-                <div class="col sayings" onclick="playSound('thesunshotterthanme');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('thesunshotterthanme');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('thesunshotterthanme');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>The sun is hotter than me</span>
-                </div>
-
-                <div class="col song sayings" onclick="playSound('mansnothot');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>Man's not hot</span>
-                </div>
-                <div class="col sayings" onclick="playSound('mansnotdumb');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>Man's not dumb</span>
+                    <span class="soundboard-label" id="thesunshotterthanmelabel"><br>The sun is hotter than me</span>
                 </div>
 
-                <div class="col sayings" onclick="playSound('mybrudda');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song sayings" ontouchstart="touchStart('mansnothot');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansnothot');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>My brudda</span>
+                    <span class="soundboard-label" id="mansnothotlabel"><br>Man's not hot</span>
                 </div>
-                <div class="col sayings" onclick="playSound('ilikemyfantawithnohaice');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mansnotdumb');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansnotdumb');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Fanta with no haice</span>
-                </div>
-
-                <div class="col song" onclick="playSound('noketchup');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>No Ketchup</span>
-                </div>
-                <div class="col sayings" onclick="playSound('mansgotsauce');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>Man's got Sauce</span>
-                </div>
-                <div class="col sayings" onclick="playSound('youdontforcethesauce');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>You don't force the sauce</span>
-                </div>
-                <div class="col sayings" onclick="playSound('askanegghowdoyouhaveyouryolk');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>Ask an egg how do you have your yolk?</span>
+                    <span class="soundboard-label" id="mansnotdumblabel"><br>Man's not dumb</span>
                 </div>
 
-                <div class="col song" onclick="playSound('papakakaka');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mybrudda');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mybrudda');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Pa-pa-ka-ka-ka</span>
+                    <span class="soundboard-label" id="mybruddalabel"><br>My brudda</span>
+                </div>
+                <div class="col sayings" ontouchstart="touchStart('ilikemyfantawithnohaice');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('ilikemyfantawithnohaice');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="ilikemyfantawithnohaicelabel"><br>Fanta with no haice</span>
                 </div>
 
-                <div class="col song" onclick="playSound('quackquackquack');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('noketchup');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('noketchup');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Quack Quack Quack</span>
+                    <span class="soundboard-label" id="noketchuplabel"><br>No Ketchup</span>
                 </div>
-                <div class="col song" onclick="playSound('youmanwereducking');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mansgotsauce');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansgotsauce');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You man were ducking</span>
+                    <span class="soundboard-label" id="mansgotsaucelabel"><br>Man's got Sauce</span>
                 </div>
-
-                <div class="col song maths" onclick="playSound('quickmafs');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('youdontforcethesauce');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youdontforcethesauce');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Quick mafs</span>
+                    <span class="soundboard-label" id="youdontforcethesaucelabel"><br>You don't force the sauce</span>
                 </div>
-                <div class="col maths" onclick="playSound('manknowsalgebra');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('askanegghowdoyouhaveyouryolk');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('askanegghowdoyouhaveyouryolk');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Man knows Algebra</span>
-                </div>
-                <div class="col maths" onclick="playSound('pythagoroustheorem');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label"><br>Pythagoras Theorem</span>
+                    <span class="soundboard-label" id="askanegghowdoyouhaveyouryolklabel"><br>Ask an egg how do you have your yolk?</span>
                 </div>
 
-                <div class="col song" onclick="playSound('rawsauce');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('papakakaka');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('papakakaka');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Raw Sauce</span>
+                    <span class="soundboard-label" id="papakakakalabel"><br>Pa-pa-ka-ka-ka</span>
                 </div>
 
-                <div class="col song" onclick="playSound('skidipipapa');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('quackquackquack');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('quackquackquack');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Skibi-ki-pa-pa</span>
+                    <span class="soundboard-label" id="quackquackquacklabel"><br>Quack Quack Quack</span>
                 </div>
-
-                <div class="col song" onclick="playSound('skrrrrrra');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('youmanwereducking');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youmanwereducking');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Skrrrrra</span>
+                    <span class="soundboard-label" id="youmanwereduckinglabel"><br>You man were ducking</span>
                 </div>
 
-                <div class="col song" onclick="playSound('skyaaa');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song maths" ontouchstart="touchStart('quickmafs');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('quickmafs');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Skyaaa</span>
+                    <span class="soundboard-label" id="quickmafslabel"><br>Quick mafs</span>
                 </div>
-
-                <div class="col song" onclick="playSound('put-put-put-boom');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col maths" ontouchstart="touchStart('manknowsalgebra');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('manknowsalgebra');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>put-put-put-boom</span>
+                    <span class="soundboard-label" id="manknowsalgebralabel"><br>Man knows Algebra</span>
                 </div>
-
-                <div class="col song" onclick="playSound('poompoom');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col maths" ontouchstart="touchStart('pythagoroustheorem');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('pythagoroustheorem');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Poom Poom</span>
+                    <span class="soundboard-label" id="pythagoroustheoremlabel"><br>Pythagoras Theorem</span>
                 </div>
 
-                <div class="col song" onclick="playSound('tu-tu-tu-qum-poom-boom');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('rawsauce');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('rawsauce');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>tu-tu-tu-qum-poom-boom</span>
+                    <span class="soundboard-label" id="rawsauce"><br>Raw Sauce</span>
                 </div>
 
-                <div class="col song" onclick="playSound('lookatyournose');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('skidipipapa');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('skidipipapa');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Look at your nose</span>
+                    <span class="soundboard-label" id="skidipipapalabel"><br>Skibi-ki-pa-pa</span>
                 </div>
 
-                <div class="col song" onclick="playSound('thetinggoesfull');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('skrrrrrra');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('skrrrrrra');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>The ting goes skrrraa (full)</span>
+                    <span class="soundboard-label" id="skrrrrrralabel"><br>Skrrrrra</span>
                 </div>
 
-                <div class="col song" onclick="playSound('takeoffyourjacket');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('skyaaa');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('skyaaa');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Take off your jacket</span>
+                    <span class="soundboard-label" id="lskyaaaabel"><br>Skyaaa</span>
                 </div>
 
-                <div class="col song" onclick="playSound('thatgirlisauckers');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('put-put-put-boom');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('put-put-put-boom');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>That girl is a uckers</span>
+                    <span class="soundboard-label" id="put-put-put-boomlabel"><br>put-put-put-boom</span>
                 </div>
 
-                <div class="col song" onclick="playSound('thetinggoes');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('poompoom');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('poompoom');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>The ting goes</span>
+                    <span class="soundboard-label" id="poompoomlabel"><br>Poom Poom</span>
                 </div>
 
-                <div class="col sayings" onclick="playSound('whosdat');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('tu-tu-tu-qum-poom-boom');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('tu-tu-tu-qum-poom-boom');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Who's dat</span>
+                    <span class="soundboard-label" id="tu-tu-tu-qum-poom-boomlabel"><br>tu-tu-tu-qum-poom-boom</span>
                 </div>
 
-                <div class="col song" onclick="playSound('yadunknow');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('lookatyournose');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('lookatyournose');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You dun know</span>
+                    <span class="soundboard-label" id="lookatyournoselabel"><br>Look at your nose</span>
                 </div>
 
-                <div class="col song" onclick="playSound('youdickhead');">
-                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('thetinggoesfull');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('thetinggoesfull');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="thetinggoesfulllabel"><br>The ting goes skrrraa (full)</span>
+                </div>
+
+                <div class="col song" ontouchstart="touchStart('takeoffyourjacket');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('takeoffyourjacket');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="takeoffyourjacketlabel"><br>Take off your jacket</span>
+                </div>
+
+                <div class="col song" ontouchstart="touchStart('thatgirlisauckers');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('thatgirlisauckers');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="thatgirlisauckerslabel"><br>That girl is a uckers</span>
+                </div>
+
+                <div class="col song" ontouchstart="touchStart('thetinggoes');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('thetinggoes');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="thetinggoeslabel"><br>The ting goes</span>
+                </div>
+
+                <div class="col sayings" ontouchstart="touchStart('whosdat');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('whosdat');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="whosdatlabel"><br>Who's dat</span>
+                </div>
+
+                <div class="col song" ontouchstart="touchStart('yadunknow');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('yadunknow');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+                        <i class="material-icons">audiotrack</i>
+                    </button>
+                    <span class="soundboard-label" id="yadunknowlabel"><br>You dun know</span>
+                </div>
+
+                <div class="col song" ontouchstart="touchStart('youdickhead');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youdickhead');">
+                     <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
-                     <span class="soundboard-label"><br>You dickhead</span>
+                     <span class="soundboard-label" id="youdickheadlabel"><br>You dickhead</span>
                  </div>
 
-                <div class="col sayings english" onclick="playSound('yourequitescintilating');">
-                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings english" ontouchstart="touchStart(yourequitescintilating'');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('yourequitescintilating');">
+                     <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
-                     <span class="soundboard-label"><br>You're quite scintillating</span>
+                     <span class="soundboard-label" id="yourequitescintilatinglabel"><br>You're quite scintillating</span>
                  </div>
 
-                <div class="col sayings" onclick="playSound('givemeyournumber');">
-                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('givemeyournumber');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('givemeyournumber');">
+                     <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
-                     <span class="soundboard-label"><br>Give me your number</span>
+                     <span class="soundboard-label" id="givemeyournumberlabel"><br>Give me your number</span>
                  </div>
-                <div class="col sayings" onclick="playSound('idonttakeoffmyjacket');">
-                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('idonttakeoffmyjacket');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('idonttakeoffmyjacket');">
+                     <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                          <i class="material-icons">audiotrack</i>
                      </button>
-                     <span class="soundboard-label"><br>I don't take off my jacket</span>
+                     <span class="soundboard-label" id="idonttakeoffmyjacketlabel"><br>I don't take off my jacket</span>
                  </div>
 
-                <div class="col sayings" onclick="playSound('yougetme');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('yougetme');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('yougetme');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You get me</span>
+                    <span class="soundboard-label" id="yougetmelabel"><br>You get me</span>
                 </div>
-                <div class="col english" onclick="playSound('squadededup');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('squadededup');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('squadededup');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Squad-ed-ed Up</span>
+                    <span class="soundboard-label" id="squadededuplabel"><br>Squad-ed-ed Up</span>
                 </div>
-                <div class="col sayings" onclick="playSound('theowlgoesprrttt');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('theowlgoesprrttt');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('theowlgoesprrttt');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>The owl goes prrrrt</span>
+                    <span class="soundboard-label" id="theowlgoesprrtttlabel"><br>The owl goes prrrrt</span>
                 </div>
-                <div class="col sayings" onclick="playSound('youknowlikethat');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('youknowlikethat');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youknowlikethat');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You know like that</span>
+                    <span class="soundboard-label" id="youknowlikethatlabel"><br>You know like that</span>
                 </div>
-                <div class="col sayings" onclick="playSound('mansgotbars');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mansgotbars');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansgotbars');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Mans got bars</span>
+                    <span class="soundboard-label" id="mansgotbarslabel"><br>Mans got bars</span>
                 </div>
-                <div class="col sayings song" onclick="playSound('asznee');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings song" ontouchstart="touchStart('asznee');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('asznee');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Asznee</span>
+                    <span class="soundboard-label" id="aszneelabel"><br>Asznee</span>
                 </div>
-                <div class="col sayings" onclick="playSound('mybrothers');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mybrothers');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mybrothers');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Hold tight my brothers</span>
+                    <span class="soundboard-label" id="mybrotherslabel"><br>Hold tight my brothers</span>
                 </div>
-                <div class="col english" onclick="playSound('intillectualisilyintelligent');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('intillectualisilyintelligent');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('intillectualisilyintelligent');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>intillectualisily intelligent</span>
+                    <span class="soundboard-label" id="intillectualisilyintelligentlabel"><br>intillectualisily intelligent</span>
                 </div>
-                <div class="col english" onclick="playSound('thesundidnotshine');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('thesundidnotshine');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('thesundidnotshine');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>The sun did not shi-ne</span>
+                    <span class="soundboard-label" id="thesundidnotshinelabel"><br>The sun did not shi-ne</span>
                 </div>
-                <div class="col english" onclick="playSound('makeanep');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('makeanep');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('makeanep');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Make an ep</span>
+                    <span class="soundboard-label" id="makeaneplabel"><br>Make an ep</span>
                 </div>
-                <div class="col english" onclick="playSound('sufficishent');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('sufficishent');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('sufficishent');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Not suffishicent</span>
+                    <span class="soundboard-label" id="sufficishentlabel"><br>Not suffishicent</span>
                 </div>
-                <div class="col english sayings" onclick="playSound('englishlesson');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english sayings" ontouchstart="touchStart('englishlesson');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('englishlesson');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>English lesson</span>
+                    <span class="soundboard-label" id="englishlessonlabel"><br>English lesson</span>
                 </div>
-                <div class="col english" onclick="playSound('itcomesvertic');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('itcomesvertic');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('itcomesvertic');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>It comes vertic-</span>
+                    <span class="soundboard-label" id="itcomesverticlabel"><br>It comes vertic-</span>
                 </div>
-                <div class="col english sayings" onclick="playSound('hoptscotchting');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english sayings" ontouchstart="touchStart('hoptscotchting');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('hoptscotchting');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Hoptscotch ting</span>
+                    <span class="soundboard-label" id="hoptscotchtinglabel"><br>Hoptscotch ting</span>
                 </div>
-                <div class="col english sayings" onclick="playSound('youregivingmeamigrane');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english sayings" ontouchstart="touchStart('youregivingmeamigrane');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youregivingmeamigrane');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You're giving me a mi-grane</span>
+                    <span class="soundboard-label" id="youregivingmeamigranelabel"><br>You're giving me a mi-grane</span>
                 </div>
-                <div class="col sayings" onclick="playSound('butterflywasp');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('butterflywasp');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('butterflywasp');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Float like a butterfly sting ike a wasp</span>
+                    <span class="soundboard-label" id="butterflywasplabel"><br>Float like a butterfly sting ike a wasp</span>
                 </div>
-                <div class="col sayings english" onclick="playSound('mansnothotboxing');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings english" ontouchstart="touchStart('mansnothotboxing');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansnothotboxing');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Man's not hot boxing incorp--</span>
+                    <span class="soundboard-label" id="mansnothotboxinglabel"><br>Man's not hot boxing incorp--</span>
                 </div>
-                <div class="col sayings" onclick="playSound('linkup');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('linkup');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('linkup');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Link up</span>
+                    <span class="soundboard-label" id="linkuplabel"><br>Link up</span>
                 </div>
-
-
-
-                <div class="col sayings" onclick="playSound('cmonbruv');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('cmonbruv');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('cmonbruv');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>C'mon Bruv</span>
+                    <span class="soundboard-label" id="cmonbruvlabel"><br>C'mon Bruv</span>
                 </div>
-                <div class="col english" onclick="playSound('englishlanguage');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('englishlanguage');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('englishlanguage');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>English Language</span>
+                    <span class="soundboard-label" id="englishlanguagelabel"><br>English Language</span>
                 </div>
-                <div class="col english" onclick="playSound('islandrecords');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('islandrecords');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('islandrecords');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Is-land records</span>
+                    <span class="soundboard-label" id="islandrecordslabel"><br>Is-land records</span>
                 </div>
-                <div class="col english" onclick="playSound('ileland');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('ileland');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('ileland');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>I-l-e land</span>
+                    <span class="soundboard-label" id="ilelandlabel"><br>I-l-e land</span>
                 </div>
-                <div class="col english" onclick="playSound('mandontmakemelooklikeidontknowenglish');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('mandontmakemelooklikeidontknowenglish');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mandontmakemelooklikeidontknowenglish');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>I don't know English</span>
+                    <span class="soundboard-label" id="mandontmakemelooklikeidontknowenglishlabel"><br>I don't know English</span>
                 </div>
-                <div class="col english" onclick="playSound('bigenglish');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('bigenglish');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('bigenglish');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Big English</span>
+                    <span class="soundboard-label" id="bigenglishlabel"><br>Big English</span>
                 </div>
-                <div class="col english" onclick="playSound('englishidnotreallymystrongestsubject');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('englishidnotreallymystrongestsubject');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('englishidnotreallymystrongestsubject');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>English isn't my strongest subject</span>
+                    <span class="soundboard-label" id="englishidnotreallymystrongestsubjectlabel"><br>English isn't my strongest subject</span>
                 </div>
-
-
-                <div class="col sayings" onclick="playSound('mansready');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col sayings" ontouchstart="touchStart('mansready');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('mansready');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Man's ready</span>
+                    <span class="soundboard-label" id="mansreadylabel"><br>Man's ready</span>
                 </div>
-                <div class="col english" onclick="playSound('amplificication');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('amplificication');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('amplificication');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Amplificication</span>
+                    <span class="soundboard-label" id="amplificicationlabel"><br>Amplificication</span>
                 </div>
-                <div class="col english" onclick="playSound('youreprotecteded');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('youreprotecteded');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('youreprotecteded');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>You're protected-ed</span>
+                    <span class="soundboard-label" id="youreprotectededlabel"><br>You're protected-ed</span>
                 </div>
-                <div class="col english" onclick="playSound('causetheconspic');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('causetheconspic');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('causetheconspic');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Causing the conspic-</span>
+                    <span class="soundboard-label" id="causetheconspiclabel"><br>Causing the conspic-</span>
                 </div>
-                <div class="col english" onclick="playSound('donttrytoincriminateme');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english" ontouchstart="touchStart('donttrytoincriminateme');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('donttrytoincriminateme');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Don't try to incriminate me</span>
+                    <span class="soundboard-label" id="donttrytoincriminatemelabel"><br>Don't try to incriminate me</span>
                 </div>
-
-                <div class="col english maths sayings" onclick="playSound('checkthestatistics');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col english maths sayings" ontouchstart="touchStart('checkthestatistics');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('checkthestatistics');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Check the Statistics</span>
+                    <span class="soundboard-label" id="checkthestatisticslabel"><br>Check the Statistics</span>
                 </div>
-                <div class="col song" onclick="playSound('persperationting');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('persperationting');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('persperationting');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Perspiration Ting</span>
+                    <span class="soundboard-label" id="persperationtinglabel"><br>Perspiration Ting</span>
                 </div>
-                <div class="col song" onclick="playSound('lynxeffect');">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <div class="col song" ontouchstart="touchStart('lynxeffect');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('lynxeffect');">
+                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                         <i class="material-icons">audiotrack</i>
                     </button>
-                    <span class="soundboard-label"><br>Lynx Effect</span>
+                    <span class="soundboard-label" id="lynxeffectlabel"><br>Lynx Effect</span>
                 </div>
             </div>
         </div>
         </div>
     </main>
+</div>
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="successalert">
+
 </div>
 </body>
 

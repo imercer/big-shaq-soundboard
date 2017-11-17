@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00FD6F7AC191459499723E5A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F27E1DD414AD0BBE68890 /* MessageUI.framework */; };
 		01C7C1ED812C4E6CB3AC47BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07826E6DBE2945A8AD4BCDBB /* libz.tbd */; };
@@ -63,6 +62,7 @@
 		FC160AEB005B4A55B1329B43 /* NativeAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6BD5C2C4C14C4F84D170C8 /* NativeAudio.m */; };
 		FDEEF88177384318B77C9BCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455A9F7A9BE4BE793728F39 /* OpenGLES.framework */; };
 		FF6CFD50459B4D7D92FB0A7F /* CDVPluginExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FC3DAE75A94D66B25AB66F /* CDVPluginExt.m */; };
+		DB5F3621B2444A4ABBC6C824 /* AppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AC949814065B4D57B749BAB5 /* AppVersion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +184,8 @@
 		F1EF1FF29E6A4037BA43EE9D /* CDVWKWebViewUIDelegate.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKWebViewUIDelegate.m; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewUIDelegate.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Big Shaq/config.xml"; sourceTree = "<group>"; };
 		FD3C9D9C06684200B7128EAD /* FirebaseAnalyticsPlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = FirebaseAnalyticsPlugin.h; path = "cordova-plugin-firebase-analytics/FirebaseAnalyticsPlugin.h"; sourceTree = "<group>"; };
+		AC949814065B4D57B749BAB5 /* AppVersion.m */ = {isa = PBXFileReference; name = "AppVersion.m"; path = "cordova-plugin-app-version/AppVersion.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D6BD87018A06430ABA10C021 /* AppVersion.h */ = {isa = PBXFileReference; name = "AppVersion.h"; path = "cordova-plugin-app-version/AppVersion.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,8 @@
 				0B791ECC016C4C238FFE3EF5 /* NativeAudioAsset.m */,
 				1A4EDC82C4DD498096BD6464 /* NativeAudio.h */,
 				B33AEF08974C4BA0BDDDE994 /* NativeAudioAsset.h */,
+				AC949814065B4D57B749BAB5 /* AppVersion.m */,
+				D6BD87018A06430ABA10C021 /* AppVersion.h */,
 			);
 			name = Plugins;
 			path = "Big Shaq/Plugins";
@@ -544,6 +548,7 @@
 				A6834DC401C9424A88EBC12B /* CDVWKProcessPoolFactory.m in Sources */,
 				FC160AEB005B4A55B1329B43 /* NativeAudio.m in Sources */,
 				34791274FD4B4207AD4493A9 /* NativeAudioAsset.m in Sources */,
+				DB5F3621B2444A4ABBC6C824 /* AppVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

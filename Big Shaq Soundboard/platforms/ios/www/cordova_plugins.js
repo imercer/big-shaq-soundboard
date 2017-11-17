@@ -326,6 +326,14 @@ module.exports = [
     "clobbers": [
       "window.plugins.NativeAudio"
     ]
+  },
+  {
+    "id": "cordova-plugin-app-version.AppVersionPlugin",
+    "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+    "pluginId": "cordova-plugin-app-version",
+    "clobbers": [
+      "cordova.getAppVersion"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -347,7 +355,8 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.2.2",
   "cordova-support-google-services": "1.0.0",
   "cordova-plugin-wkwebview-engine": "1.1.4",
-  "cordova-plugin-nativeaudio": "3.0.9"
+  "cordova-plugin-nativeaudio": "3.0.9",
+  "cordova-plugin-app-version": "0.1.9"
 };
 // BOTTOM OF METADATA
 });

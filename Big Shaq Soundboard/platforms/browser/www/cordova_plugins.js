@@ -381,6 +381,14 @@ module.exports = [
             "cordova.plugins.NativeAudio",
             "plugins.NativeAudio"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+        "id": "cordova-plugin-app-version.AppVersionPlugin",
+        "pluginId": "cordova-plugin-app-version",
+        "clobbers": [
+            "cordova.getAppVersion"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -402,7 +410,8 @@ module.exports.metadata =
     "cordova-plugin-file-transfer": "1.7.0",
     "cordova-plugin-firebase-analytics": "0.12.0",
     "cordova-plugin-wkwebview-engine": "1.1.4",
-    "cordova-plugin-nativeaudio": "3.0.9"
+    "cordova-plugin-nativeaudio": "3.0.9",
+    "cordova-plugin-app-version": "0.1.9"
 }
 // BOTTOM OF METADATA
 });

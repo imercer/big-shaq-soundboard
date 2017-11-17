@@ -14,7 +14,8 @@
             }
           ],
           "NSLocationWhenInUseUsageDescription": [],
-          "WKWebViewPluginEmbeddedServerPort": []
+          "WKWebViewPluginEmbeddedServerPort": [],
+          "NSPhotoLibraryAddUsageDescription": []
         }
       },
       "config.xml": {
@@ -87,6 +88,10 @@
             {
               "xml": "<feature name=\"NativeAudio\"><param name=\"ios-package\" value=\"NativeAudio\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -143,6 +148,9 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-nativeaudio": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-app-version": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -474,6 +482,14 @@
       "clobbers": [
         "window.plugins.NativeAudio"
       ]
+    },
+    {
+      "id": "cordova-plugin-app-version.AppVersionPlugin",
+      "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+      "pluginId": "cordova-plugin-app-version",
+      "clobbers": [
+        "cordova.getAppVersion"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -493,6 +509,7 @@
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-support-google-services": "1.0.0",
     "cordova-plugin-wkwebview-engine": "1.1.4",
-    "cordova-plugin-nativeaudio": "3.0.9"
+    "cordova-plugin-nativeaudio": "3.0.9",
+    "cordova-plugin-app-version": "0.1.9"
   }
 }

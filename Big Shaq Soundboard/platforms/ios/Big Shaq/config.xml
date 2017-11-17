@@ -66,6 +66,9 @@
     <feature name="NativeAudio">
         <param name="ios-package" value="NativeAudio" />
     </feature>
+    <feature name="AppVersion">
+        <param name="ios-package" value="AppVersion" />
+    </feature>
     <hook src="hooks/gradle-fix.js" type="before_prepare" />
     <name>Big Shaq</name>
     <description>

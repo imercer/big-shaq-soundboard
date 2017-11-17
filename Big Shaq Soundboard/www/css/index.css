@@ -34,3 +34,17 @@ user-select: none;
     position: relative;
     overflow: visible;
 }
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+#successalert {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15;
+    z-index: 5;
+ }
