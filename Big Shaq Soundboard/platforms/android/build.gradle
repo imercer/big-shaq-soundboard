@@ -22,9 +22,8 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        maven { url "https://maven.google.com"}
+        maven { url 'https://maven.fabric.io/public'}
     }
 
     // Switch the Android Gradle plugin version requirement depending on the
@@ -33,6 +32,8 @@ buildscript {
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.google.firebase:firebase-plugins:1.1.1'
+        classpath 'io.fabric.tools:gradle:1.24.4'
     }
 }
 
