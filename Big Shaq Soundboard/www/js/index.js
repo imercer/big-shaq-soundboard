@@ -14,9 +14,10 @@ function notifyonDeviceReady() {
     cordova.getAppVersion.getVersionCode(function (version) {
                 cordova.plugins.firebase.analytics.setUserProperty("build_number", version);
         });
-	document.getElementById('body').style.display = 'block';
+	finaliseRows();
 	loadFavourites();
 	StatusBar.show();
+	document.getElementById('body').style.display = 'block';
 
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
@@ -192,6 +193,9 @@ function displayElement(element) {
     $('.maths').hide();
     $('.song').hide();
     $('.sayings').hide();
+	$('.divider').hide();
+	document.getElementById('homelists').style.display = "none";
+    document.getElementById('selection').style.display = "block";
     $('.' + element + '').show();
     cordova.plugins.firebase.analytics.setCurrentScreen(element);
     document.getElementById('app').MaterialLayout.toggleDrawer();
@@ -209,7 +213,10 @@ function displayAll() {
     $('.maths').show();
     $('.song').show();
     $('.sayings').show();
-    cordova.plugins.firebase.analytics.setCurrentScreen("Home");
+	$('.divider').show();
+	document.getElementById('homelists').style.display = "block";
+    document.getElementById('selection').style.display = "none";
+	cordova.plugins.firebase.analytics.setCurrentScreen("Home");
     document.getElementById('app').MaterialLayout.toggleDrawer();
 }
 
@@ -218,6 +225,20 @@ function menudisplayFavourites() {
     document.getElementById('favbody').style.display = "block";
     cordova.plugins.firebase.analytics.setCurrentScreen("favourites");
     document.getElementById('app').MaterialLayout.toggleDrawer();
+}
+
+var allbuttons = "<div class=\"row\">";
+function finaliseRows() {
+	allbuttons += document.getElementById('mansnothot').innerHTML;
+	allbuttons += document.getElementById('fireinthebooth').innerHTML;
+	allbuttons += document.getElementById('genius').innerHTML;
+	allbuttons += document.getElementById('breakfast').innerHTML;
+	allbuttons += document.getElementById('instagram').innerHTML;
+	allbuttons += document.getElementById('remaining').innerHTML;
+	allbuttons += "</div>"
+  	document.getElementById('selection').innerHTML = allbuttons;
+	document.getElementById('selection').style.display = "none";
+
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);
