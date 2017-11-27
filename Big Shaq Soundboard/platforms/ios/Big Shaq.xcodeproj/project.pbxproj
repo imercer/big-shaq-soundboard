@@ -64,6 +64,7 @@
 		4A4D471BE7EB4B4E92EF861C /* NSString+SSURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 873D6497348D41ABABFBBED4 /* NSString+SSURLEncoding.m */; };
 		3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */; };
 		C9141CFED7A44FBC89733ED5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B7405063934C67B86AAC06 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,8 @@
 		081C10F3C048473687F0AB8A /* NSString+SSURLEncoding.h */ = {isa = PBXFileReference; name = "NSString+SSURLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		90984EBCA52A4C61A1F68383 /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		39B7405063934C67B86AAC06 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */ = {isa = PBXFileReference; name = "NativeSettings.m"; path = "cordova-open-native-settings/NativeSettings.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		01F87BB1BEF94A95916A8061 /* NativeSettings.h */ = {isa = PBXFileReference; name = "NativeSettings.h"; path = "cordova-open-native-settings/NativeSettings.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +397,8 @@
 				E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */,
 				081C10F3C048473687F0AB8A /* NSString+SSURLEncoding.h */,
 				90984EBCA52A4C61A1F68383 /* SocialSharing.h */,
+				1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */,
+				01F87BB1BEF94A95916A8061 /* NativeSettings.h */,
 			);
 			name = Plugins;
 			path = "Big Shaq/Plugins";
@@ -553,6 +558,7 @@
 				DB5F3621B2444A4ABBC6C824 /* AppVersion.m in Sources */,
 				4A4D471BE7EB4B4E92EF861C /* NSString+SSURLEncoding.m in Sources */,
 				3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */,
+				01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

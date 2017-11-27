@@ -25,14 +25,21 @@
       "cordova-plugin-firebase-analytics": {},
       "cordova-plugin-wkwebview-engine": {},
       "cordova-plugin-app-version": {},
-      "cordova-plugin-x-socialsharing": {}
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-custom-config": {},
+      "cordova-open-native-settings": {},
+      "cordova-plugin-android-permissions": {}
     }
   },
   "dependencies": {
+    "cordova": "^7.1.0",
     "cordova-android": "^6.3.0",
     "cordova-browser": "~5.0.1",
+    "cordova-custom-config": "^4.0.2",
     "cordova-ios": "^4.5.3",
+    "cordova-open-native-settings": "^1.4.1",
     "cordova-plugin-admobpro": "^2.29.27",
+    "cordova-plugin-android-permissions": "^1.0.0",
     "cordova-plugin-app-version": "^0.1.9",
     "cordova-plugin-device": "~1.1.1",
     "cordova-plugin-device-orientation": "~1.0.2",

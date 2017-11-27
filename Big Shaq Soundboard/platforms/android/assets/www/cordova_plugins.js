@@ -332,6 +332,22 @@ module.exports = [
     "clobbers": [
       "window.plugins.socialsharing"
     ]
+  },
+  {
+    "id": "cordova-open-native-settings.Settings",
+    "file": "plugins/cordova-open-native-settings/www/settings.js",
+    "pluginId": "cordova-open-native-settings",
+    "clobbers": [
+      "cordova.plugins.settings"
+    ]
+  },
+  {
+    "id": "cordova-plugin-android-permissions.Permissions",
+    "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+    "pluginId": "cordova-plugin-android-permissions",
+    "clobbers": [
+      "cordova.plugins.permissions"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -355,7 +371,10 @@ module.exports.metadata =
   "cordova-plugin-wkwebview-engine": "1.1.4",
   "cordova-plugin-app-version": "0.1.9",
   "es6-promise-plugin": "4.1.0",
-  "cordova-plugin-x-socialsharing": "5.2.1"
+  "cordova-plugin-x-socialsharing": "5.2.1",
+  "cordova-custom-config": "4.0.2",
+  "cordova-open-native-settings": "1.4.1",
+  "cordova-plugin-android-permissions": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

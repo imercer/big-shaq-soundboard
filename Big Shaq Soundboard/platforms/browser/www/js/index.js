@@ -3,6 +3,7 @@ var sounds = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","ef
 var soundsplayed = 0;
 
 function notifyonDeviceReady() {
+	document.getElementById('body').style.display = 'block';
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#d84b29");
     }
@@ -17,7 +18,15 @@ function notifyonDeviceReady() {
 	finaliseRows();
 	loadFavourites();
 	StatusBar.show();
-	document.getElementById('body').style.display = 'block';
+	var permissions = cordova.plugins.permissions;
+    permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, permissionSuccess, permissionError);
+    function permissionError() {
+      console.warn('Camera permission is not turned on');
+    }
+
+    function permissionSuccess( status ) {
+      if( !status.hasPermission ) error();
+    }
 
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
@@ -57,19 +66,25 @@ function notifyonDeviceReady() {
             autoShow:true}
     	);
 
-    	/*AdMob.prepareInterstitial({
+    	AdMob.prepareInterstitial({
         	adId: admobid.interstitial,
         	autoShow: false
-        });*/
+        });
 
 
 }
 
 var storedfavourites = JSON.parse(localStorage.getItem("favourites"));
+var displayshareprompt = localStorage.getItem("shareprompt");
 var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
-  if (storedfavourites) {
+if (!displayshareprompt) {
+    document.getElementById('shareprompt').style.display = "block";
+    if (!storedfavourites) {
+        storedfavourites = [];
+    }
+} else if (storedfavourites) {
     var favbody = "<div class=\"container\"><div class=\"row\">";
     storedfavourites.forEach(function(favourite) {
           console.log(favourite);
@@ -78,38 +93,50 @@ function loadFavourites() {
       });
     favbody += "</div></div>";
   document.getElementById('favbody').innerHTML = favbody;
-  } else if (displayprompt) {
+  document.getElementById('favbody').style.display = "block";
+} else if (displayprompt) {
     storedfavourites = [];
     document.getElementById('favbody').style.display = "none";
-  } else {
+} else {
     storedfavourites = [];
     document.getElementById('favprompt').style.display = "block";
   }
 
 };
 
-function hideFavouritesPrompt() {
-    localStorage.setItem('favprompt', 'hidden');
-    displayprompt = localStorage.getItem("favprompt");
-    document.getElementById('favprompt').style.display = "none";
+function hidePrompt(type) {
+    console.log('hiding type ' + type);
+    if (type == "favourites") {
+        console.log('favourites prompt is being hidden');
+        document.getElementById('favprompt').style.display = "none";
+        localStorage.setItem('favprompt', 'hidden');
+        displayprompt = "hidden";
+    } else if (type == "share") {
+        console.log('sharing prompt is being hidden');
+        document.getElementById('shareprompt').style.display = "none";
+        localStorage.setItem('shareprompt', 'hidden');
+        displayshareprompt = "hidden";
+    }
     loadFavourites();
 }
 
 var pressTimer;
 
 function touchStart(sound) {
- pressTimer = setTimeout(function() { console.log("adding sound:" + sound); addSound(sound); },1000);
+ pressTimer = setTimeout(function() { console.log("showing dialog for sound:" + sound + "addonly"); launchDialog(sound,'add'); },1000);
 }
 
 function touchStartRem(sound) {
- pressTimer = setTimeout(function() { console.log("removing sound:" + sound); removeSound(sound); },1000);
+ pressTimer = setTimeout(function() { console.log("showing dialog for sound:" + sound + "remonly"); launchDialog(sound, 'remove'); },1000);
 }
 
 function touchCancel() {
    clearTimeout(pressTimer);
 }
 
+
 function addSound(sound) {
+   $( "#dialog" ).dialog( "close" );
     storedfavourites.push(sound);
     localStorage.setItem("favourites", JSON.stringify(storedfavourites));
     document.getElementById("successalert").innerHTML = "This sound has been added to your favourites!"
@@ -123,6 +150,7 @@ function addSound(sound) {
 };
 
 function removeSound(sound) {
+   $( "#dialog" ).dialog( "close" );
     storedfavourites = JSON.parse(localStorage.getItem("favourites"));
     var index = storedfavourites.indexOf(sound);
     if (index > -1) {
@@ -137,7 +165,28 @@ function removeSound(sound) {
          }, 5000);
     storedfavourites = JSON.parse(localStorage.getItem("favourites"));
     loadFavourites();
-}
+};
+
+function launchDialog(sound,option) {
+    if (option == "add") {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button>";
+    } else if (option == "remove") {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button>";
+    } else {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button>";
+    };
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','ringtone')\">Create Ringtone</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','notification')\">Create Notification Tone</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','alarm')\">Create Alarm Tone</button>";
+    dialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+   document.getElementById("dialog").innerHTML = dialogtxt;
+   $( "#dialog" ).dialog( "open" );
+};
+
+function closeDialog() {
+   $( "#dialog" ).dialog( "close" );
+};
 
 function playSound(origin,audio) {
     clearTimeout(pressTimer);
@@ -239,6 +288,56 @@ function finaliseRows() {
   	document.getElementById('selection').innerHTML = allbuttons;
 	document.getElementById('selection').style.display = "none";
 
+}
+
+function shareSound(sound) {
+   $( "#dialog" ).dialog( "close" );
+    window.plugins.socialsharing.share(null, null, 'www/audio/' + sound + '.mp3', null);
+    cordova.plugins.firebase.analytics.logEvent("sound_shared", {sound: sound});
+}
+
+
+function ringtoneSet(sound,setting) {
+    cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
+    AdMob.showInterstitial();
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
+    var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
+    var notificationDir = cordova.file.externalRootDirectory + "Notifications/" + sound + ".mp3";
+    var alarmDir = cordova.file.externalRootDirectory + "Alarms/" + sound + ".mp3";
+    if (setting == "ringtone") {
+        var fileURL = ringtoneDir;
+    } else if (setting == "notification") {
+        var fileURL = notificationDir;
+    } else if (setting == "alarm") {
+        var fileURL = alarmDir;
+    }
+    fileTransfer.download(
+        uri,
+        fileURL,
+        function(entry) {
+            console.log("download complete: " + entry.toURL());
+            var successdialogtxt = "<h5>Ringtone now available</h5><p>You can now set this sound as your " + setting + " tone. This is usually done within the Settings app, under sound, and by clicking the " + setting + "tone option and selecting the sound " + sound + ". This process may vary on some devices and you may have to restart your device for the sound to appear in the list.";
+            //successdialogtxt += "<br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"cordova.plugins.settings.open(\"sound\");\">Open Settings</button>";
+            successdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+            document.getElementById('dialog').innerHTML = successdialogtxt;
+        },
+        function(error) {
+            console.log("download error source " + error.source);
+            console.log("download error target " + error.target);
+            console.log("download error code" + error.code);
+            console.log(error);
+            var errordialogtxt = "<h5>Something went wrong!</h5>Unfortunately we were unable copy the ringtone on your device. This could be because you haven't given us permission to modify files, or something else happened. You could try again, or it might be worth checking settings for any permission you may've turned off. <br>If you've just installed the app and given it permission there's a bug on some phones where you may have to restart the app for the permission to become available, so that could also be the case."
+            errordialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+             document.getElementById('dialog').innerHTML = errordialogtxt;
+        },
+        false,
+        {
+            headers: {
+                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+            }
+        }
+    );
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);

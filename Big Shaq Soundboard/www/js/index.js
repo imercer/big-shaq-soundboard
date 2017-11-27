@@ -18,6 +18,15 @@ function notifyonDeviceReady() {
 	finaliseRows();
 	loadFavourites();
 	StatusBar.show();
+	var permissions = cordova.plugins.permissions;
+    permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, permissionSuccess, permissionError);
+    function permissionError() {
+      console.warn('Camera permission is not turned on');
+    }
+
+    function permissionSuccess( status ) {
+      if( !status.hasPermission ) error();
+    }
 
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
@@ -57,10 +66,10 @@ function notifyonDeviceReady() {
             autoShow:true}
     	);
 
-    	/*AdMob.prepareInterstitial({
+    	AdMob.prepareInterstitial({
         	adId: admobid.interstitial,
         	autoShow: false
-        });*/
+        });
 
 
 }
@@ -160,13 +169,17 @@ function removeSound(sound) {
 
 function launchDialog(sound,option) {
     if (option == "add") {
-        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button>";
     } else if (option == "remove") {
-        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button>";
     } else {
-        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button>";
     };
-    dialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>"
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','ringtone')\">Create Ringtone</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','notification')\">Create Notification Tone</button>";
+    dialogtxt += "<br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"ringtoneSet('" + sound + "','alarm')\">Create Alarm Tone</button>";
+    dialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
    document.getElementById("dialog").innerHTML = dialogtxt;
    $( "#dialog" ).dialog( "open" );
 };
@@ -281,6 +294,50 @@ function shareSound(sound) {
    $( "#dialog" ).dialog( "close" );
     window.plugins.socialsharing.share(null, null, 'www/audio/' + sound + '.mp3', null);
     cordova.plugins.firebase.analytics.logEvent("sound_shared", {sound: sound});
+}
+
+
+function ringtoneSet(sound,setting) {
+    cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
+    AdMob.showInterstitial();
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
+    var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
+    var notificationDir = cordova.file.externalRootDirectory + "Notifications/" + sound + ".mp3";
+    var alarmDir = cordova.file.externalRootDirectory + "Alarms/" + sound + ".mp3";
+    if (setting == "ringtone") {
+        var fileURL = ringtoneDir;
+    } else if (setting == "notification") {
+        var fileURL = notificationDir;
+    } else if (setting == "alarm") {
+        var fileURL = alarmDir;
+    }
+    fileTransfer.download(
+        uri,
+        fileURL,
+        function(entry) {
+            console.log("download complete: " + entry.toURL());
+            var successdialogtxt = "<h5>Ringtone now available</h5><p>You can now set this sound as your " + setting + " tone. This is usually done within the Settings app, under sound, and by clicking the " + setting + "tone option and selecting the sound " + sound + ". This process may vary on some devices and you may have to restart your device for the sound to appear in the list.";
+            //successdialogtxt += "<br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"cordova.plugins.settings.open(\"sound\");\">Open Settings</button>";
+            successdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+            document.getElementById('dialog').innerHTML = successdialogtxt;
+        },
+        function(error) {
+            console.log("download error source " + error.source);
+            console.log("download error target " + error.target);
+            console.log("download error code" + error.code);
+            console.log(error);
+            var errordialogtxt = "<h5>Something went wrong!</h5>Unfortunately we were unable copy the ringtone on your device. This could be because you haven't given us permission to modify files, or something else happened. You could try again, or it might be worth checking settings for any permission you may've turned off. <br>If you've just installed the app and given it permission there's a bug on some phones where you may have to restart the app for the permission to become available, so that could also be the case."
+            errordialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+             document.getElementById('dialog').innerHTML = errordialogtxt;
+        },
+        false,
+        {
+            headers: {
+                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+            }
+        }
+    );
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);

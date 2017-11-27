@@ -57,6 +57,15 @@
     },
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {

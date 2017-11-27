@@ -71,6 +71,14 @@
             {
               "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"NativeSettings\"><param name=\"android-package\" value=\"com.phonegap.plugins.nativesettings.NativeSettings\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -165,6 +173,15 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -502,6 +519,22 @@
       "clobbers": [
         "window.plugins.socialsharing"
       ]
+    },
+    {
+      "id": "cordova-open-native-settings.Settings",
+      "file": "plugins/cordova-open-native-settings/www/settings.js",
+      "pluginId": "cordova-open-native-settings",
+      "clobbers": [
+        "cordova.plugins.settings"
+      ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -523,6 +556,9 @@
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "cordova-plugin-app-version": "0.1.9",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.2.1"
+    "cordova-plugin-x-socialsharing": "5.2.1",
+    "cordova-custom-config": "4.0.2",
+    "cordova-open-native-settings": "1.4.1",
+    "cordova-plugin-android-permissions": "1.0.0"
   }
 }

@@ -20,6 +20,12 @@
               "xml": "<string>This app requires photo library access to function properly.</string>",
               "count": 1
             }
+          ],
+          "CFBundleURLTypes": [
+            {
+              "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLSchemes</key><array><string>prefs</string></array></dict></array>",
+              "count": 1
+            }
           ]
         }
       },
@@ -97,6 +103,10 @@
             {
               "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"NativeSettings\"><param name=\"ios-package\" value=\"NativeSettings\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -159,6 +169,15 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -504,6 +523,22 @@
       "clobbers": [
         "window.plugins.socialsharing"
       ]
+    },
+    {
+      "id": "cordova-open-native-settings.Settings",
+      "file": "plugins/cordova-open-native-settings/www/settings.js",
+      "pluginId": "cordova-open-native-settings",
+      "clobbers": [
+        "cordova.plugins.settings"
+      ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -525,6 +560,9 @@
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "cordova-plugin-app-version": "0.1.9",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.2.1"
+    "cordova-plugin-x-socialsharing": "5.2.1",
+    "cordova-custom-config": "4.0.2",
+    "cordova-open-native-settings": "1.4.1",
+    "cordova-plugin-android-permissions": "1.0.0"
   }
 }

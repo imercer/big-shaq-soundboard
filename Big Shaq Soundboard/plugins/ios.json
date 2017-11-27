@@ -57,6 +57,15 @@
     },
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {

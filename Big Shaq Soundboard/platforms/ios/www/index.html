@@ -41,12 +41,14 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/card.css"/>
     <script defer src="js/material.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <title>Soundboard</title>
@@ -80,18 +82,30 @@
             <br><br>
             <a class="mdl-navigation__link" href="mailto:bigshaqapp@isaacscomputertips.com?subject=Big Shaq Soundboard - Sound Suggestion" onclick="cordova.plugins.firebase.analytics.logEvent('suggestionemail');">Suggest a Sound</a>
             <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('googleplayreview');" href="market://details?id=nz.isaacmercer.bigshaq">Review on Google Play</a>
+            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink');window.plugins.socialsharing.share('Check out this cool app, Big Shaq Soundboard, on Google Play. Skrrr-pop-pop!', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.bigshaq')">Share the App</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
             <div id="favbody">
                 <div class="content">
+                    <div id="shareprompt" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                        <h4 class="alert-heading">Introducing Sharing and Ringtones!</h4>
+                        <p>Get your friends in on the action with sharing, now built into the Big Shaq Soundboard. Audio files can be shared to many messaging and social media apps including Facebook Messenger, WhatsApp and more.</p>
+                        <p>It's also now possible to set your ringtone or notification tone to one of the sounds. This feature is very much in beta, so it can be a little flaky but it works in most cases. You'll need to give the app permission to modify your files for this to work.</p>
+                        <hr>
+                        <p class="mb-0">Simply long press any sound, select share and then choose an app to share to, or select add as ringtone/notification tone. It's that easy!</p>
+                        <p class="mb-0"><b>Your favourites will be accessible upon dismissing this box.</b></p>
+                        <button type="button" class="close" aria-label="Close" onclick="hidePrompt('share');">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <div id="favprompt" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
                         <h4 class="alert-heading">Introducing favourites!</h4>
                         <p>You can now add your favourite Big Shaq sounds to your favourites collection which will appear at the top of the home screen, and in the favourites section - accessible from the menu.</p>
                         <hr>
-                        <p class="mb-0">Simply long press any sound and I'll add it to your favourites.</p>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="hideFavouritesPrompt();">
+                        <p class="mb-0">Simply long press any sound, select add to favourites and I'll add it to your favourites.</p>
+                        <button type="button" class="close" aria-label="Close" onclick="hidePrompt('favourites');">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -673,6 +687,16 @@
         </div>
         </div>
     </main>
+    <script>
+  $( function() {
+    $( "#dialog" ).dialog({
+        autoOpen: false,
+        modal: true
+    });
+   });
+    </script>
+    <div id="dialog" title="Options" style="text-align: center">
+    </div>
     <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="waitalert">
         Hold on a bit! There's been a bit of a hiccup, sounds will be back in just a sec.
     </div>

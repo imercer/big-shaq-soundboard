@@ -1,0 +1,107 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-open-native-settings",
+        "raw": "cordova-open-native-settings",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-open-native-settings@latest",
+  "_id": "cordova-open-native-settings@1.4.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-open-native-settings",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-open-native-settings-1.4.1.tgz_1500213362099_0.11562135978601873"
+  },
+  "_npmUser": {
+    "email": "admin@gsrweb.net",
+    "name": "guyromb"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-open-native-settings",
+    "raw": "cordova-open-native-settings",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-open-native-settings/-/cordova-open-native-settings-1.4.1.tgz",
+  "_shasum": "5b7937f81f2b4c7eb9cd03132259d33fa77457c2",
+  "_shrinkwrap": null,
+  "_spec": "cordova-open-native-settings",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "email": "admin@gsrweb.net",
+    "name": "Guy Rombaut"
+  },
+  "bugs": {
+    "url": "https://github.com/guyromb/Cordova-open-native-settings/issues"
+  },
+  "contributors": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "cordova": {
+    "id": "cordova-open-native-settings",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Native settings opener for Cordova",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "5b7937f81f2b4c7eb9cd03132259d33fa77457c2",
+    "tarball": "https://registry.npmjs.org/cordova-open-native-settings/-/cordova-open-native-settings-1.4.1.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=4.0.0"
+    }
+  ],
+  "gitHead": "8066c95f579eb36e53594c2f3bb37d8347c367d9",
+  "homepage": "https://github.com/guyromb/Cordova-open-native-settings#readme",
+  "keywords": [
+    "native-settings",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "admin@gsrweb.net",
+      "name": "guyromb"
+    }
+  ],
+  "name": "cordova-open-native-settings",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyromb/Cordova-open-native-settings.git"
+  },
+  "scripts": {},
+  "version": "1.4.1"
+}

@@ -74,6 +74,15 @@
     },
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {},
@@ -472,6 +481,22 @@
       "clobbers": [
         "window.plugins.socialsharing"
       ]
+    },
+    {
+      "file": "plugins/cordova-open-native-settings/www/settings.js",
+      "id": "cordova-open-native-settings.Settings",
+      "pluginId": "cordova-open-native-settings",
+      "clobbers": [
+        "cordova.plugins.settings"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -493,6 +518,9 @@
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "cordova-plugin-app-version": "0.1.9",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.2.1"
+    "cordova-plugin-x-socialsharing": "5.2.1",
+    "cordova-custom-config": "4.0.2",
+    "cordova-open-native-settings": "1.4.1",
+    "cordova-plugin-android-permissions": "1.0.0"
   }
 }
