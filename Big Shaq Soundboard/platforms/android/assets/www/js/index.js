@@ -66,10 +66,16 @@ function notifyonDeviceReady() {
 }
 
 var storedfavourites = JSON.parse(localStorage.getItem("favourites"));
+var displayshareprompt = localStorage.getItem("shareprompt");
 var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
-  if (storedfavourites) {
+if (!displayshareprompt) {
+    document.getElementById('shareprompt').style.display = "block";
+    if (!storedfavourites) {
+        storedfavourites = [];
+    }
+} else if (storedfavourites) {
     var favbody = "<div class=\"container\"><div class=\"row\">";
     storedfavourites.forEach(function(favourite) {
           console.log(favourite);
@@ -78,38 +84,50 @@ function loadFavourites() {
       });
     favbody += "</div></div>";
   document.getElementById('favbody').innerHTML = favbody;
-  } else if (displayprompt) {
+  document.getElementById('favbody').style.display = "block";
+} else if (displayprompt) {
     storedfavourites = [];
     document.getElementById('favbody').style.display = "none";
-  } else {
+} else {
     storedfavourites = [];
     document.getElementById('favprompt').style.display = "block";
   }
 
 };
 
-function hideFavouritesPrompt() {
-    localStorage.setItem('favprompt', 'hidden');
-    displayprompt = localStorage.getItem("favprompt");
-    document.getElementById('favprompt').style.display = "none";
+function hidePrompt(type) {
+    console.log('hiding type ' + type);
+    if (type == "favourites") {
+        console.log('favourites prompt is being hidden');
+        document.getElementById('favprompt').style.display = "none";
+        localStorage.setItem('favprompt', 'hidden');
+        displayprompt = "hidden";
+    } else if (type == "share") {
+        console.log('sharing prompt is being hidden');
+        document.getElementById('shareprompt').style.display = "none";
+        localStorage.setItem('shareprompt', 'hidden');
+        displayshareprompt = "hidden";
+    }
     loadFavourites();
 }
 
 var pressTimer;
 
 function touchStart(sound) {
- pressTimer = setTimeout(function() { console.log("adding sound:" + sound); addSound(sound); },1000);
+ pressTimer = setTimeout(function() { console.log("showing dialog for sound:" + sound + "addonly"); launchDialog(sound,'add'); },1000);
 }
 
 function touchStartRem(sound) {
- pressTimer = setTimeout(function() { console.log("removing sound:" + sound); removeSound(sound); },1000);
+ pressTimer = setTimeout(function() { console.log("showing dialog for sound:" + sound + "remonly"); launchDialog(sound, 'remove'); },1000);
 }
 
 function touchCancel() {
    clearTimeout(pressTimer);
 }
 
+
 function addSound(sound) {
+   $( "#dialog" ).dialog( "close" );
     storedfavourites.push(sound);
     localStorage.setItem("favourites", JSON.stringify(storedfavourites));
     document.getElementById("successalert").innerHTML = "This sound has been added to your favourites!"
@@ -123,6 +141,7 @@ function addSound(sound) {
 };
 
 function removeSound(sound) {
+   $( "#dialog" ).dialog( "close" );
     storedfavourites = JSON.parse(localStorage.getItem("favourites"));
     var index = storedfavourites.indexOf(sound);
     if (index > -1) {
@@ -137,7 +156,24 @@ function removeSound(sound) {
          }, 5000);
     storedfavourites = JSON.parse(localStorage.getItem("favourites"));
     loadFavourites();
-}
+};
+
+function launchDialog(sound,option) {
+    if (option == "add") {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+    } else if (option == "remove") {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+    } else {
+        var dialogtxt = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"addSound('" + sound + "')\">Add to Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"removeSound('" + sound + "')\">Remove from Favourites</button><br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onclick=\"shareSound('" + sound + "')\">Share Sound</button>";
+    };
+    dialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>"
+   document.getElementById("dialog").innerHTML = dialogtxt;
+   $( "#dialog" ).dialog( "open" );
+};
+
+function closeDialog() {
+   $( "#dialog" ).dialog( "close" );
+};
 
 function playSound(origin,audio) {
     clearTimeout(pressTimer);
@@ -239,6 +275,12 @@ function finaliseRows() {
   	document.getElementById('selection').innerHTML = allbuttons;
 	document.getElementById('selection').style.display = "none";
 
+}
+
+function shareSound(sound) {
+   $( "#dialog" ).dialog( "close" );
+    window.plugins.socialsharing.share(null, null, 'www/audio/' + sound + '.mp3', null);
+    cordova.plugins.firebase.analytics.logEvent("sound_shared", {sound: sound});
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);

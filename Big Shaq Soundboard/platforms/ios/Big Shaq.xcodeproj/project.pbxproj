@@ -61,6 +61,9 @@
 		FDEEF88177384318B77C9BCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455A9F7A9BE4BE793728F39 /* OpenGLES.framework */; };
 		FF6CFD50459B4D7D92FB0A7F /* CDVPluginExt.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FC3DAE75A94D66B25AB66F /* CDVPluginExt.m */; };
 		DB5F3621B2444A4ABBC6C824 /* AppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AC949814065B4D57B749BAB5 /* AppVersion.m */; };
+		4A4D471BE7EB4B4E92EF861C /* NSString+SSURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 873D6497348D41ABABFBBED4 /* NSString+SSURLEncoding.m */; };
+		3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */; };
+		C9141CFED7A44FBC89733ED5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B7405063934C67B86AAC06 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +183,11 @@
 		FD3C9D9C06684200B7128EAD /* FirebaseAnalyticsPlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = FirebaseAnalyticsPlugin.h; path = "cordova-plugin-firebase-analytics/FirebaseAnalyticsPlugin.h"; sourceTree = "<group>"; };
 		AC949814065B4D57B749BAB5 /* AppVersion.m */ = {isa = PBXFileReference; name = "AppVersion.m"; path = "cordova-plugin-app-version/AppVersion.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		D6BD87018A06430ABA10C021 /* AppVersion.h */ = {isa = PBXFileReference; name = "AppVersion.h"; path = "cordova-plugin-app-version/AppVersion.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		873D6497348D41ABABFBBED4 /* NSString+SSURLEncoding.m */ = {isa = PBXFileReference; name = "NSString+SSURLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */ = {isa = PBXFileReference; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		081C10F3C048473687F0AB8A /* NSString+SSURLEncoding.h */ = {isa = PBXFileReference; name = "NSString+SSURLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		90984EBCA52A4C61A1F68383 /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		39B7405063934C67B86AAC06 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +220,7 @@
 				4C5A9BCE9E24463AA5BA0D8B /* UIKit.framework in Frameworks */,
 				01C7C1ED812C4E6CB3AC47BA /* libz.tbd in Frameworks */,
 				D10F581956B54BD983401808 /* WebKit.framework in Frameworks */,
+				C9141CFED7A44FBC89733ED5 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +317,7 @@
 				E287C0B5C4034FA09DA3FD63 /* UIKit.framework */,
 				07826E6DBE2945A8AD4BCDBB /* libz.tbd */,
 				13C37AAFCEF04FB7BE68593A /* WebKit.framework */,
+				39B7405063934C67B86AAC06 /* Social.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -380,6 +390,10 @@
 				6E88D8D8D81547C3BC11684B /* CDVWKProcessPoolFactory.h */,
 				AC949814065B4D57B749BAB5 /* AppVersion.m */,
 				D6BD87018A06430ABA10C021 /* AppVersion.h */,
+				873D6497348D41ABABFBBED4 /* NSString+SSURLEncoding.m */,
+				E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */,
+				081C10F3C048473687F0AB8A /* NSString+SSURLEncoding.h */,
+				90984EBCA52A4C61A1F68383 /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = "Big Shaq/Plugins";
@@ -537,6 +551,8 @@
 				C3F8DCF8493B4FFAA4CFD58D /* CDVWKWebViewUIDelegate.m in Sources */,
 				A6834DC401C9424A88EBC12B /* CDVWKProcessPoolFactory.m in Sources */,
 				DB5F3621B2444A4ABBC6C824 /* AppVersion.m in Sources */,
+				4A4D471BE7EB4B4E92EF861C /* NSString+SSURLEncoding.m in Sources */,
+				3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

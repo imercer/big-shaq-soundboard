@@ -326,6 +326,20 @@ module.exports = [
     "clobbers": [
       "cordova.getAppVersion"
     ]
+  },
+  {
+    "id": "es6-promise-plugin.Promise",
+    "file": "plugins/es6-promise-plugin/www/promise.js",
+    "pluginId": "es6-promise-plugin",
+    "runs": true
+  },
+  {
+    "id": "cordova-plugin-x-socialsharing.SocialSharing",
+    "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+    "pluginId": "cordova-plugin-x-socialsharing",
+    "clobbers": [
+      "window.plugins.socialsharing"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -347,7 +361,9 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.2.2",
   "cordova-support-google-services": "1.0.0",
   "cordova-plugin-wkwebview-engine": "1.1.4",
-  "cordova-plugin-app-version": "0.1.9"
+  "cordova-plugin-app-version": "0.1.9",
+  "es6-promise-plugin": "4.1.0",
+  "cordova-plugin-x-socialsharing": "5.2.1"
 };
 // BOTTOM OF METADATA
 });

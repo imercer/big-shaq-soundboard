@@ -54,10 +54,16 @@
     },
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-extension": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   }
