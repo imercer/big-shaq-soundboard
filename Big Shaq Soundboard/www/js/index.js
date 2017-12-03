@@ -317,7 +317,7 @@ function ringtoneSet(sound,setting) {
         fileURL,
         function(entry) {
             console.log("download complete: " + entry.toURL());
-            var successdialogtxt = "<h5>Ringtone now available</h5><p>You can now set this sound as your " + setting + " tone. This is usually done within the Settings app, under sound, and by clicking the " + setting + "tone option and selecting the sound " + sound + ". This process may vary on some devices and you may have to restart your device for the sound to appear in the list.";
+            var successdialogtxt = "<h5>Ringtone now available</h5><p>You can now set this sound as your " + setting + " tone. This is usually done within the Settings app, under sound, and by clicking the " + setting + " tone option and selecting the sound " + sound + ". This process may vary on some devices and you may have to restart your device for the sound to appear in the list.";
             //successdialogtxt += "<br><br><br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"cordova.plugins.settings.open(\"sound\");\">Open Settings</button>";
             successdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
             document.getElementById('dialog').innerHTML = successdialogtxt;
