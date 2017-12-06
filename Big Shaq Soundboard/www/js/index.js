@@ -1,4 +1,4 @@
-var sounds = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull"];
+var sounds = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull","condensationcon","getthelate","indadequate","justsaucenoketchup","yeahyeah","youdontknoweverything","youwanttostartbiff"];
 
 var soundsplayed = 0;
 
@@ -21,7 +21,7 @@ function notifyonDeviceReady() {
 	var permissions = cordova.plugins.permissions;
     permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, permissionSuccess, permissionError);
     function permissionError() {
-      console.warn('Camera permission is not turned on');
+      console.warn('external storage permission is not turned on');
     }
 
     function permissionSuccess( status ) {
@@ -300,6 +300,10 @@ function shareSound(sound) {
 function ringtoneSet(sound,setting) {
     cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
     AdMob.showInterstitial();
+    AdMob.prepareInterstitial({
+            adId: 'ca-app-pub-5354491797983322/6572334447',
+            autoShow: false
+        });
     var fileTransfer = new FileTransfer();
     var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
     var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
@@ -311,7 +315,7 @@ function ringtoneSet(sound,setting) {
         var fileURL = notificationDir;
     } else if (setting == "alarm") {
         var fileURL = alarmDir;
-    }
+    };
     fileTransfer.download(
         uri,
         fileURL,
@@ -334,7 +338,6 @@ function ringtoneSet(sound,setting) {
         false,
         {
             headers: {
-                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
             }
         }
     );
