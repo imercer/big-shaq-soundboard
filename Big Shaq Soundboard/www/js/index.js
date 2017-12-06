@@ -1,4 +1,4 @@
-var sounds = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull","condensationcon","getthelate","indadequate","justsaucenoketchup","yeahyeah","youdontknoweverything","youwanttostartbiff"];
+var soundsArray = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull","condensationcon","getthelate","indadequate","justsaucenoketchup","yeahyeah","youdontknoweverything","youwanttostartbiff"];
 
 var soundsplayed = 0;
 
@@ -188,6 +188,37 @@ function closeDialog() {
    $( "#dialog" ).dialog( "close" );
 };
 
+function audioPlayer(audio) {
+    console.log("playing" + audio);
+    if(cordova.platformId == 'android') {
+            // Play the audio file at url
+                    var my_media = new Media('/android_asset/www/audio/' + audio + '.mp3',
+                        // success callback
+                        function () {
+                            console.log("playAudio():Audio Success");
+                            my_media.release();
+                        },
+                        // error callback
+                        function (err) {
+                            console.log("playAudio():Audio Error: " + err);
+                        }
+                    );
+        } else {
+                    var my_media = new Media('audio/' + audio + '.mp3',
+                        // success callback
+                        function () {
+                            console.log("playAudio():Audio Success");
+                            my_media.release();
+                        },
+                        // error callback
+                        function (err) {
+                            console.log("playAudio():Audio Error: " + err);
+                        }
+                    );
+        }
+        // Play audio
+        my_media.play();
+}
 function playSound(origin,audio) {
     clearTimeout(pressTimer);
     /*window.plugins.NativeAudio.play(audio,function(){console.log('playing' + audio);},function(msg){console.log('error playing back' + audio + msg);},function(){console.log('completed playing back' + audio);});
@@ -203,35 +234,17 @@ function playSound(origin,audio) {
         }, 5000);
         soundsplayed = 0;
     }*/
-   if(cordova.platformId == 'android') {
-        // Play the audio file at url
-                var my_media = new Media('/android_asset/www/audio/' + audio + '.mp3',
-                    // success callback
-                    function () {
-                        console.log("playAudio():Audio Success");
-                        my_media.release();
-                    },
-                    // error callback
-                    function (err) {
-                        console.log("playAudio():Audio Error: " + err);
-                    }
-                );
-    } else {
-                var my_media = new Media('audio/' + audio + '.mp3',
-                    // success callback
-                    function () {
-                        console.log("playAudio():Audio Success");
-                        my_media.release();
-                    },
-                    // error callback
-                    function (err) {
-                        console.log("playAudio():Audio Error: " + err);
-                    }
-                );
-    }
-        // Play audio
-        my_media.play();
-        cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio, origin: origin});
+    audioPlayer(audio);
+    cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio, origin: origin});
+};
+
+function playRandomSound() {
+    var rand = soundsArray[Math.floor(Math.random() * soundsArray.length)];
+    var randomsoundstring = rand.toString()
+    console.log("playing random sound" + randomsoundstring);
+    audioPlayer(randomsoundstring);
+    cordova.plugins.firebase.analytics.logEvent("random_sound_played", {sound: randomsoundstring});
+
 };
 
 function displayElement(element) {
