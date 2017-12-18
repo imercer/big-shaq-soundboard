@@ -57,18 +57,18 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+            <state relative-caret-position="75">
+              <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
               <folding>
                 <element signature="e#547#565#0" expanded="true" />
                 <element signature="e#704#727#0" expanded="true" />
                 <element signature="e#935#958#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
@@ -78,8 +78,44 @@
             <state relative-caret-position="225">
               <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
               <folding>
-                <element signature="e#0#858#0" expanded="true" />
-                <marker date="1512532742925" expanded="true" signature="9137:9176" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="0:858" ph="/*...*/" />
+                <marker date="1513636787831" expanded="true" signature="913:1541" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="932:1059" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="1065:1344" ph="..." />
+                <marker date="1513636787831" expanded="true" signature="1362:1539" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="1627:1742" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="1646:1740" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="1680:1694" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="1724:1734" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="1772:1778" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="1802:1804" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="1806:2000" ph="..." />
+                <marker date="1513636787831" expanded="true" signature="2005:3338" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2153:2163" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2153:2197" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2191:2197" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="2300:2310" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2300:2344" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2338:2344" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="2441:2451" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2441:2478" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2472:2478" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="2579:2589" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2579:2618" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2612:2618" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="2725:2735" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2725:2768" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2762:2768" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="2887:2897" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="2887:2941" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="2935:2941" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="3056:3066" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="3056:3108" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="3102:3108" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="3186:3196" ph="{" />
+                <marker date="1513636787831" expanded="true" signature="3186:3221" ph="{...}" />
+                <marker date="1513636787831" expanded="true" signature="3215:3221" ph="}" />
+                <marker date="1513636787831" expanded="true" signature="9137:9176" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -90,26 +126,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradle-wrapper.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,7 +169,7 @@
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2325">
-              <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
+              <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -2314,7 +2330,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2332,21 +2347,12 @@
               <option name="myItemId" value="android" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -2600,7 +2606,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32881773" sideWeight="0.521978" order="24" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32881773" sideWeight="0.521978" order="24" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24847375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2708,9 +2714,6 @@
     <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -2720,6 +2723,9 @@
             <element signature="e#935#958#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
@@ -2774,9 +2780,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="70" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="70" />
@@ -2786,6 +2789,9 @@
             <element signature="e#935#958#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -2865,9 +2871,6 @@
     <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -2877,6 +2880,9 @@
             <element signature="e#935#958#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
@@ -2921,13 +2927,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-    <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$USER_HOME$/Downloads/1106-1.apk">
       <provider selected="true" editor-type-id="apk-viewer">
         <state />
@@ -2943,8 +2943,44 @@
         <state relative-caret-position="225">
           <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
           <folding>
-            <element signature="e#0#858#0" expanded="true" />
-            <marker date="1512532742925" expanded="true" signature="9137:9176" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="0:858" ph="/*...*/" />
+            <marker date="1513636787831" expanded="true" signature="913:1541" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="932:1059" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="1065:1344" ph="..." />
+            <marker date="1513636787831" expanded="true" signature="1362:1539" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="1627:1742" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="1646:1740" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="1680:1694" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="1724:1734" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="1772:1778" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="1802:1804" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="1806:2000" ph="..." />
+            <marker date="1513636787831" expanded="true" signature="2005:3338" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2153:2163" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2153:2197" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2191:2197" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="2300:2310" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2300:2344" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2338:2344" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="2441:2451" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2441:2478" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2472:2478" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="2579:2589" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2579:2618" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2612:2618" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="2725:2735" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2725:2768" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2762:2768" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="2887:2897" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="2887:2941" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="2935:2941" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="3056:3066" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="3056:3108" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="3102:3108" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="3186:3196" ph="{" />
+            <marker date="1513636787831" expanded="true" signature="3186:3221" ph="{...}" />
+            <marker date="1513636787831" expanded="true" signature="3215:3221" ph="}" />
+            <marker date="1513636787831" expanded="true" signature="9137:9176" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2957,22 +2993,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties" />
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3004,24 +3026,24 @@
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2325">
-          <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
+          <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+        <state relative-caret-position="75">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding>
             <element signature="e#547#565#0" expanded="true" />
             <element signature="e#704#727#0" expanded="true" />
             <element signature="e#935#958#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
   </component>
