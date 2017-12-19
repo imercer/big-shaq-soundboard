@@ -294,6 +294,8 @@ function finaliseRows() {
 	allbuttons += document.getElementById('mansnothot').innerHTML;
 	allbuttons += document.getElementById('fireinthebooth').innerHTML;
 	allbuttons += document.getElementById('genius').innerHTML;
+	allbuttons += document.getElementById('capitalextra').innerHTML;
+	allbuttons += document.getElementById('swil').innerHTML;
 	allbuttons += document.getElementById('breakfast').innerHTML;
 	allbuttons += document.getElementById('instagram').innerHTML;
 	allbuttons += document.getElementById('remaining').innerHTML;
