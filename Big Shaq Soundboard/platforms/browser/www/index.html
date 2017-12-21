@@ -82,6 +82,8 @@
             <a class="mdl-navigation__link" onclick="displayElement('english')">English</a>
             <a class="mdl-navigation__link" onclick="displayElement('sayings')">Sayings and Ad-libs</a>
             <br><br>
+            <a class="mdl-navigation__link" onclick="displayHideAds();">Hide Ads</a>
+            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('googleplayreview');" href="market://details?id=nz.isaacmercer.bigshaq">Review on Google Play</a>
             <a class="mdl-navigation__link" href="mailto:bigshaqapp@isaacscomputertips.com?subject=Big Shaq Soundboard - Sound Suggestion" onclick="cordova.plugins.firebase.analytics.logEvent('suggestionemail');">Suggest a Sound</a>
             <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('googleplayreview');" href="market://details?id=nz.isaacmercer.bigshaq">Review on Google Play</a>
             <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink');window.plugins.socialsharing.share('Check out this cool app, Big Shaq Soundboard, on Google Play. Skrrr-pop-pop!', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.bigshaq')">Share the App</a>
@@ -889,6 +891,15 @@
 				<div class="row">
 				</div>
 			</div>
+        </div>
+        <div id="hideadsscreen" style="display: none; text-align: center">
+            <br>
+            <h3>Hide ads in Big Shaq Soundboard for only <span id="currencyString">USD</span><span id="priceindecimalString">$0.99</span>. </h3>
+            <br>
+            <span id="description"></span>
+            <br><br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="purchaseHideAds()">Buy Now</button>
+            <br><br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="restoreIAPPurchases()">Restore Purchases</button>
+            <div class="alert alert-danger" role="alert" id="IAPFetchError" style="display: none">Whoops! Something went wrong when I tried to retrieve in app purchase information. Not to worry, you can try again later, or you may not be connected to the internet.</div>
         </div>
         </div>
     </main>

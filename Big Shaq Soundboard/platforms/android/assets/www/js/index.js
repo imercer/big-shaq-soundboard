@@ -47,7 +47,7 @@ if (adsIAPpurchased) {
             } else {
                 displayAds = result.state;
                 localStorage.removeItem("hideAdsPurchased");
-                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid" {state: data.state});
+                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid", {state: data.state});
             }
           })
       })
@@ -382,7 +382,7 @@ function restoreIAPPurchases() {
             } else {
                 displayAds = data.state;
                 localStorage.removeItem("hideAdsPurchased");
-                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid" {state: data.state});
+                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid", {state: data.state});
             }
           })
       })

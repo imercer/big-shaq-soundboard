@@ -1,4 +1,5 @@
 var soundsArray = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull","condensationcon","getthelate","indadequate","justsaucenoketchup","yeahyeah","youdontknoweverything","youwanttostartbiff","cutherecording","bigman","hahaha","hedgehogsong","illbeequaltotheequator","itsnotamathematicalsong","manknowstrigonometry","manknowstrigonometryalgebrageography","wheresyourgrammaticalgrammars","youtwit","youresayingitlikeaturkishdon","whydidntyouinformme","babesmansnothotfull","dformaths"];
+var displayAds;
 
 var soundsplayed = 0;
 
@@ -28,6 +29,34 @@ function notifyonDeviceReady() {
       if( !status.hasPermission ) error();
     }
 
+/* IAP Restore/Validation Code */
+var adsIAPpurchased = localStorage.getItem("hideAdsPurchased");
+var displayAds = "yes";
+if (adsIAPpurchased) {
+    displayAds = "no";
+    inAppPurchase
+      .restorePurchases()
+      .then(function (data) {
+        console.log(data);
+        data.forEach(function(result) {
+            console.log(result.productId);
+            console.log("state " + result.state);
+            cordova.plugins.firebase.analytics.setUserProperty("IAP_TransactionID", data.transactionId);
+            if (!data.state) {
+                displayAds = "no";
+            } else {
+                displayAds = result.state;
+                localStorage.removeItem("hideAdsPurchased");
+                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid", {state: data.state});
+            }
+          })
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+};
+
+/* Advertising Code */
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
       admobid = {
@@ -57,7 +86,10 @@ function notifyonDeviceReady() {
     	autoShow: true
     };
     AdMob.setOptions( defaultOptions );
-
+if(displayAds == "no") {
+    console.log("Not showing ads");
+} else {
+    console.log("Showing ads");
     if(AdMob)
         AdMob.createBanner( {
 
@@ -70,8 +102,7 @@ function notifyonDeviceReady() {
         	adId: admobid.interstitial,
         	autoShow: false
         });
-
-
+    }
 }
 
 var storedfavourites = JSON.parse(localStorage.getItem("favourites"));
@@ -80,7 +111,6 @@ var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
 if (!displayshareprompt) {
-    document.getElementById('shareprompt').style.display = "block";
     if (!storedfavourites) {
         storedfavourites = [];
     }
@@ -99,7 +129,7 @@ if (!displayshareprompt) {
     document.getElementById('favbody').style.display = "none";
 } else {
     storedfavourites = [];
-    document.getElementById('favprompt').style.display = "block";
+    document.getElementById('favprompt').style.display = "none";
   }
 
 };
@@ -278,12 +308,92 @@ function displayAll() {
 	$('.divider').show();
 	document.getElementById('homelists').style.display = "block";
     document.getElementById('selection').style.display = "none";
+    document.getElementById('hideadsscreen').style.display = "none";
 	cordova.plugins.firebase.analytics.setCurrentScreen("Home");
     document.getElementById('app').MaterialLayout.toggleDrawer();
 }
 
+function displayHideAds() {
+    document.getElementById('all').style.display = "none";
+    document.getElementById('favbody').style.display = "none";
+    document.getElementById('IAPFetchError').style.display = "none";
+    document.getElementById('hideadsscreen').style.display = "block";
+    document.getElementById('app').MaterialLayout.toggleDrawer();
+    inAppPurchase
+      .getProducts(['nz.isaacmercer.bigshaq.noads'])
+      .then(function (products) {
+        console.log(products);
+        document.getElementById('currencyString').innerHTML = products[0].currency;
+        document.getElementById('priceindecimalString').innerHTML = products[0].price;
+        document.getElementById('description').innerHTML = products[0].description;
+      })
+      .catch(function (err) {
+        console.log(err);
+        document.getElementById('IAPFetchError').style.display = "block";
+      });
+    cordova.plugins.firebase.analytics.setCurrentScreen("HideAdsScreen");
+}
+
+function purchaseHideAds() {
+    cordova.plugins.firebase.analytics.logEvent("IAPPurchaseRequested");
+    inAppPurchase
+      .buy('nz.isaacmercer.bigshaq.noads')
+      .then(function (data) {
+        console.log(data);
+           displayAds = "no";
+           AdMob.removeBanner();
+            cordova.plugins.firebase.analytics.logEvent("IAPPurchaseSuccess");
+          localStorage.setItem('hideAdsPurchased', data.transactionId);
+          var IAPsuccessdialogtxt = "<h5>All Done!</h5>You've successfully purchased the Hide Ads add-on for Big Shaq Soundboard. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support.";
+          IAPsuccessdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+          document.getElementById('dialog').innerHTML = IAPsuccessdialogtxt;
+          cordova.plugins.firebase.analytics.setUserProperty("IAP_TransactionID", data.transactionId);
+          $( "#dialog" ).dialog( "open" );
+      })
+      .catch(function (err) {
+        console.log(err);
+        var IAPerrordialogtxt = "<h5>Whoops, Something went wrong!</h5>Unfortunately we couldn't process your purchase. You could try again, but at this stage you haven't been charged. The error we got from Google Play was:<br>";
+        IAPerrordialogtxt += "<b>" + err.message + "</b>";
+        IAPerrordialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+       document.getElementById('dialog').innerHTML = IAPerrordialogtxt;
+       $( "#dialog" ).dialog( "open" );
+      });
+}
+
+function restoreIAPPurchases() {
+    cordova.plugins.firebase.analytics.logEvent("IAPRestorePurchases");
+    inAppPurchase
+      .restorePurchases()
+      .then(function (data) {
+        console.log(data);
+        data.forEach(function(data) {
+            console.log(data.productId);
+            console.log("state" + data.state);
+            if (!data.state) {
+                displayAds = "no";
+                AdMob.removeBanner();
+                cordova.plugins.firebase.analytics.logEvent("IAPRestorePurchaseSuccess");
+                cordova.plugins.firebase.analytics.setUserProperty("IAP_TransactionID", data.transactionId);
+                localStorage.setItem('hideAdsPurchased', data.transactionId);
+                var IAPrestoredialogtxt = "<h5>All Done!</h5>Your purchase has successfully been restored. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support."
+                 IAPrestoredialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+                 document.getElementById('dialog').innerHTML = IAPrestoredialogtxt;
+                $( "#dialog" ).dialog( "open" );
+            } else {
+                displayAds = data.state;
+                localStorage.removeItem("hideAdsPurchased");
+                cordova.plugins.firebase.analytics.logEvent("IAPPurchaseInvalid", {state: data.state});
+            }
+          })
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+}
+
 function menudisplayFavourites() {
     document.getElementById('all').style.display = "none";
+    document.getElementById('hideadsscreen').style.display = "none";
     document.getElementById('favbody').style.display = "block";
     cordova.plugins.firebase.analytics.setCurrentScreen("favourites");
     document.getElementById('app').MaterialLayout.toggleDrawer();
@@ -314,11 +424,15 @@ function shareSound(sound) {
 
 function ringtoneSet(sound,setting) {
     cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
-    AdMob.showInterstitial();
-    AdMob.prepareInterstitial({
-            adId: 'ca-app-pub-5354491797983322/6572334447',
-            autoShow: false
-        });
+    if(displayAds == "no") {
+        console.log("Not showing ads");
+    } else {
+        AdMob.showInterstitial();
+        AdMob.prepareInterstitial({
+                adId: 'ca-app-pub-5354491797983322/6572334447',
+                autoShow: false
+            });
+    };
     var fileTransfer = new FileTransfer();
     var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
     var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
@@ -359,5 +473,4 @@ function ringtoneSet(sound,setting) {
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);
-
 

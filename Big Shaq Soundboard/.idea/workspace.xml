@@ -18,8 +18,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+            <state relative-caret-position="199">
+              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -29,8 +29,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>that f</find>
-      <find>&lt;div class=&quot;mdl-cell mdl-cell--2-col&quot;</find>
       <find>dl-cell mdl-cell--1-col</find>
       <find>sk</find>
       <find>mansgot</find>
@@ -59,6 +57,8 @@
       <find>scin</find>
       <find>'</find>
       <find>if</find>
+      <find>data.s</find>
+      <find>data.state</find>
     </findStrings>
     <replaceStrings>
       <replace>dl-cell mdl-cell--2-col</replace>
@@ -1591,25 +1591,25 @@
         <state relative-caret-position="-381">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding>
-            <marker date="1513835885133" expanded="true" signature="192:4009" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="297:337" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="408:443" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="899:969" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="1009:1088" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="1192:1712" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="1986:2043" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="2073:2174" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="2200:2299" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="2329:2428" ph="..." />
-            <marker date="1513835885133" expanded="true" signature="2454:2527" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="192:4009" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="297:337" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="408:443" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="899:969" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="1009:1088" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="1192:1712" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="1986:2043" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="2073:2174" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="2200:2299" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="2329:2428" ph="..." />
+            <marker date="1513836044803" expanded="true" signature="2454:2527" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        <state relative-caret-position="199">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
           <folding />
         </state>
       </provider>
