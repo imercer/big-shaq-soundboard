@@ -117,6 +117,10 @@
             {
               "xml": "<feature name=\"NativeSettings\"><param name=\"ios-package\" value=\"NativeSettings\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"PaymentsPlugin\"><param name=\"ios-package\" value=\"PaymentsPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -188,6 +192,9 @@
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-inapppurchase": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -549,6 +556,14 @@
       "clobbers": [
         "cordova.plugins.permissions"
       ]
+    },
+    {
+      "id": "cordova-plugin-inapppurchase.PaymentsPlugin",
+      "file": "plugins/cordova-plugin-inapppurchase/www/index-ios.js",
+      "pluginId": "cordova-plugin-inapppurchase",
+      "clobbers": [
+        "inAppPurchase"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -573,6 +588,7 @@
     "cordova-plugin-x-socialsharing": "5.2.1",
     "cordova-custom-config": "4.0.2",
     "cordova-open-native-settings": "1.4.1",
-    "cordova-plugin-android-permissions": "1.0.0"
+    "cordova-plugin-android-permissions": "1.0.0",
+    "cordova-plugin-inapppurchase": "1.1.0"
   }
 }

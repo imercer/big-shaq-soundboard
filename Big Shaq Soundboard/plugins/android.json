@@ -66,6 +66,9 @@
     },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-inapppurchase": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {

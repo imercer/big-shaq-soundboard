@@ -65,6 +65,8 @@
 		3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = E45BAB44A7A64425B11E9AE1 /* SocialSharing.m */; };
 		C9141CFED7A44FBC89733ED5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B7405063934C67B86AAC06 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */; };
+		9AE70256D6ED4D6FB96ED1B8 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6E0D71B374FDA95541668 /* RMStore.m */; };
+		A88891F052F84A11862CAEAF /* PaymentsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +193,10 @@
 		39B7405063934C67B86AAC06 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */ = {isa = PBXFileReference; name = "NativeSettings.m"; path = "cordova-open-native-settings/NativeSettings.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		01F87BB1BEF94A95916A8061 /* NativeSettings.h */ = {isa = PBXFileReference; name = "NativeSettings.h"; path = "cordova-open-native-settings/NativeSettings.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		EEF6E0D71B374FDA95541668 /* RMStore.m */ = {isa = PBXFileReference; name = "RMStore.m"; path = "cordova-plugin-inapppurchase/RMStore.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */ = {isa = PBXFileReference; name = "PaymentsPlugin.m"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		23F636392B8549D5BDF36575 /* RMStore.h */ = {isa = PBXFileReference; name = "RMStore.h"; path = "cordova-plugin-inapppurchase/RMStore.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A7793F48F15B4994994D84AB /* PaymentsPlugin.h */ = {isa = PBXFileReference; name = "PaymentsPlugin.h"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +405,10 @@
 				90984EBCA52A4C61A1F68383 /* SocialSharing.h */,
 				1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */,
 				01F87BB1BEF94A95916A8061 /* NativeSettings.h */,
+				EEF6E0D71B374FDA95541668 /* RMStore.m */,
+				D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */,
+				23F636392B8549D5BDF36575 /* RMStore.h */,
+				A7793F48F15B4994994D84AB /* PaymentsPlugin.h */,
 			);
 			name = Plugins;
 			path = "Big Shaq/Plugins";
@@ -559,6 +569,8 @@
 				4A4D471BE7EB4B4E92EF861C /* NSString+SSURLEncoding.m in Sources */,
 				3644FDC1A7484A389F5FA7EE /* SocialSharing.m in Sources */,
 				01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */,
+				9AE70256D6ED4D6FB96ED1B8 /* RMStore.m in Sources */,
+				A88891F052F84A11862CAEAF /* PaymentsPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,6 +73,9 @@
     <feature name="NativeSettings">
         <param name="ios-package" value="NativeSettings" />
     </feature>
+    <feature name="PaymentsPlugin">
+        <param name="ios-package" value="PaymentsPlugin" />
+    </feature>
     <hook src="hooks/gradle-fix.js" type="before_prepare" />
     <name>Big Shaq</name>
     <description>

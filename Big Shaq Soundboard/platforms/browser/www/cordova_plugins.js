@@ -436,7 +436,8 @@ module.exports.metadata =
     "cordova-plugin-x-socialsharing": "5.2.1",
     "cordova-custom-config": "4.0.2",
     "cordova-open-native-settings": "1.4.1",
-    "cordova-plugin-android-permissions": "1.0.0"
+    "cordova-plugin-android-permissions": "1.0.0",
+    "cordova-plugin-inapppurchase": "1.1.0"
 }
 // BOTTOM OF METADATA
 });

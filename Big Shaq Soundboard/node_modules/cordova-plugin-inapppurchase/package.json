@@ -1,0 +1,119 @@
+{
+  "_args": [
+    [
+      {
+        "name": "cordova-plugin-inapppurchase",
+        "raw": "cordova-plugin-inapppurchase",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
+    ]
+  ],
+  "_from": "cordova-plugin-inapppurchase@latest",
+  "_id": "cordova-plugin-inapppurchase@1.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-inapppurchase",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-inapppurchase-1.2.0.tgz_1510329576247_0.7450244263745844"
+  },
+  "_npmUser": {
+    "email": "alexdisler@gmail.com",
+    "name": "alex101"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-inapppurchase",
+    "raw": "cordova-plugin-inapppurchase",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-inapppurchase/-/cordova-plugin-inapppurchase-1.2.0.tgz",
+  "_shasum": "2f59777ff4e026de04f8a5f4dba7898b63dbd3b3",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-inapppurchase",
+  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "author": {
+    "email": "alexdisler@gmail.com",
+    "name": "Alex Disler",
+    "url": "alexdisler.com"
+  },
+  "bugs": {
+    "url": "https://github.com/AlexDisler/cordova-plugin-inapppurchase/issues"
+  },
+  "dependencies": {},
+  "description": "A lightweight cordova plugin for in app purchases on iOS and Android with a simple promise based API.",
+  "devDependencies": {
+    "babel-core": "6.5.2",
+    "babel-plugin-syntax-async-functions": "6.5.0",
+    "babel-plugin-transform-regenerator": "6.5.2",
+    "babel-polyfill": "6.5.0",
+    "babel-preset-es2015": "6.5.0",
+    "gulp": "3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-babel": "6.1.2",
+    "gulp-concat": "2.6.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.4.5",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "2f59777ff4e026de04f8a5f4dba7898b63dbd3b3",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-inapppurchase/-/cordova-plugin-inapppurchase-1.2.0.tgz"
+  },
+  "gitHead": "d0765bbabfd9aa5f7dffe9f0abefd07eeaf195dc",
+  "homepage": "https://github.com/AlexDisler/cordova-plugin-inapppurchase",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "purchase",
+    "purchases",
+    "cordova-android",
+    "cordova-ios",
+    "payments",
+    "in",
+    "app",
+    "promise",
+    "promises",
+    "android",
+    "ios",
+    "itunes",
+    "google",
+    "play",
+    "ionic"
+  ],
+  "license": "MIT",
+  "main": "www/index-ios.js",
+  "maintainers": [
+    {
+      "email": "alex@binarypattern.com",
+      "name": "alex101"
+    }
+  ],
+  "name": "cordova-plugin-inapppurchase",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AlexDisler/cordova-plugin-inapppurchase.git"
+  },
+  "scripts": {
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill test/*",
+    "watch": "mocha --watch --compilers js:babel-core/register --require babel-polyfill test/*"
+  },
+  "version": "1.2.0"
+}
