@@ -11,7 +11,6 @@
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		06A2F4F5004D46C694F4F52D /* CDVWKWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BB77C79FC6446FBCDC5679 /* CDVWKWebViewEngine.m */; };
 		1811D7D0753C477FB230F7C9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4448AAA93A3B4552961852C0 /* CoreBluetooth.framework */; };
-		189B68DA95D142A68F0FFB55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64B21BC511BC4AF3B4BE4368 /* GoogleService-Info.plist */; };
 		1922E25C638F4276BEB461BF /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEA6650F714B31A124986F /* CDVSound.m */; };
 		1BAA31AD2D0143A18725920E /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1745CFEE9C6A4E539D7E3719 /* CDVInAppBrowser.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -67,6 +66,7 @@
 		01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */; };
 		9AE70256D6ED4D6FB96ED1B8 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6E0D71B374FDA95541668 /* RMStore.m */; };
 		A88891F052F84A11862CAEAF /* PaymentsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */; };
+		2B430032AD9043AF87C09211 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +140,6 @@
 		640E7B5970B14D7FBD538A2E /* CDVWKWebViewUIDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKWebViewUIDelegate.h; path = "cordova-plugin-wkwebview-engine/CDVWKWebViewUIDelegate.h"; sourceTree = "<group>"; };
 		64146714D9A44CA88A8B4BCF /* CDVFile.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVFile.m; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; };
 		64793DF3F0BB4F67BAA371B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		64B21BC511BC4AF3B4BE4368 /* GoogleService-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = "Big Shaq/CDVLaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		6B4F9B5E47464DE4BA47A373 /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
 		6BAAC8DD900F4BCDBAABBA87 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -197,6 +196,7 @@
 		D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */ = {isa = PBXFileReference; name = "PaymentsPlugin.m"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		23F636392B8549D5BDF36575 /* RMStore.h */ = {isa = PBXFileReference; name = "RMStore.h"; path = "cordova-plugin-inapppurchase/RMStore.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		A7793F48F15B4994994D84AB /* PaymentsPlugin.h */ = {isa = PBXFileReference; name = "PaymentsPlugin.h"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,8 +292,8 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* Big Shaq-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
-				64B21BC511BC4AF3B4BE4368 /* GoogleService-Info.plist */,
 				EB07CA8DDE534FA0BB4C41BB /* CDVNotification.bundle */,
+				E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			path = "Big Shaq/Resources";
@@ -511,8 +511,8 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
-				189B68DA95D142A68F0FFB55 /* GoogleService-Info.plist in Resources */,
 				D285620484404D9F9E27AC9B /* CDVNotification.bundle in Resources */,
+				2B430032AD9043AF87C09211 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
