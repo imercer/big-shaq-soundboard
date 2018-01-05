@@ -6,7 +6,7 @@ var soundsplayed = 0;
 function notifyonDeviceReady() {
 	document.getElementById('body').style.display = 'block';
     if (cordova.platformId == 'android') {
-        StatusBar.backgroundColorByHexString("#d84b29");
+        StatusBar.backgroundColorByHexString("#28292b");
     }
     cordova.plugins.firebase.analytics.setEnabled(true);
     var uuid = device.uuid;
