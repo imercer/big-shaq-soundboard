@@ -373,11 +373,6 @@ protected void __showInterstitial(Object interstitial) {
       }
     }
 
-    if(mGender != null) {
-      if("male".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_MALE);
-      else if("female".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_FEMALE);
-      else builder.setGender(AdRequest.GENDER_UNKNOWN);
-    }
     if(mLocation != null) builder.setLocation(mLocation);
     if(mForFamily != null) {
       Bundle extras = new Bundle();
@@ -421,15 +416,10 @@ protected void __showInterstitial(Object interstitial) {
       builder = builder.addNetworkExtras(new AdMobExtras(bundle));
     }
 
-    if(mGender != null) {
-      if("male".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_MALE);
-      else if("female".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_FEMALE);
-      else builder.setGender(AdRequest.GENDER_UNKNOWN);
-    }
     if(mLocation != null) builder.setLocation(mLocation);
     if(mForFamily != null) {
       Bundle extras = new Bundle();
-      extras.putBoolean("is_designed_for_families", ("yes".compareToIgnoreCase(mForChild) == 0));
+      extras.putBoolean("is_designed_for_families", ("yes".compareToIgnoreCase(mForFamily) == 0));
       builder.addNetworkExtrasBundle(AdMobAdapter.class, extras);
     }
     if(mForChild != null) {
@@ -679,6 +669,11 @@ protected void __showInterstitial(Object interstitial) {
     @Override
     public void onRewardedVideoStarted() {
       fireAdEvent(EVENT_AD_WILLPRESENT, ADTYPE_REWARDVIDEO);
+    }
+
+    //@Override
+    public void onRewardedVideoCompleted() {
+      fireAdEvent(EVENT_AD_WILLDISMISS, ADTYPE_REWARDVIDEO);
     }
 
     @Override

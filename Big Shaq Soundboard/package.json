@@ -5,8 +5,7 @@
   "cordova": {
     "platforms": [
       "browser",
-      "android",
-      "ios"
+      "android"
     ],
     "plugins": {
       "cordova-plugin-device": {},
@@ -37,7 +36,6 @@
     "cordova-android": "^6.3.0",
     "cordova-browser": "~5.0.1",
     "cordova-custom-config": "^4.0.2",
-    "cordova-ios": "^4.5.3",
     "cordova-open-native-settings": "^1.4.1",
     "cordova-plugin-admobpro": "^2.29.27",
     "cordova-plugin-android-permissions": "^1.0.0",

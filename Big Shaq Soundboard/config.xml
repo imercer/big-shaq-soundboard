@@ -54,9 +54,6 @@
     <platform name="ios">
         <resource-file src="GoogleService-Info.plist" />
     </platform>
-    <engine name="browser" spec="~5.0.1" />
-    <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.3" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
@@ -78,4 +75,6 @@
     <plugin name="cordova-open-native-settings" spec="^1.4.1" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-inapppurchase" spec="^1.2.0" />
+    <engine name="browser" spec="~5.0.1" />
+    <engine name="android" spec="^6.3.0" />
 </widget>

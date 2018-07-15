@@ -1,8 +1,0 @@
-{
-    "Firebase/Core": {
-        "name": "Firebase/Core",
-        "type": "podspec",
-        "spec": "~> 4.1",
-        "count": 1
-    }
-}

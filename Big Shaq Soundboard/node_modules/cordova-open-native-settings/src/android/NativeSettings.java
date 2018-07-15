@@ -17,6 +17,8 @@ import android.net.Uri;
 
 import android.provider.Settings;
 
+import android.os.Build;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -25,6 +27,7 @@ public class NativeSettings extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		Context context=this.cordova.getActivity().getApplicationContext();
         PluginResult.Status status = PluginResult.Status.OK;
         Uri packageUri = Uri.parse("package:" + this.cordova.getActivity().getPackageName());
         String result = "";
@@ -97,7 +100,22 @@ public class NativeSettings extends CordovaPlugin {
             intent = new Intent(android.provider.Settings.ACTION_NFC_PAYMENT_SETTINGS);
         } else if (action.equals("nfc_settings")) {
             intent = new Intent(android.provider.Settings.ACTION_NFC_SETTINGS);
-        }
+        } else if (action.equals("notification_id")) {
+			// from: https://stackoverflow.com/questions/32366649/any-way-to-link-to-the-android-notification-settings-for-my-app
+			intent = new Intent();
+			if(android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1){
+				intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+				intent.putExtra("android.provider.extra.APP_PACKAGE", context.getPackageName());
+			}else if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+				intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+				intent.putExtra("app_package", context.getPackageName());
+				intent.putExtra("app_uid", context.getApplicationInfo().uid);
+			}else {
+				intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+				intent.addCategory(Intent.CATEGORY_DEFAULT);
+				intent.setData(Uri.parse("package:" + context.getPackageName()));
+			}
+		}
         //else if (action.equals("notification_listner")) {
         //    intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
         //}
