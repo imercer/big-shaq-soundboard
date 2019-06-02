@@ -17,7 +17,11 @@ cordova plugin add cordova-plugin-admobpro
 * If use with PhoneGap Buid, just configure in config.xml:
 
 ```javascript
-<gap:plugin name="cordova-plugin-admobpro" source="npm"/>
+<preference name="android-build-tool" value="gradle" />
+<preference name="phonegap-version" value="cli-7.1.0" />
+<plugin name="cordova-plugin-admobpro" source="npm">
+  <variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
+</plugin>
 ```
 
 * If use with Intel XDK (not support npm yet):
@@ -293,7 +297,7 @@ AdMob.createBanner({
 ```
 ## AdMob.showBanner(position) ##
 
-> **Purpose**: show banner at given position. It can also be used to move banner to given position.  It's not needed to removeBannr and create a new one.
+> **Purpose**: show banner at given position. It can also be used to move banner to given position.  It's not needed to removeBanner and create a new one.
 
 Params:
 - **position**, *integer*, see description in **AdMob.setOptions()**

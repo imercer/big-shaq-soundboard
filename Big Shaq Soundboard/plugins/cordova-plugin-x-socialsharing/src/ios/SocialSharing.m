@@ -18,9 +18,6 @@ static NSString *const kShareOptionUrl = @"url";
 }
 
 - (void)pluginInitialize {
-  if ([self isEmailAvailable]) {
-    [self cycleTheGlobalMailComposer];
-  }
 }
 
 - (void)available:(CDVInvokedUrlCommand*)command {
@@ -110,7 +107,7 @@ static NSString *const kShareOptionUrl = @"url";
     }
 
     if (urlString != (id)[NSNull null] && urlString != nil) {
-        [activityItems addObject:[NSURL URLWithString:[urlString URLEncodedString]]];
+        [activityItems addObject:[NSURL URLWithString:[urlString SSURLEncodedString]]];
     }
 
     UIActivity *activity = [[UIActivity alloc] init];
@@ -200,8 +197,7 @@ static NSString *const kShareOptionUrl = @"url";
   NSString *message = [command.arguments objectAtIndex:0];
   if (message != (id)[NSNull null]) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1000 * NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-      // since iOS 11 the internal sharing widgets have been removed, so it's safe to assume the app has been installed
-      BOOL fbAppInstalled = IsAtLeastiOSVersion(@"11.0") || [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]]; // requires whitelisting on iOS9
+      BOOL fbAppInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]]; // requires whitelisting on iOS9
       if (fbAppInstalled) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         [pasteboard setValue:message forPasteboardType:@"public.utf8-plain-text"];
@@ -232,6 +228,10 @@ static NSString *const kShareOptionUrl = @"url";
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   } else if ([@"instagram" caseInsensitiveCompare:via] == NSOrderedSame && [self canShareViaInstagram]) {
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  } else if ([@"com.apple.social.facebook" caseInsensitiveCompare:via] == NSOrderedSame && [self canShareViaFacebook]) {
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  } else if ([@"com.apple.social.twitter" caseInsensitiveCompare:via] == NSOrderedSame && [self canShareViaTwitter]) {
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   } else if ([self isAvailableForSharing:command type:via]) {
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   } else {
@@ -257,10 +257,6 @@ static NSString *const kShareOptionUrl = @"url";
 
 - (bool)isAvailableForSharing:(CDVInvokedUrlCommand*)command
                          type:(NSString *) type {
-  // since iOS 11 this will always return false, so assume true
-  if (IsAtLeastiOSVersion(@"11.0")) {
-    return YES;
-  }
 
   // isAvailableForServiceType returns true if you pass it a type that is not
   // in the defined constants, this is probably a bug on apples part
@@ -301,7 +297,7 @@ static NSString *const kShareOptionUrl = @"url";
   }
 
   if (urlString != (id)[NSNull null]) {
-    [composeViewController addURL:[NSURL URLWithString:[urlString URLEncodedString]]];
+    [composeViewController addURL:[NSURL URLWithString:[urlString SSURLEncodedString]]];
   }
 
   [composeViewController setCompletionHandler:^(SLComposeViewControllerResult result) {
@@ -387,7 +383,7 @@ static NSString *const kShareOptionUrl = @"url";
           else
           {
               mimeType = (NSString*)[[[basename substringFromIndex:rangeData.location+rangeData.length] componentsSeparatedByString: @";"] objectAtIndex:0];
-              
+
               //Find df anywhere in string
               NSRange rangeDF = [basename rangeOfString:@"df:"];
               //If not found fallback to default name
@@ -398,8 +394,8 @@ static NSString *const kShareOptionUrl = @"url";
                   //Found, apply name
                   fileName = (NSString*)[[[basename substringFromIndex:rangeDF.location+rangeDF.length] componentsSeparatedByString: @";"] objectAtIndex:0];
               }
-              
-              
+
+
               NSString *base64content = (NSString*)[[basename componentsSeparatedByString: @","] lastObject];
               data = [SocialSharing dataFromBase64String:base64content];
           }
@@ -421,7 +417,7 @@ static NSString *const kShareOptionUrl = @"url";
 }
 
 - (UIViewController*) getTopMostViewController {
-  UIViewController *presentingViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+  UIViewController *presentingViewController = [[UIApplication sharedApplication] keyWindow].rootViewController;
   while (presentingViewController.presentedViewController != nil) {
     presentingViewController = presentingViewController.presentedViewController;
   }
@@ -458,7 +454,7 @@ static NSString *const kShareOptionUrl = @"url";
            didFinishWithResult:(MFMailComposeResult)result
                          error:(NSError*)error {
   bool ok = result == MFMailComposeResultSent;
-  [self.globalMailComposer dismissViewControllerAnimated:YES completion:^{[self cycleTheGlobalMailComposer];}];
+  [self.globalMailComposer dismissViewControllerAnimated:YES completion:nil];
   CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:ok];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:_command.callbackId];
 }
@@ -529,6 +525,14 @@ static NSString *const kShareOptionUrl = @"url";
 
 - (bool)canShareViaWhatsApp {
   return [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]]; // requires whitelisting on iOS9
+}
+
+- (bool)canShareViaFacebook {
+  return [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"fb://"]]; // requires whitelisting on iOS9
+}
+
+- (bool)canShareViaTwitter {
+  return [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"twitter://"]]; // requires whitelisting on iOS9
 }
 
 // this is only an internal test method for now, can be used to open a share sheet with 'Open in xx' links for tumblr, drive, dropbox, ..
@@ -603,7 +607,7 @@ static NSString *const kShareOptionUrl = @"url";
   // Tradeoff: on iOS9 this method will always return true, so make sure to whitelist it and call canShareVia('whatsapp'..)
   if (!IsAtLeastiOSVersion(@"9.0")) {
     if (![self canShareViaWhatsApp]) {
-      CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"not available"];
+      CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"not available"];
       [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
       return;
     }
@@ -611,20 +615,21 @@ static NSString *const kShareOptionUrl = @"url";
 
   NSString *message   = [command.arguments objectAtIndex:0];
   // subject is not supported by the SLComposeViewController
-  NSArray  *filenames = [command.arguments objectAtIndex:2];
+  NSArray *filenames = [command.arguments objectAtIndex:2];
   NSString *urlString = [command.arguments objectAtIndex:3];
   NSString *abid = [command.arguments objectAtIndex:4];
+  NSString *phone = [command.arguments objectAtIndex:5];
 
   // only use the first image (for now.. maybe we can share in a loop?)
-  UIImage* image = nil;
-  for (NSString* filename in filenames) {
+  UIImage *image = nil;
+  for (NSString *filename in filenames) {
     image = [self getImage:filename];
     break;
   }
 
   // with WhatsApp, we can share an image OR text+url.. image wins if set
   if (image != nil) {
-    NSString * savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/whatsAppTmp.jpg"];
+    NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/whatsAppTmp.jpg"];
     [UIImageJPEGRepresentation(image, 1.0) writeToFile:savePath atomically:YES];
     _documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:savePath]];
     _documentInteractionController.UTI = @"net.whatsapp.image";
@@ -633,7 +638,7 @@ static NSString *const kShareOptionUrl = @"url";
     [_documentInteractionController presentOpenInMenuFromRect:CGRectZero inView:self.viewController.view animated: YES];
   } else {
     // append an url to a message, if both are passed
-    NSString * shareString = @"";
+    NSString *shareString = @"";
     if (message != (id)[NSNull null]) {
       shareString = message;
     }
@@ -641,22 +646,26 @@ static NSString *const kShareOptionUrl = @"url";
       if ([shareString isEqual: @""]) {
         shareString = urlString;
       } else {
-        shareString = [NSString stringWithFormat:@"%@ %@", shareString, [urlString URLEncodedString]];
+        shareString = [NSString stringWithFormat:@"%@ %@", shareString, [urlString SSURLEncodedString]];
       }
     }
-    NSString * encodedShareString = [shareString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodedShareString = [shareString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     // also encode the '=' character
     encodedShareString = [encodedShareString stringByReplacingOccurrencesOfString:@"=" withString:@"%3D"];
     encodedShareString = [encodedShareString stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-    NSString * abidString = @"";
+    NSString *abidString = @"";
     if (abid != (id)[NSNull null]) {
       abidString = [NSString stringWithFormat:@"abid=%@&", abid];
     }
-    NSString * encodedShareStringForWhatsApp = [NSString stringWithFormat:@"whatsapp://send?%@text=%@", abidString, encodedShareString];
+    NSString *phoneString = @"";
+    if (phone != (id)[NSNull null]) {
+      phoneString = [NSString stringWithFormat:@"phone=%@&", phone];
+    }
+    NSString *encodedShareStringForWhatsApp = [NSString stringWithFormat:@"whatsapp://send?%@%@text=%@", abidString, phoneString, encodedShareString];
 
     NSURL *whatsappURL = [NSURL URLWithString:encodedShareStringForWhatsApp];
     [[UIApplication sharedApplication] openURL: whatsappURL];
-    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
   }
 }
@@ -738,7 +747,7 @@ static NSString *const kShareOptionUrl = @"url";
      } else if (rangeData.location != NSNotFound ){
         //If found "data:"
         NSString *fileType  = (NSString*)[[[fileName substringFromIndex:rangeData.location+rangeData.length] componentsSeparatedByString: @";"] objectAtIndex:0];
-        
+
         NSString* attachmentName;
         //Find df anywhere in string
         NSRange rangeDF = [fileName rangeOfString:@"df:"];
@@ -750,8 +759,8 @@ static NSString *const kShareOptionUrl = @"url";
             //Found, apply name
             attachmentName = (NSString*)[[[fileName substringFromIndex:rangeDF.location+rangeDF.length] componentsSeparatedByString: @";"] objectAtIndex:0];
         }
-        
-        
+
+
         NSString *base64content = (NSString*)[[fileName componentsSeparatedByString: @","] lastObject];
         NSData* data = [SocialSharing dataFromBase64String:base64content];
         file = [NSURL fileURLWithPath:[self storeInFile:attachmentName fileData:data]];

@@ -36,7 +36,7 @@ From May 2015, Cordova team announced the deprecation of Cordova registry, and s
 ## Features
 
 Platforms supported:
-- [x] iOS, via SDK v7.27.0 (see [Release Notes](https://developers.google.com/admob/ios/rel-notes))
+- [x] iOS, via SDK v7.37.0 (see [Release Notes](https://developers.google.com/admob/ios/rel-notes))
 - [x] Android, via Android SDK (part of Google Play service, see [Release Notes](https://developers.google.com/admob/android/rel-notes))
 - [x] Amazon-FireOS, via Android SDK (part of Google Play service)
 - [x] Windows Phone, via SDK v6.5.13 (see [Release Notes](https://developers.google.com/admob/wp/rel-notes))
@@ -107,10 +107,21 @@ Wanna quickly see the mobile ad on your simulator or device? Try the following c
 * If use with Cordova CLI:
 ```bash
 cordova plugin add cordova-plugin-admobpro
+
+cordova plugin add cordova-plugin-admobpro --save --variable PLAY_SERVICES_VERSION=16.0.0
 ```
 Or, if you see conflict when using Firebase, use this one instead:
 ```bash
 cordova plugin add cordova-plugin-admobpro-firebase
+```
+
+* If use with PhoneGap Build:
+```xml
+<preference name="android-build-tool" value="gradle" />
+<preference name="phonegap-version" value="cli-7.1.0" />
+<plugin name="cordova-plugin-admobpro" source="npm">
+<variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
+</plugin>
 ```
 
 If use other tools or online build services, see:
@@ -337,7 +348,7 @@ https://github.com/floatinghotpot/cordova-plugin-admob
 
 If use in commercial project, please [get a license](http://rjfun.github.io/), or, you have monetized more than $1000 using this plugin, you are also required to either get a commercial license ($20). As a commercial customer, you will be supported with high priority, via private email or even Skype chat.
 
-If you don't want to get a license as your apps may not earn too much, or you don't have a PayPal account to pay, here is a compromised option. You don't have to pay, we are also okay if just share 2 percent user traffic, so that we can cover our effort and focus on maintenance and online support. (We have maintained this project over 3 years, and closed more than 560 support issues)
+If you don't want to get a license as your apps may not earn too much, or you don't have a PayPal account to pay, here is a compromised option. You don't have to pay, we are also okay if just share 2 percent user traffic, so that we can cover our effort and focus on maintenance and online support. (We have maintained this project since Aug 2014, and closed more than 560 support issues)
 
 Please read the [License Agreement](https://github.com/floatinghotpot/cordova-admob-pro/wiki/License-Agreement) for details.
 

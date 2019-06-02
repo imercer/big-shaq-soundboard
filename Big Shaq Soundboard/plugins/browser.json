@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
     "cordova-plugin-device-orientation": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
@@ -31,22 +28,10 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-support-google-services": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-media": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-firebase-analytics": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-wkwebview-engine": {
@@ -55,26 +40,41 @@
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-x-socialsharing": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-custom-config": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-open-native-settings": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-inapppurchase": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
-    }
-  },
-  "dependent_plugins": {
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
     "cordova-plugin-extension": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-admobpro": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    }
+  },
+  "dependent_plugins": {
     "es6-promise-plugin": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }

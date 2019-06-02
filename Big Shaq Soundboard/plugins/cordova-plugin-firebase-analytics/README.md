@@ -1,18 +1,38 @@
-# cordova-plugin-firebase-analytics<br>[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
-> Cordova plugin for [Firebase Analytics](https://firebase.google.com/docs/analytics/)
+# Cordova plugin for [Firebase Analytics](https://firebase.google.com/docs/analytics/)
 
-## Installation
+[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
 
-    cordova plugin add cordova-plugin-firebase-analytics --save
+| [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your help is appreciated. Create a PR, submit a bug or just grab me :beer: |
+|-|-|
 
-Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
+## Index
 
-NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
+<!-- MarkdownTOC levels="2" autolink="true" -->
 
-## Supported Platforms
+- [Supported platforms](#supported-platforms)
+- [Installation](#installation)
+- [Methods](#methods)
+
+<!-- /MarkdownTOC -->
+
+## Supported platforms
 
 - iOS
 - Android
+
+## Installation
+
+    $ cordova plugin add cordova-plugin-firebase-analytics
+
+If you get an error about CocoaPods being unable to find compatible versions, run
+    
+    $ pod repo update
+
+Plugin depends on [cordova-support-google-services](https://github.com/chemerisuk/cordova-support-google-services) for setting up google services properly. Please read the [README](https://github.com/chemerisuk/cordova-support-google-services/blob/master/README.md) carefully in order to avoid common issues with a project configuration.
+
+Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
+
+NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
@@ -52,6 +72,15 @@ Sets whether analytics collection is enabled for this app on this device.
 cordova.plugins.firebase.analytics.setEnabled(false);
 ```
 
+### resetAnalyticsData()
+Clears all analytics data for this instance from the device and resets the app instance ID
+```js
+cordova.plugins.firebase.analytics.resetAnalyticsData();
+```
+
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-firebase-analytics
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-firebase-analytics.svg
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-firebase-analytics.svg
+[twitter-url]: https://twitter.com/chemerisuk
+[twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
+[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4SVTMPKTAD9QC&source=url

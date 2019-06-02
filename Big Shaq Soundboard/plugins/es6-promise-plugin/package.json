@@ -1,77 +1,45 @@
 {
-  "_args": [
-    [
-      {
-        "name": "es6-promise-plugin",
-        "raw": "es6-promise-plugin@4.1.0",
-        "rawSpec": "4.1.0",
-        "scope": null,
-        "spec": "4.1.0",
-        "type": "version"
-      },
-      "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard"
-    ]
-  ],
-  "_from": "es6-promise-plugin@4.1.0",
-  "_id": "es6-promise-plugin@4.1.0",
-  "_inCache": true,
-  "_installable": true,
+  "_from": "es6-promise-plugin@^4.1.0",
+  "_id": "es6-promise-plugin@4.2.2",
+  "_inBundle": false,
+  "_integrity": "sha512-uoA4aVplXI9oqUYJFBAVRwAqIN9/n9JgrTAUGX3qPbnSZVE5yY1+6/MsoN5f4xsaPO62WjPHOdtts6okMN6tNA==",
   "_location": "/es6-promise-plugin",
-  "_nodeVersion": "7.6.0",
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/es6-promise-plugin-4.1.0.tgz_1490129626311_0.10174082987941802"
-  },
-  "_npmUser": {
-    "email": "vlad.stirbu@ieee.org",
-    "name": "vstirbu"
-  },
-  "_npmVersion": "4.1.2",
   "_phantomChildren": {},
   "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "es6-promise-plugin@^4.1.0",
     "name": "es6-promise-plugin",
-    "raw": "es6-promise-plugin@4.1.0",
-    "rawSpec": "4.1.0",
-    "scope": null,
-    "spec": "4.1.0",
-    "type": "version"
+    "escapedName": "es6-promise-plugin",
+    "rawSpec": "^4.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^4.1.0"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.1.0.tgz",
-  "_shasum": "f06107399844509eaaba8ed07077d288a5ca697e",
-  "_shrinkwrap": null,
-  "_spec": "es6-promise-plugin@4.1.0",
-  "_where": "/Users/isaacmercer/big-shaq-soundboard/Big Shaq Soundboard",
+  "_resolved": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.2.2.tgz",
+  "_shasum": "cfa0cc1383d91f999a62a2bbf4bd97bec305e0ac",
+  "_spec": "es6-promise-plugin@^4.1.0",
+  "_where": "D:\\big-shaq-soundboard\\Big Shaq Soundboard",
   "author": "",
   "bugs": {
     "url": "https://github.com/vstirbu/PromisesPlugin/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {},
+  "deprecated": false,
   "description": "ES6-Promises polyfill for Cordova/PhoneGap",
   "devDependencies": {
-    "es6-promise": "^4.1.0"
-  },
-  "directories": {},
-  "dist": {
-    "shasum": "f06107399844509eaaba8ed07077d288a5ca697e",
-    "tarball": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.1.0.tgz"
+    "browserify": "^14.4.0",
+    "es6-promise": "^4.2.2"
   },
   "ecosystem": "cordova",
-  "gitHead": "0f396b2e34b9b591a3122b0705b858d0d22b432e",
   "homepage": "https://github.com/vstirbu/PromisesPlugin#readme",
   "license": "MIT",
   "main": "www/promise.js",
-  "maintainers": [
-    {
-      "email": "vlad.stirbu@ieee.org",
-      "name": "vstirbu"
-    }
-  ],
   "name": "es6-promise-plugin",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vstirbu/PromisesPlugin.git"
@@ -79,5 +47,5 @@
   "scripts": {
     "build": "./build"
   },
-  "version": "4.1.0"
+  "version": "4.2.2"
 }

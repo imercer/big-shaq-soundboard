@@ -4,11 +4,9 @@
   "displayName": "Big Shaq Soundboard",
   "cordova": {
     "platforms": [
-      "browser",
-      "android"
+      "browser"
     ],
     "plugins": {
-      "cordova-plugin-device": {},
       "cordova-plugin-device-orientation": {},
       "cordova-plugin-dialogs": {},
       "cordova-plugin-inappbrowser": {},
@@ -16,37 +14,45 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-admobpro": {},
-      "cordova-support-google-services": {},
       "cordova-plugin-file": {},
       "cordova-plugin-media": {},
-      "cordova-plugin-file-transfer": {},
-      "cordova-plugin-firebase-analytics": {},
       "cordova-plugin-wkwebview-engine": {},
       "cordova-plugin-app-version": {},
-      "cordova-plugin-x-socialsharing": {},
-      "cordova-custom-config": {},
-      "cordova-open-native-settings": {},
       "cordova-plugin-android-permissions": {},
-      "cordova-plugin-inapppurchase": {}
+      "cordova-plugin-inapppurchase": {},
+      "cordova-open-native-settings": {},
+      "cordova-custom-config": {},
+      "cordova-plugin-x-socialsharing": {
+        "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+      },
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-extension": {},
+      "cordova-support-google-services": {},
+      "cordova-plugin-firebase-analytics": {
+        "FIREBASE_CORE_VERSION": "16.0.+"
+      },
+      "cordova-plugin-admobpro": {
+        "PLAY_SERVICES_VERSION": "16.0.0"
+      }
     }
   },
   "dependencies": {
     "cordova": "^7.1.0",
-    "cordova-android": "^6.3.0",
+    "cordova-android": "^7.1.4",
     "cordova-browser": "~5.0.1",
-    "cordova-custom-config": "^4.0.2",
-    "cordova-open-native-settings": "^1.4.1",
-    "cordova-plugin-admobpro": "^2.29.27",
+    "cordova-custom-config": "^5.1.0",
+    "cordova-open-native-settings": "^1.5.2",
+    "cordova-plugin-admobpro": "^2.37.2",
     "cordova-plugin-android-permissions": "^1.0.0",
     "cordova-plugin-app-version": "^0.1.9",
-    "cordova-plugin-device": "~1.1.1",
+    "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-device-orientation": "~1.0.2",
     "cordova-plugin-dialogs": "~1.2.0",
-    "cordova-plugin-extension": "^1.5.2",
+    "cordova-plugin-extension": "^1.5.4",
     "cordova-plugin-file": "^5.0.0",
-    "cordova-plugin-file-transfer": "^1.7.0",
-    "cordova-plugin-firebase-analytics": "^0.12.0",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-firebase-analytics": "^2.0.3",
     "cordova-plugin-inappbrowser": "~1.3.0",
     "cordova-plugin-inapppurchase": "^1.2.0",
     "cordova-plugin-media": "^4.0.0",
@@ -56,8 +62,9 @@
     "cordova-plugin-whitelist": "~1.2.1",
     "cordova-plugin-wkwebview": "^0.6.10",
     "cordova-plugin-wkwebview-engine": "^1.1.4",
-    "cordova-plugin-x-socialsharing": "^5.2.1",
-    "cordova-support-google-services": "^1.0.0",
-    "es6-promise-plugin": "^4.1.0"
+    "cordova-plugin-x-socialsharing": "^5.4.4",
+    "cordova-support-android-plugin": "^1.0.1",
+    "cordova-support-google-services": "^1.3.1",
+    "es6-promise-plugin": "^4.2.2"
   }
 }

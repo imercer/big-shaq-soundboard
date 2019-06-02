@@ -17,9 +17,10 @@
 	NSString* prefix = @"App-Prefs:";
 	BOOL result = NO;
 
-	if(SYSTEM_VERSION_LESS_THAN(@"10.0")){
-		prefix = @"prefs:";
-	}
+	if(SYSTEM_VERSION_LESS_THAN(@"11.3")){
+        prefix = @"app-settings:";
+    }
+
 	
     if ([key isEqualToString:@"application_details"]) {
         result = [self do_open:UIApplicationOpenSettingsURLString];
@@ -40,13 +41,23 @@
 		result = [self do_open:[prefix stringByAppendingString:@"root=AIRPLANE_MODE"]];
 	}
 	else if ([key isEqualToString:@"autolock"]) {
-		result = [self do_open:[prefix stringByAppendingString:@"root=General&path=AUTOLOCK"]];
+		if (SYSTEM_VERSION_LESS_THAN(@"10.0")) {
+			result = [self do_open:[prefix stringByAppendingString:@"root=General&path=AUTOLOCK"]];
+		}
+		else {
+			result = [self do_open:[prefix stringByAppendingString:@"root=DISPLAY&path=AUTOLOCK"]];
+		}
 	}
 	else if ([key isEqualToString:@"display"]) {
 		result = [self do_open:[prefix stringByAppendingString:@"root=Brightness"]];
 	}
 	else if ([key isEqualToString:@"bluetooth"]) {
-		result = [self do_open:[prefix stringByAppendingString:@"root=Bluetooth"]];
+		if (SYSTEM_VERSION_LESS_THAN(@"9.0")) {
+			result = [self do_open:[prefix stringByAppendingString:@"root=General&path=Bluetooth"]];
+		}
+		else {
+			result = [self do_open:[prefix stringByAppendingString:@"root=Bluetooth"]];
+		}
 	}
 	else if ([key isEqualToString:@"castle"]) {
 		result = [self do_open:[prefix stringByAppendingString:@"root=CASTLE"]];
@@ -121,7 +132,12 @@
 		result = [self do_open:[prefix stringByAppendingString:@"root=Safari"]];
 	}
 	else if ([key isEqualToString:@"search"]) {
-		result = [self do_open:[prefix stringByAppendingString:@"root=General&path=Assistant"]];
+		if (SYSTEM_VERSION_LESS_THAN(@"10.0")) {
+			result = [self do_open:[prefix stringByAppendingString:@"root=General&path=Assistant"]];
+		}
+		else {
+			result = [self do_open:[prefix stringByAppendingString:@"root=SIRI"]];
+		}
 	}
 	else if ([key isEqualToString:@"sound"]) {
 		result = [self do_open:[prefix stringByAppendingString:@"root=Sounds"]];
@@ -150,6 +166,24 @@
 	else if ([key isEqualToString:@"wifi"]) {
 		result = [self do_open:[prefix stringByAppendingString:@"root=WIFI"]];
 	} 
+	else if ([key isEqualToString:@"touch"]) {
+	    result = [self do_open:[prefix stringByAppendingString:@"root=TOUCHID_PASSCODE"]];
+	}	
+	else if ([key isEqualToString:@"battery"]) {
+		result = [self do_open:[prefix stringByAppendingString:@"root=BATTERY_USAGE"]];
+	}
+	else if ([key isEqualToString:@"privacy"]) {
+		result = [self do_open:[prefix stringByAppendingString:@"root=Privacy"]];
+	}
+	else if ([key isEqualToString:@"do_not_disturb"]) {
+		result = [self do_open:[prefix stringByAppendingString:@"root=General&path=DO_NOT_DISTURB"]];
+	}
+	else if ([key isEqualToString:@"keyboards"]) {
+		result = [self do_open:[prefix stringByAppendingString:@"root=General&path=Keyboard/KEYBOARDS"]];
+	}
+	else if ([key isEqualToString:@"mobile_data"]) {
+		result = [self do_open:[prefix stringByAppendingString:@"root=MOBILE_DATA_SETTINGS_ID"]];
+	}
 	else {
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Invalid Action"];
 	}

@@ -7,7 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-device": {
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-app-version": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-device-orientation": {
@@ -16,7 +19,13 @@
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
     "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-media": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-plugin-network-information": {
@@ -31,51 +40,48 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-support-google-services": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-media": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-firebase-analytics": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
     "cordova-plugin-wkwebview-engine": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-app-version": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-plugin-x-socialsharing": {
-      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
-    },
-    "cordova-custom-config": {
+    "cordova-plugin-inapppurchase": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
     "cordova-open-native-settings": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-android-permissions": {
+    "cordova-custom-config": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "cordova-plugin-inapppurchase": {
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-extension": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "FIREBASE_CORE_VERSION": "16.0.+",
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "cordova-plugin-admobpro": {
+      "PLAY_SERVICES_VERSION": "16.0.0",
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     },
-    "es6-promise-plugin": {
+    "cordova-support-android-plugin": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   }

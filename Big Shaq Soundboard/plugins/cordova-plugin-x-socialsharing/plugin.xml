@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-x-socialsharing"
-        version="5.2.1">
+        version="5.4.4">
 
   <name>SocialSharing</name>
 
@@ -25,7 +25,7 @@
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
 
-  <dependency id="es6-promise-plugin" version="4.1.0" />
+  <dependency id="es6-promise-plugin" version="^4.1.0" />
 
   <js-module src="www/SocialSharing.js" name="SocialSharing">
     <clobbers target="window.plugins.socialsharing" />
@@ -40,8 +40,12 @@
         <param name="onload" value="true" />
       </feature>
     </config-file>
-          
+
     <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+      <string>This app requires photo library access to function properly.</string>
+    </config-file>
+
+    <config-file target ="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
       <string>This app requires photo library access to function properly.</string>
     </config-file>
 
@@ -63,6 +67,16 @@
       </feature>
     </config-file>
 
+
+
+    <config-file target="AndroidManifest.xml" parent="/*/application">
+      <receiver android:name="nl.xservices.plugins.ShareChooserPendingIntent" android:enabled="true">
+        <intent-filter>
+          <action android:name="android.intent.action.SEND"/>
+        </intent-filter>
+      </receiver>
+    </config-file>
+
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     </config-file>
@@ -74,10 +88,12 @@
     </config-file>
 
     <source-file src="src/android/nl/xservices/plugins/SocialSharing.java" target-dir="src/nl/xservices/plugins"/>
+    <source-file src="src/android/nl/xservices/plugins/ShareChooserPendingIntent.java" target-dir="src/nl/xservices/plugins"/>
     <source-file src="src/android/nl/xservices/plugins/FileProvider.java" target-dir="src/nl/xservices/plugins"/>
     <source-file src="src/android/res/xml/sharing_paths.xml" target-dir="res/xml"/>
 
-    <framework src="com.android.support:support-v4:24.1.1+" />
+    <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION" />
+    <preference name="ANDROID_SUPPORT_V4_VERSION" default="24.1.1+"/>
   </platform>
 
   <!-- wp8 -->

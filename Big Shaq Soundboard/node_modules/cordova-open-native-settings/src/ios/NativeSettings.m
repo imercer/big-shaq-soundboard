@@ -17,13 +17,10 @@
 	NSString* prefix = @"App-Prefs:";
 	BOOL result = NO;
 
-	if(SYSTEM_VERSION_LESS_THAN(@"10.0")){
-		prefix = @"prefs:";
-	}
-	
-	if (@available(iOS 11.0, *)) {
-        	prefix = @"app-settings:";
-    	}
+	if(SYSTEM_VERSION_LESS_THAN(@"11.3")){
+        prefix = @"app-settings:";
+    }
+
 	
     if ([key isEqualToString:@"application_details"]) {
         result = [self do_open:UIApplicationOpenSettingsURLString];
