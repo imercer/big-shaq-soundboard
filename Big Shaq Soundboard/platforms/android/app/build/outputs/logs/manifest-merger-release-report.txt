@@ -11,10 +11,10 @@ INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\s
 	android:name
 		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:16:135-183
 manifest
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [com.google.android.gms:play-services-ads:16.0.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\play-services-ads-16.0.0.aar\d32bfbb2dd1000ee440a6356becbf6e3\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-core:16.0.9] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.9.aar\d57ec5f9b5df357af7a2b42c50162fef\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:16.5.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.5.0.aar\f60dce0feae399324109fb5534b8a2e5\AndroidManifest.xml:2:1-9:12
@@ -45,9 +45,9 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isaac\.gradle\
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\50439c8f50733f73d8b609f8ae0ddcee\AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.android.gms:play-services-ads-base:16.0.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-16.0.0.aar\ce68115eeb2cc5d0c9b46791be2c649c\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\63416480cd7330ddd7ae6627af9ab9c3\AndroidManifest.xml:17:1-30:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:101-133
 		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
@@ -282,36 +282,20 @@ MERGED from [com.google.firebase:firebase-iid:17.1.2] C:\Users\isaac\.gradle\cac
 MERGED from [com.google.firebase:firebase-iid:17.1.2] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.1.2.aar\dd30fe6010500a705d25946cee1377ab\AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:22:22-76
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:23:5-81
 	android:name
 		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:23:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:24:22-76
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:25:5-81
-	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:25:22-78
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:26:5-71
-	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:26:22-68
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:27:5-80
+ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:24:5-80
 	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:27:22-77
-uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:28:5-75
-	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:28:22-72
+		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:24:22-77
 uses-permission#com.android.vending.BILLING
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:29:5-67
+ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:25:5-67
 	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:29:22-64
+		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:25:22-64
 uses-permission#android.permission.INTERNET
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:30:5-67
+ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.gms:play-services-measurement:16.5.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.5.0.aar\f8c6f400b72fc3ddfedb28faf4f2e978\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement:16.5.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.5.0.aar\f8c6f400b72fc3ddfedb28faf4f2e978\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:16.5.0] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.5.0.aar\7c3044ed316a28000005d9931629df84\AndroidManifest.xml:22:5-67
@@ -325,7 +309,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.5.0] C:
 MERGED from [com.google.firebase:firebase-iid:17.1.2] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.1.2.aar\dd30fe6010500a705d25946cee1377ab\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.1.2] C:\Users\isaac\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.1.2.aar\dd30fe6010500a705d25946cee1377ab\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:30:22-64
+		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:26:22-64
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:17:13-115
 	android:resource

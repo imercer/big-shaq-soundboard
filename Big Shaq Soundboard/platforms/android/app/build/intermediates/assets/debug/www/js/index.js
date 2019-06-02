@@ -106,14 +106,10 @@ if(displayAds == "no") {
 }
 
 var storedfavourites = JSON.parse(localStorage.getItem("favourites"));
-var displayshareprompt = localStorage.getItem("shareprompt");
-var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
-if (!displayshareprompt) {
-    if (!storedfavourites) {
+if (!storedfavourites) {
         storedfavourites = [];
-    }
 } else if (storedfavourites) {
     var favbody = "<div class=\"container\"><div class=\"row\">";
     storedfavourites.forEach(function(favourite) {

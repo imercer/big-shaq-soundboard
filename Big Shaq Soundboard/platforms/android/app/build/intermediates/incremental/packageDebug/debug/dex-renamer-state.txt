@@ -1,19 +1,4 @@
-#Sun Jun 02 23:05:47 NZST 2019
-path.1=classes.dex
+#Sun Jun 02 23:24:21 NZST 2019
+base.0=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\38
 path.0=classes.dex
-renamed.5=classes6.dex
-renamed.4=classes5.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
-base.5=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\33
-base.4=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\35
-base.3=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\32
-base.2=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\34
-base.1=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31
-base.0=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\36
-path.5=classes.dex
-path.4=classes.dex
-path.3=classes.dex
-path.2=classes.dex
