@@ -24,6 +24,13 @@
       </state>
     </system>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="C:\Users\isaac\OneDrive\Downloads\key.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
@@ -35,8 +42,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="app" />
+    <property name="BundleExportedModule" value="app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV2" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -112,6 +125,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="594" y="237" key="FileChooserDialogImpl" timestamp="1598532412033">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="594" y="237" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1598532412033" />
     <state width="1460" height="524" key="GridCell.Tab.0.bottom" timestamp="1598532151784">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
