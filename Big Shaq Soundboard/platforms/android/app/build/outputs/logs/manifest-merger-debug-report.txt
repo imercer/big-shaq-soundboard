@@ -49,17 +49,17 @@ INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Sou
 INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:101-133
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:99-131
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:73-100
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:73-98
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:134-192
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:132-190
 	android:versionCode
 		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:46-72
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml

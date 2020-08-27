@@ -49,12 +49,14 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.quicksearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/searcher.js"></script>
     <title>Soundboard</title>
     <style>
         .col {
-        padding: 15px;
+        padding: 5px;
         text-align: center;
         }
     </style>
@@ -65,11 +67,20 @@
     <header class="mdl-layout__header" style="background-color: #28292b">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Big Shaq Soundboard</span>
+            <div id="searchform" style="display: none;">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="searcher" name="searcher">
+                  <label class="mdl-textfield__label" for="searcher">Search</label>
+                </div>
+              </form>  
+            </div> 
+            <a onclick="hideSearchField()" id="hideSearchButton" style="display: none;"><i class="material-icons">highlight_off</i></a>   
+            <span class="mdl-layout-title" id="appnamelabel">Big Shaq Soundboard</span>
             <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <a onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink', {origin: 'header'});window.plugins.socialsharing.share('Check out this cool app, Big Shaq Soundboard, on Google Play. Skrrr-pop-pop!', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.bigshaq')"><i class="material-icons">share</i></a>
-            <a onclick="playRandomSound()"><i class="material-icons">shuffle</i></a>
+            <div class="mdl-layout-spacer"></div>      
+              <a onclick="displaySearchField()" id="displaySearchButton"><i class="material-icons">search</i></a>   
+              <a onclick="playRandomSound()"><i class="material-icons">shuffle</i></a>
             <!-- Navigation. We hide it in small screens. -->
         </div>
     </header>
@@ -728,7 +739,7 @@
 			<hr>
 			<h5>Capital Extra</h5></div>
                 <div class="row" id="capitalextra">
-                    <div class="col sayings" ontouchstart="touchStart('facilities');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','facilities');">
+                    <div class="col sayings recent" ontouchstart="touchStart('facilities');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','facilities');">
                         <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
                             <i class="material-icons">audiotrack</i>
                         </button>
@@ -1186,6 +1197,41 @@
         modal: true
     });
    });
+
+   $('#searcher').quicksearch('main .col', {
+    'delay': 100,
+    'bind': 'keyup keydown',
+    'show': function() {
+        if ($('#searcher').val() === '') {
+            $('.col').css('display','block')
+            return;
+        }
+        $('.col').css('display','none')
+        $(this).addClass('show-search');
+        $(this).css('display','block')
+    },
+    'onAfter': function() {
+        console.log($('#searcher').val());
+        if ($('#searcher').val() === '') {
+            $('.col').css('display','block')
+            return;
+        }
+        if ($('.show-search:first').length > 0) {
+        	$('html,body').scrollTop($('.show-search:first').offset().top);
+        }
+    },
+    'hide': function() {
+        $(this).removeClass('show-search');
+        $(this).css('display','none')
+    },
+    'prepareQuery': function(val) {
+        return new RegExp(val, "i");
+    },
+    'testQuery': function(query, txt, _row) {
+        return query.test(txt);
+    }
+});
+
     </script>
     <div id="dialog" title="Options" style="text-align: center">
     </div>

@@ -57,8 +57,17 @@ user-select: none;
     z-index: 5;
  }
 
+ .show-search {
+    background-color:yellow;   
+    display: block !important; 
+}
 
-
+.mdl-textfield__input {
+    color: white;
+}
+.mdl-textfield__label {
+    color: white;
+}
 .ui-icon-closethick {
     background-image: url(images/my-10px-image.png) !important;
     background-position: left top !important;
@@ -84,6 +93,6 @@ user-select: none;
 display: none;
 }
 
-.mdl-button--colored {
+.mdl-button--fab.mdl-button--colored {
     background-color: #28292b;
 }
