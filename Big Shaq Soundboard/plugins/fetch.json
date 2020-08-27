@@ -127,14 +127,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-android-permissions": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-android-permissions"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-inapppurchase": {
     "source": {
       "type": "registry",
@@ -175,7 +167,9 @@
       "id": "cordova-plugin-firebase-analytics@^2.0.3"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "FIREBASE_CORE_VERSION": "16.0.+"
+    }
   },
   "cordova-support-android-plugin": {
     "source": {
@@ -213,6 +207,16 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-admobpro"
+    },
+    "is_top_level": true,
+    "variables": {
+      "PLAY_SERVICES_VERSION": "16.0.0"
+    }
+  },
+  "cordova-plugin-android-permissions": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-android-permissions"
     },
     "is_top_level": true,
     "variables": {}

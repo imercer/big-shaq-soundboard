@@ -1,28 +1,28 @@
 {
-  "_from": "cordova-support-android-plugin@~1.0.0",
-  "_id": "cordova-support-android-plugin@1.0.1",
+  "_from": "cordova-support-android-plugin@1.0.2",
+  "_id": "cordova-support-android-plugin@1.0.2",
   "_inBundle": false,
-  "_integrity": "sha512-m/ciZFl2kPsdA1jFp0By2txF0aOqnVvhNqQhM04fFNjD2tlcFNsaIqOpkCfDzCYVy9mVH0BupwePmRMTgEIoMw==",
+  "_integrity": "sha512-bgvSG5/A2Z/OerfNHN7AHMV3jt+9bH6J4vw9T8R5OJRkkK+ENRBhL8qx7m6mLmBPvtQoIhCMOCRMM9fd4P/p9w==",
   "_location": "/cordova-support-android-plugin",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-support-android-plugin@~1.0.0",
+    "raw": "cordova-support-android-plugin@1.0.2",
     "name": "cordova-support-android-plugin",
     "escapedName": "cordova-support-android-plugin",
-    "rawSpec": "~1.0.0",
+    "rawSpec": "1.0.2",
     "saveSpec": null,
-    "fetchSpec": "~1.0.0"
+    "fetchSpec": "1.0.2"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-support-android-plugin/-/cordova-support-android-plugin-1.0.1.tgz",
-  "_shasum": "ff3010596dd66dc7e0f3ca9c0942dc55a3309089",
-  "_spec": "cordova-support-android-plugin@~1.0.0",
-  "_where": "D:\\big-shaq-soundboard\\Big Shaq Soundboard",
+  "_resolved": "https://registry.npmjs.org/cordova-support-android-plugin/-/cordova-support-android-plugin-1.0.2.tgz",
+  "_shasum": "db5c8c34190d656d7fa116f702f103d692f492a4",
+  "_spec": "cordova-support-android-plugin@1.0.2",
+  "_where": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard",
   "author": {
     "name": "Maksim Chemerisuk",
     "email": "chemerisuk@gmail.com",
@@ -57,5 +57,5 @@
     "postversion": "git push && git push --tags",
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

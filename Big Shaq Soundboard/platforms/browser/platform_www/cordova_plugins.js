@@ -328,14 +328,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
-        "id": "cordova-plugin-android-permissions.Permissions",
-        "pluginId": "cordova-plugin-android-permissions",
-        "clobbers": [
-            "cordova.plugins.permissions"
-        ]
-    },
-    {
         "file": "plugins/cordova-open-native-settings/www/settings.js",
         "id": "cordova-open-native-settings.Settings",
         "pluginId": "cordova-open-native-settings",
@@ -426,7 +418,6 @@ module.exports.metadata =
     "cordova-plugin-media": "4.0.0",
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "cordova-plugin-app-version": "0.1.9",
-    "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-inapppurchase": "1.1.0",
     "cordova-open-native-settings": "1.5.2",
     "cordova-custom-config": "5.1.0",

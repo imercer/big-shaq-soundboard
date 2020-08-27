@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7556612-7096-40a7-9c07-65d55233ff62" name="Default Changelist" comment="" />
+    <list default="true" id="585c506f-a346-43df-bc1a-2186f12fb5a1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,19 +10,14 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1gfvZydKRyVs13H7gdQLuSixEU1" />
+  <component name="ProjectId" id="1ggAVujEbD8Cr9G9fl5ZtpNTicF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,25 +27,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b7556612-7096-40a7-9c07-65d55233ff62" name="Default Changelist" comment="" />
-      <created>1598518521732</created>
+      <changelist id="585c506f-a346-43df-bc1a-2186f12fb5a1" name="Default Changelist" comment="" />
+      <created>1598525889458</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1598518521732</updated>
+      <updated>1598525889458</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="124" key="SettingsEditor" timestamp="1598519036330">
+    <state x="448" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1598525931419">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="254" y="124" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1598519036330" />
+    <state x="448" y="306" key="com.intellij.ide.util.TipDialog/0.0.1504.963@0.0.1504.963" timestamp="1598525931419" />
   </component>
 </project>

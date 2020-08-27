@@ -19,14 +19,26 @@ function notifyonDeviceReady() {
 	finaliseRows();
 	loadFavourites();
 	StatusBar.show();
-	var permissions = cordova.plugins.permissions;
-    permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, permissionSuccess, permissionError);
+    var permissions = cordova.plugins.permissions;
+    var permissionsList = [
+        permissions.WRITE_EXTERNAL_STORAGE,
+        permissions.READ_EXTERNAL_STORAGE
+      ];    
+    permissions.requestPermissions(permissionsList, permissionSuccess, permissionError);
     function permissionError() {
-      console.warn('external storage permission is not turned on');
+      console.warn('storage permission is not turned on');
     }
 
     function permissionSuccess( status ) {
-      if( !status.hasPermission ) error();
+        console.log(status);
+        if( !status.hasPermission ) {
+            permissions.requestPermissions(
+              list,
+              function(status) {
+                if( !status.hasPermission ) error();
+              },
+              error);
+          }
     }
 
 /* IAP Restore/Validation Code */
