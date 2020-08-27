@@ -83,3 +83,7 @@ user-select: none;
 .ui-dialog-titlebar {
 display: none;
 }
+
+.mdl-button--colored {
+    background-color: #28292b;
+}
