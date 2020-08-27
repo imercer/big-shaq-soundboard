@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.hiraqui.ringtone"
+      version="0.6.1">
+    <name>Ringtone</name>
+    <description>Ringtone Plugin</description>
+    <author>Hiraqui</author>
+    <keywords>ecosystem:cordova,cordova-android,cordova,ringtone,android,phonegap</keywords>
+    <repo>https://github.com/Hiraqui/cordova-plugin-ringtone.git</repo>
+    <issue>https://github.com/Hiraqui/cordova-plugin-ringtone/issues</issue>
+    <license>GNU GENERAL PUBLIC LICENSE Version 3</license>
+
+ <js-module src="www/ringtone.js" name="ringtone">
+<clobbers target="ringtone" />
+</js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Ringtone">
+            <param name="android-package" value="com.hiraqui.ringtone.Ringtone"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/android/Ringtone.java" target-dir="src/com/hiraqui/ringtone" />
+    </platform>
+</plugin>

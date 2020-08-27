@@ -220,5 +220,21 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.hiraqui.ringtone": {
+    "source": {
+      "type": "registry",
+      "id": "com.hiraqui.ringtone"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.lampa.startapp": {
+    "source": {
+      "type": "registry",
+      "id": "com.lampa.startapp"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

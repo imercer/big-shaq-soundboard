@@ -11,10 +11,10 @@ INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Sou
 	android:name
 		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:18:135-183
 manifest
-ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [:CordovaLib] C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.android.gms:play-services-ads:16.0.0] C:\Users\isaac\.gradle\caches\transforms-2\files-2.1\9f79eb04e54e2922f4e3368ee7f4327d\play-services-ads-16.0.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-core:16.0.9] C:\Users\isaac\.gradle\caches\transforms-2\files-2.1\7ed82c8d0654e35b938398452d000c2d\firebase-core-16.0.9\AndroidManifest.xml:2:1-9:12
@@ -45,9 +45,9 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\isaac\.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isaac\.gradle\caches\transforms-2\files-2.1\cfacb11cb03f8de1c2075f934b7070b5\support-core-ui-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\isaac\.gradle\caches\transforms-2\files-2.1\f3cb7f025ae4c157a11de8a06e7ff991\support-compat-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\isaac\.gradle\caches\transforms-2\files-2.1\5b4d6e387a2926204c429dc79dc68940\runtime-1.0.0\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:2:101-133
 		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml
@@ -256,6 +256,14 @@ uses-permission#android.permission.READ_PHONE_STATE
 ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:29:5-75
 	android:name
 		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:29:22-72
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:30:5-73
+	android:name
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:30:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:31:5-80
+	android:name
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml:31:22-77
 uses-sdk
 INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\app\src\main\AndroidManifest.xml

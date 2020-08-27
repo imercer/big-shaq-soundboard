@@ -61,6 +61,12 @@
     <feature name="SocialSharing">
         <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
+    <feature name="Ringtone">
+        <param name="android-package" value="com.hiraqui.ringtone.Ringtone" />
+    </feature>
+    <feature name="startApp">
+        <param name="android-package" value="com.lampa.startapp.startApp" />
+    </feature>
     <name>Big Shaq</name>
     <description>
         Mans not hot

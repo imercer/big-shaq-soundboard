@@ -356,6 +356,22 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.plugins.socialsharing"
       ]
+    },
+    {
+      "id": "com.hiraqui.ringtone.ringtone",
+      "file": "plugins/com.hiraqui.ringtone/www/ringtone.js",
+      "pluginId": "com.hiraqui.ringtone",
+      "clobbers": [
+        "ringtone"
+      ]
+    },
+    {
+      "id": "com.lampa.startapp.startapp",
+      "file": "plugins/com.lampa.startapp/www/startApp.js",
+      "pluginId": "com.lampa.startapp",
+      "merges": [
+        "startApp"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -382,6 +398,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "es6-promise-plugin": "4.2.2",
-    "cordova-plugin-x-socialsharing": "5.4.4"
+    "cordova-plugin-x-socialsharing": "5.4.4",
+    "com.hiraqui.ringtone": "0.6.1",
+    "com.lampa.startapp": "6.1.6"
   };
 });

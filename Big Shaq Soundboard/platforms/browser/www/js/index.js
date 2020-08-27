@@ -19,14 +19,26 @@ function notifyonDeviceReady() {
 	finaliseRows();
 	loadFavourites();
 	StatusBar.show();
-	var permissions = cordova.plugins.permissions;
-    permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, permissionSuccess, permissionError);
+    var permissions = cordova.plugins.permissions;
+    var permissionsList = [
+        permissions.WRITE_EXTERNAL_STORAGE,
+        permissions.READ_EXTERNAL_STORAGE
+      ];    
+    permissions.requestPermissions(permissionsList, permissionSuccess, permissionError);
     function permissionError() {
-      console.warn('external storage permission is not turned on');
+      console.warn('storage permission is not turned on');
     }
 
     function permissionSuccess( status ) {
-      if( !status.hasPermission ) error();
+        console.log(status);
+        if( !status.hasPermission ) {
+            permissions.requestPermissions(
+              list,
+              function(status) {
+                if( !status.hasPermission ) error();
+              },
+              error);
+          }
     }
 
 /* IAP Restore/Validation Code */
@@ -420,7 +432,7 @@ function shareSound(sound) {
 
 function ringtoneSet(sound,setting) {
     cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
-    if(displayAds == "no") {
+   /* if(displayAds == "no") {
         console.log("Not showing ads");
     } else {
         AdMob.showInterstitial();
@@ -428,8 +440,19 @@ function ringtoneSet(sound,setting) {
                 adId: 'ca-app-pub-5354491797983322/6572334447',
                 autoShow: false
             });
-    };
-    var fileTransfer = new FileTransfer();
+    };*/
+    window.ringtone.exportAssetAndSetRingtone("/android_asset/www/audio/"+sound+".mp3",
+    sound, "Big Shaq Soundboard", setting, 
+    function(success) {
+    	alert(success);
+    },
+    function(err) {
+        console.log(err);
+        var obj = new Object();
+        obj.package = "nz.isaacmercer.bigshaq";
+        intentPlugin.startActivity("android.settings.action", "MANAGE_WRITE_SETTINGS", JSON.stringify(obj));
+    })
+    /*var fileTransfer = new FileTransfer();
     var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
     var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
     var notificationDir = cordova.file.externalRootDirectory + "Notifications/" + sound + ".mp3";
@@ -465,7 +488,7 @@ function ringtoneSet(sound,setting) {
             headers: {
             }
         }
-    );
+    );*/
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);

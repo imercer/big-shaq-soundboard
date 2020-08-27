@@ -75,6 +75,12 @@
     },
     "cordova-support-google-services": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "com.hiraqui.ringtone": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "com.lampa.startapp": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
   "dependent_plugins": {

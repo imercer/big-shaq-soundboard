@@ -1,0 +1,64 @@
+{
+  "_from": "com.hiraqui.ringtone",
+  "_id": "com.hiraqui.ringtone@0.6.1",
+  "_inBundle": false,
+  "_integrity": "sha1-hS/JxfGVP8UauIKPIWekaOj7kNs=",
+  "_location": "/com.hiraqui.ringtone",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "com.hiraqui.ringtone",
+    "name": "com.hiraqui.ringtone",
+    "escapedName": "com.hiraqui.ringtone",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/com.hiraqui.ringtone/-/com.hiraqui.ringtone-0.6.1.tgz",
+  "_shasum": "852fc9c5f1953fc51ab8828f2167a468e8fb90db",
+  "_spec": "com.hiraqui.ringtone",
+  "_where": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard",
+  "author": {
+    "name": "Hiraqui"
+  },
+  "bugs": {
+    "url": "https://github.com/Hiraqui/cordova-plugin-ringtone/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.hiraqui.ringtone",
+    "platforms": [
+      "android"
+    ]
+  },
+  "cordova_name": "Ringtone",
+  "deprecated": false,
+  "description": "Ringtone Plugin",
+  "engines": [],
+  "homepage": "https://github.com/Hiraqui/cordova-plugin-ringtone",
+  "issue": "https://github.com/Hiraqui/cordova-plugin-ringtone/issues",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova",
+    "ringtone",
+    "android",
+    "phonegap"
+  ],
+  "license": "GNU GENERAL PUBLIC LICENSE Version 3",
+  "name": "com.hiraqui.ringtone",
+  "platforms": [
+    "android"
+  ],
+  "repo": "https://github.com/Hiraqui/cordova-plugin-ringtone.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hiraqui/cordova-plugin-ringtone.git"
+  },
+  "version": "0.6.1"
+}

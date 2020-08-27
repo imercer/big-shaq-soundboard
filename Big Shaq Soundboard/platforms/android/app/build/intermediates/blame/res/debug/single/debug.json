@@ -32,6 +32,10 @@
         "source": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\src\\main\\res\\drawable-land-mdpi\\screen.png"
     },
     {
+        "merged": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\src\\main\\res\\xml\\file_paths.xml"
+    },
+    {
         "merged": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_remove.png.flat",
         "source": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_remove.png"
     },

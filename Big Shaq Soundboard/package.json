@@ -34,7 +34,9 @@
       },
       "cordova-plugin-admobpro": {
         "PLAY_SERVICES_VERSION": "16.0.0"
-      }
+      },
+      "com.hiraqui.ringtone": {},
+      "com.lampa.startapp": {}
     }
   },
   "dependencies": {
@@ -72,6 +74,8 @@
     "strip-bom": "^4.0.0"
   },
   "devDependencies": {
+    "com.hiraqui.ringtone": "^0.6.1",
+    "com.lampa.startapp": "^6.1.6",
     "cordova-android": "^9.0.0"
   }
 }

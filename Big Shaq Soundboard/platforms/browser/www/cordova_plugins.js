@@ -402,6 +402,22 @@ module.exports = [
         "clobbers": [
             "window.AdMob"
         ]
+    },
+    {
+        "file": "plugins/com.hiraqui.ringtone/www/ringtone.js",
+        "id": "com.hiraqui.ringtone.ringtone",
+        "pluginId": "com.hiraqui.ringtone",
+        "clobbers": [
+            "ringtone"
+        ]
+    },
+    {
+        "file": "plugins/com.lampa.startapp/www/startApp.js",
+        "id": "com.lampa.startapp.startapp",
+        "pluginId": "com.lampa.startapp",
+        "merges": [
+            "startApp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -428,7 +444,9 @@ module.exports.metadata =
     "cordova-plugin-extension": "1.5.4",
     "cordova-support-google-services": "1.3.1",
     "cordova-plugin-firebase-analytics": "2.0.3",
-    "cordova-plugin-admobpro": "2.37.2"
+    "cordova-plugin-admobpro": "2.37.2",
+    "com.hiraqui.ringtone": "0.6.1",
+    "com.lampa.startapp": "6.1.6"
 }
 // BOTTOM OF METADATA
 });

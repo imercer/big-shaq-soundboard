@@ -69,6 +69,12 @@
     },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "com.hiraqui.ringtone": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "com.lampa.startapp": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {

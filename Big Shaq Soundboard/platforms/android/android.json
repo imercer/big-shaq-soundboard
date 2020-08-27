@@ -83,6 +83,14 @@
             {
               "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Ringtone\"><param name=\"android-package\" value=\"com.hiraqui.ringtone.Ringtone\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"startApp\"><param name=\"android-package\" value=\"com.lampa.startapp.startApp\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -118,7 +126,7 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 4
+              "count": 5
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
@@ -130,6 +138,14 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
               "count": 1
             }
           ],
@@ -223,6 +239,12 @@
     },
     "cordova-plugin-x-socialsharing": {
       "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "com.hiraqui.ringtone": {
+      "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
+    },
+    "com.lampa.startapp": {
       "PACKAGE_NAME": "nz.isaacmercer.bigshaq"
     }
   },
@@ -584,6 +606,22 @@
       "clobbers": [
         "window.plugins.socialsharing"
       ]
+    },
+    {
+      "id": "com.hiraqui.ringtone.ringtone",
+      "file": "plugins/com.hiraqui.ringtone/www/ringtone.js",
+      "pluginId": "com.hiraqui.ringtone",
+      "clobbers": [
+        "ringtone"
+      ]
+    },
+    {
+      "id": "com.lampa.startapp.startapp",
+      "file": "plugins/com.lampa.startapp/www/startApp.js",
+      "pluginId": "com.lampa.startapp",
+      "merges": [
+        "startApp"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -610,6 +648,8 @@
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-wkwebview-engine": "1.1.4",
     "es6-promise-plugin": "4.2.2",
-    "cordova-plugin-x-socialsharing": "5.4.4"
+    "cordova-plugin-x-socialsharing": "5.4.4",
+    "com.hiraqui.ringtone": "0.6.1",
+    "com.lampa.startapp": "6.1.6"
   }
 }

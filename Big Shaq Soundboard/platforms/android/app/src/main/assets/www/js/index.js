@@ -432,16 +432,45 @@ function shareSound(sound) {
 
 function ringtoneSet(sound,setting) {
     cordova.plugins.firebase.analytics.logEvent("ringtone_set", {sound: sound, type: setting});
-    if(displayAds == "no") {
-        console.log("Not showing ads");
-    } else {
-        AdMob.showInterstitial();
-        AdMob.prepareInterstitial({
-                adId: 'ca-app-pub-5354491797983322/6572334447',
-                autoShow: false
-            });
-    };
-    var fileTransfer = new FileTransfer();
+    window.ringtone.exportAssetAndSetRingtone("/android_asset/www/audio/"+sound+".mp3",
+    sound, "Big Shaq Soundboard", setting, 
+    function(success) {
+        if(displayAds == "no") {
+            console.log("Not showing ads");
+        } else {
+            AdMob.showInterstitial();
+            AdMob.prepareInterstitial({
+                    adId: 'ca-app-pub-5354491797983322/6572334447',
+                    autoShow: false
+                });
+        };
+        var successdialogtxt = "<h5>Ringtone Set!</h5><p>The sound has been selected as your " + setting + " tone. You can modify this using your Settings app, under sounds and ringtones (or similar). Alternatively you can use your preffered ringtone management application.";
+        successdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+        document.getElementById('dialog').innerHTML = successdialogtxt;
+    },
+    function(err) {
+        var permissionError = "android.permission.WRITE_SETTINGS";
+        var isPermissionIssue = err.includes(permissionError);
+        console.log(err);
+        if (isPermissionIssue == true) {
+            alert('You\'ll need to give Big Shaq Soundboard permission to change your settings - you\'ll only need to do this once. Once you close this message you\'ll be asked to allow us permission to change your settings. \n\nWhen you\'re finished on that screen, head back to the app and try again.');
+            var sApp = startApp.set({
+                "intent": "android.settings.action.MANAGE_WRITE_SETTINGS",
+                "uri":"package:nz.isaacmercer.bigshaq"
+            }).start(); 
+            var errordialogtxt = "<h5>Please try again.</h5>If you've just changed your permissions to alow us access to your settings, please add the ringtone you wanted again.";
+            var Existingdialogtxt = document.getElementById('dialog').innerHTML;
+            document.getElementById('dialog').innerHTML = errordialogtxt;
+            document.getElementById('dialog').innerHTML += Existingdialogtxt;
+        } else {
+            console.error(err);
+            var errordialogtxt = "<h5>Something went wrong!</h5>Unfortunately we were unable set your ringtone."
+            errordialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
+             document.getElementById('dialog').innerHTML = errordialogtxt;
+        };
+        
+    })
+    /*var fileTransfer = new FileTransfer();
     var uri = encodeURI("file:///android_asset/www/audio/"+sound+".mp3");
     var ringtoneDir = cordova.file.externalRootDirectory + "Ringtones/" + sound + ".mp3";
     var notificationDir = cordova.file.externalRootDirectory + "Notifications/" + sound + ".mp3";
@@ -477,7 +506,7 @@ function ringtoneSet(sound,setting) {
             headers: {
             }
         }
-    );
+    );*/
 }
 
 document.addEventListener("deviceready", notifyonDeviceReady, false);
