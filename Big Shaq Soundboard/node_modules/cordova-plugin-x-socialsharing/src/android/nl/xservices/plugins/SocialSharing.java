@@ -87,10 +87,10 @@ public class SocialSharing extends CordovaPlugin {
     } else if (ACTION_SHARE_VIA_TWITTER_EVENT.equals(action)) {
       return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "twitter", null, false, true);
     } else if (ACTION_SHARE_VIA_FACEBOOK_EVENT.equals(action)) {
-      return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "com.facebook.katana", null, false, true, "com.facebook.composer.shareintent");
+      return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.isNull(3) ? args.getJSONArray(2) : null, args.getString(3), "com.facebook.katana", null, false, true, "com.facebook.composer.shareintent");
     } else if (ACTION_SHARE_VIA_FACEBOOK_WITH_PASTEMESSAGEHINT.equals(action)) {
       this.pasteMessage = args.getString(4);
-      return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "com.facebook.katana", null, false, true, "com.facebook.composer.shareintent");
+      return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.isNull(3) ? args.getJSONArray(2) : null, args.getString(3), "com.facebook.katana", null, false, true, "com.facebook.composer.shareintent");
     } else if (ACTION_SHARE_VIA_WHATSAPP_EVENT.equals(action)) {
       if (notEmpty(args.getString(4))) { // abid
         return shareViaWhatsAppDirectly(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), args.getString(4));
@@ -422,7 +422,7 @@ public class SocialSharing extends CordovaPlugin {
 
     if (image.startsWith("http") || image.startsWith("www/")) {
       String filename = getFileName(image);
-      localImage = "file://" + dir + "/" + filename;
+      localImage = "file://" + dir + "/" + filename.replaceAll("[^a-zA-Z0-9._-]", "");
       if (image.startsWith("http")) {
         // filename optimisation taken from https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/pull/56
         URLConnection connection = new URL(image).openConnection();

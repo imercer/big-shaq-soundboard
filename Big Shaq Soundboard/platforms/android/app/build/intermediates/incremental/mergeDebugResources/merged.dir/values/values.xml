@@ -15,43 +15,6 @@
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
-    <declare-styleable name="AdsAttrs"><attr format="string" name="adSize"/><attr format="string" name="adSizes"/><attr format="string" name="adUnitId"/></declare-styleable>
-    <declare-styleable name="FontFamily"><attr format="string" name="fontProviderAuthority"/><attr format="string" name="fontProviderPackage"/><attr format="string" name="fontProviderQuery"/><attr format="reference" name="fontProviderCerts"/><attr name="fontProviderFetchStrategy">
-            
-            <enum name="blocking" value="0"/>
-            
-            <enum name="async" value="1"/>
-        </attr><attr format="integer" name="fontProviderFetchTimeout">
-          
-            <enum name="forever" value="-1"/>
-        </attr></declare-styleable>
-    <declare-styleable name="FontFamilyFont"><attr name="fontStyle">
-            <enum name="normal" value="0"/>
-            <enum name="italic" value="1"/>
-        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/></declare-styleable>
-    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
-<enum name="none" value="0"/>
-
-<enum name="adjust_width" value="1"/>
-
-<enum name="adjust_height" value="2"/>
-
-</attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
-    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
-<enum name="standard" value="0"/>
-
-<enum name="wide" value="1"/>
-
-<enum name="icon_only" value="2"/>
-
-</attr><attr format="reference" name="colorScheme">
-<enum name="dark" value="0"/>
-
-<enum name="light" value="1"/>
-
-<enum name="auto" value="2"/>
-
-</attr><attr format="reference|string" name="scopeUris"/></declare-styleable>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -145,4 +108,56 @@
 </style>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <declare-styleable name="AdsAttrs">
+<attr format="string" name="adSize"/>
+
+<attr format="string" name="adSizes"/>
+
+<attr format="string" name="adUnitId"/>
+</declare-styleable>
+    <declare-styleable name="FontFamily"><attr format="string" name="fontProviderAuthority"/><attr format="string" name="fontProviderPackage"/><attr format="string" name="fontProviderQuery"/><attr format="reference" name="fontProviderCerts"/><attr name="fontProviderFetchStrategy">
+            
+            <enum name="blocking" value="0"/>
+            
+            <enum name="async" value="1"/>
+        </attr><attr format="integer" name="fontProviderFetchTimeout">
+          
+            <enum name="forever" value="-1"/>
+        </attr></declare-styleable>
+    <declare-styleable name="FontFamilyFont"><attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/></declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+<enum name="none" value="0"/>
+
+<enum name="adjust_width" value="1"/>
+
+<enum name="adjust_height" value="2"/>
+
+</attr>
+
+<attr format="float" name="imageAspectRatio"/>
+
+<attr format="boolean" name="circleCrop"/>
+</declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+<enum name="standard" value="0"/>
+
+<enum name="wide" value="1"/>
+
+<enum name="icon_only" value="2"/>
+
+</attr>
+<attr format="reference" name="colorScheme">
+<enum name="dark" value="0"/>
+
+<enum name="light" value="1"/>
+
+<enum name="auto" value="2"/>
+
+</attr>
+
+<attr format="reference|string" name="scopeUris"/>
+</declare-styleable>
 </resources>

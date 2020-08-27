@@ -1,4 +1,0 @@
-#Sun Jun 02 23:05:46 NZST 2019
-base.0=D\:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\25
-path.0=classes.dex
-renamed.0=classes.dex

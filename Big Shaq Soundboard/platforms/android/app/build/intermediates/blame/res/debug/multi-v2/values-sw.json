@@ -1,27 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
+            "outputFile": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d68335313b08955bb6401785ccb00646\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f3cb7f025ae4c157a11de8a06e7ff991\\support-compat-26.1.0\\res\\values-sw\\values-sw.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,347,535,658,765,987,1110,1255,1394,1618,1722,1907,2032,2241,2426,2520,2621",
-                        "endColumns": "101,187,122,106,221,122,144,138,223,103,184,124,208,184,93,100,120",
-                        "endOffsets": "346,534,657,764,986,1109,1254,1393,1617,1721,1906,2031,2240,2425,2519,2620,2741"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,399,526,637,859,986,1135,1483,1707,1815,2000,2129,2338,2527,2625,2730",
-                        "endColumns": "105,187,126,110,221,126,148,142,223,107,184,128,208,188,97,104,124",
-                        "endOffsets": "206,394,521,632,854,981,1130,1273,1702,1810,1995,2124,2333,2522,2620,2725,2850"
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3470",
+                        "endColumns": "100",
+                        "endOffsets": "3566"
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-16.0.0.aar\\d32bfbb2dd1000ee440a6356becbf6e3\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\9f79eb04e54e2922f4e3368ee7f4327d\\play-services-ads-16.0.0\\res\\values-sw\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\2c2d0d3cb369ae975aee0cc5709d5213\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\62effaa7bbc7d9104ffc97563454eb99\\play-services-base-16.0.1\\res\\values-sw\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,347,535,658,765,987,1110,1255,1394,1618,1722,1907,2032,2241,2426,2520,2621",
+                        "endColumns": "101,187,122,106,221,122,144,138,223,103,184,124,208,184,93,100,120",
+                        "endOffsets": "346,534,657,764,986,1109,1254,1393,1617,1721,1906,2031,2240,2425,2519,2620,2741"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,399,526,637,859,986,1135,1483,1707,1815,2000,2129,2338,2527,2625,2730",
+                        "endColumns": "105,187,126,110,221,126,148,142,223,107,184,128,208,188,97,104,124",
+                        "endOffsets": "206,394,521,632,854,981,1130,1273,1702,1810,1995,2124,2333,2522,2620,2725,2850"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f7e5ccffb736ba12d8ecf3fc7710a910\\play-services-basement-16.2.0\\res\\values-sw\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "1278",
                         "endColumns": "204",
                         "endOffsets": "1478"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\50439c8f50733f73d8b609f8ae0ddcee\\res\\values-sw\\values-sw.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3470",
-                        "endColumns": "100",
-                        "endOffsets": "3566"
                     }
                 }
             ]

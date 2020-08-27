@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
+            "outputFile": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\50439c8f50733f73d8b609f8ae0ddcee\\res\\values-vi\\values-vi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3440",
-                        "endColumns": "100",
-                        "endOffsets": "3536"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-16.0.0.aar\\d32bfbb2dd1000ee440a6356becbf6e3\\res\\values-vi\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\9f79eb04e54e2922f4e3368ee7f4327d\\play-services-ads-16.0.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d68335313b08955bb6401785ccb00646\\res\\values-vi\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\62effaa7bbc7d9104ffc97563454eb99\\play-services-base-16.0.1\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\2c2d0d3cb369ae975aee0cc5709d5213\\res\\values-vi\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f3cb7f025ae4c157a11de8a06e7ff991\\support-compat-26.1.0\\res\\values-vi\\values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3440",
+                        "endColumns": "100",
+                        "endOffsets": "3536"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f7e5ccffb736ba12d8ecf3fc7710a910\\play-services-basement-16.2.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

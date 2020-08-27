@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
+            "outputFile": "C:\\Users\\isaac\\OneDrive\\Documents\\big-shaq-soundboard\\Big Shaq Soundboard\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\d68335313b08955bb6401785ccb00646\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\62effaa7bbc7d9104ffc97563454eb99\\play-services-base-16.0.1\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-16.0.0.aar\\d32bfbb2dd1000ee440a6356becbf6e3\\res\\values-am\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "197,263,367,429,495,571,665",
-                        "endColumns": "65,103,61,65,75,93,68",
-                        "endOffsets": "262,366,428,494,570,664,733"
-                    },
-                    "to": {
-                        "startLines": "20,21,22,23,24,25,26",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "2600,2670,2778,2844,2914,2994,3092",
-                        "endColumns": "69,107,65,69,79,97,72",
-                        "endOffsets": "2665,2773,2839,2909,2989,3087,3160"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\2c2d0d3cb369ae975aee0cc5709d5213\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f7e5ccffb736ba12d8ecf3fc7710a910\\play-services-basement-16.2.0\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\50439c8f50733f73d8b609f8ae0ddcee\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\9f79eb04e54e2922f4e3368ee7f4327d\\play-services-ads-16.0.0\\res\\values-am\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,263,367,429,495,571,665",
+                        "endColumns": "65,103,61,65,75,93,68",
+                        "endOffsets": "262,366,428,494,570,664,733"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "2600,2670,2778,2844,2914,2994,3092",
+                        "endColumns": "69,107,65,69,79,97,72",
+                        "endOffsets": "2665,2773,2839,2909,2989,3087,3160"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\isaac\\.gradle\\caches\\transforms-2\\files-2.1\\f3cb7f025ae4c157a11de8a06e7ff991\\support-compat-26.1.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

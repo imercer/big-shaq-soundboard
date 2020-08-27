@@ -1,27 +1,31 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
-INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
+ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:1-22:12
 	package
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:7-35
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:7-35
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:36-61
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:36-61
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:11-69
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:20:11-69
 	android:versionCode
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:62-85
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
-		INJECTED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:21:62-85
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
 uses-sdk
-ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:22:5-44
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml:22:15-41
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		ADDED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
+		INJECTED from C:\Users\isaac\OneDrive\Documents\big-shaq-soundboard\Big Shaq Soundboard\platforms\android\CordovaLib\AndroidManifest.xml
